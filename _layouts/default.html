@@ -87,7 +87,7 @@
 			<article class="content">
 				{{ content }}
 			</article>
-			{% if page.title == "Welcome" %}
+			{% if page.title and page.title == "Welcome" %}
 			<div class="cert-bar" id="cert-bar">
 				<img class="cert-img" alt="Google Certified Associate Engineer" src="./images/ae.png" />
 				<img class="cert-img" alt="Google Certified Cloud Architect" src="./images/ca.png" />
