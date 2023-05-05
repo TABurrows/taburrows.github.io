@@ -16,8 +16,6 @@ Consisting of:
 - Connections
 - Search Indexes
 
-
-
 #### Datasets
 
 Created via one of the following:
