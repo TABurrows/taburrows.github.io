@@ -1,9 +1,9 @@
 ---
-title: Prometheus - Installation
+title: Installation
 category: Prometheus
 order: 1
 ---
-Prometheus - Installation
+Installation
 
 [ This example, Debian 11 ]
 
