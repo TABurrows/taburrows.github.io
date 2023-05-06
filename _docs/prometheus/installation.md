@@ -126,4 +126,4 @@ sudo systemctl status prometheus
 
 Check the system is running at http://`<ip-address-or-host-name>:9090`
 
-![Prometheus Landing Page](./images/prometheus.png)
+![Prometheus Landing Page](/images/prometheus.png)
