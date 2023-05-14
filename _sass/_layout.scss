@@ -279,10 +279,10 @@ nav > ul {
 
 
 .nav-item-header {
-	display: block;
+	display: inline-flex;
 	font-family: "Open Sans", sans-serif;
 	line-height: 1;
-	margin: 0 0 6px 0;
+	margin: 6px 0 0 0;
 
 	nav:not(.full-navigation) & > ul {
 		display: none;
@@ -293,10 +293,10 @@ nav > ul {
 	}
 
 	> a {
-		color: #666;
+		color: #333;
 		text-decoration: none;
 		font-size: 1.6rem;
-		padding: $space / 2 0 $space / 2 $space * 2;
+		padding: $space / 3 0 $space / 2 $space * 2;
 	}
 
 	&.current > a,
