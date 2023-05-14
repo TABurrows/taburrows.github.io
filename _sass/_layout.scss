@@ -295,27 +295,23 @@ nav > ul {
 		display: block;
 	}
 
-	span {
-		
-		> a {
-			color: #666;
-			text-decoration: none;
-			font-size: 1.6rem;
-			padding: $space / 2 0 $space / 2 $space * 2;
-		}
+	> a {
+		color: #666;
+		text-decoration: none;
+		font-size: 1.6rem;
+		padding: $space / 2 0 $space / 2 $space * 2;
+	}
 
-		&.current > a,
-		> a:active,
-		> a:hover {
-			color: #111;
-		}
+	&.current > a,
+	> a:active,
+	> a:hover {
+		color: #111;
+	}
 
-		&.top-level > a {
-			line-height: 1.5;
-			font-weight: 600;
-			padding-left: $space;
-		}
-
+	&.top-level > a {
+		line-height: 1.5;
+		font-weight: 600;
+		padding-left: $space;
 	}
 }
 
