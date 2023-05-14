@@ -36,11 +36,13 @@
 
 	<body>
 		<header>
+			<h1>
 			<div class="icon-title-sidebar">
 				<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/octicon.svg" width="40" height="40" alt="{{ site.title }} logo"></a>
-				<h1>{{ site.title }}</h1>
+				{{ site.title }}
 				<button type="button" class="open-nav" id="open-nav"></button>
 			</div>
+		</h1>
 
 			<form action="{{ site.baseurl }}/search/" method="get">
 				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
