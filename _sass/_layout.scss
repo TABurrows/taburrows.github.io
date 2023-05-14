@@ -478,3 +478,12 @@ img {
 .cms-editor-active .editor-link {
 	display: block;
 }
+
+
+.nav-item-size-badge {
+	max-width: 14px;
+	max-height: 14px;
+	border-radius: 25%;
+	background-color: $brand-colour;
+	color: $brand-colour-light;
+}
