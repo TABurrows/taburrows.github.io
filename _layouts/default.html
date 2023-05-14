@@ -31,16 +31,21 @@
 				max-width: 180px;
 				margin: 1rem;
 			}
+			.icon-title-sidebar {
+				display: flex;
+				flex-direction: center;
+				justify-items: center;
+			}
 		</style>
 	</head>
 
 	<body>
 		<header>
-			<h1>
+			<div class="icon-title-sidebar">
 				<a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/octicon.svg" width="40" height="40" alt="{{ site.title }} logo"></a>
-				{{ site.title }}
+				<h1>{{ site.title }}</h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-			</h1>
+			</div>
 
 			<form action="{{ site.baseurl }}/search/" method="get">
 				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
