@@ -93,6 +93,14 @@ header {
 		margin: 0;
 	}
 
+
+	.icon-title-sidebar {
+		display: flex;
+		flex-direction: center;
+		justify-items: center;
+		background-color: $brand-colour;
+	}
+
 	h1 {
 		padding: $emblem-vertical-padding $emblem-horizontal-padding;
 		height: $nav-header-height;
