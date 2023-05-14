@@ -535,7 +535,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	transform: translateY(-2px);
-	margin-left: 8px;
+	margin-left: $space * 0.4;
 }
 
 .nav-item-header-link {
@@ -545,5 +545,5 @@ img {
 }
 
 .push-left {
-	margin-left: $space / 2;
+	margin-left: $space * 0.7;
 }
