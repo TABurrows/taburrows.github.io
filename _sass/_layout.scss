@@ -93,6 +93,23 @@ header {
 		margin: 0;
 	}
 
+	.icon-title-sidebar {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		background-color: $brand-colour;
+
+		a {
+			color: #fff;
+			margin: 0;
+			font-size: 1.7rem;
+			line-height: 0.8;
+			letter-spacing: 0;
+			font-weight: 600;
+			text-indent: 0;
+		}
+	}
+	
 	h1 {
 		padding: $emblem-vertical-padding $emblem-horizontal-padding;
 		height: $nav-header-height;
@@ -109,24 +126,6 @@ header {
 		@include flex-direction(row);
 		@include align-items(center);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-
-
-		.icon-title-sidebar {
-			display: flex;
-			align-items: center;
-			justify-items: center;
-			background-color: $brand-colour;
-
-			a {
-				color: #fff;
-				margin: 0;
-				font-size: 1.7rem;
-				line-height: 0.8;
-				letter-spacing: 0;
-				font-weight: 600;
-				text-indent: 0;
-			}
-		}
 	}
 
 $nav-image: $baseurl + "/images/menu.svg";
