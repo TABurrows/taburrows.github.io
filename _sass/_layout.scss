@@ -257,6 +257,45 @@ nav > ul {
 	}
 
 	span {
+
+		> a {
+			color: #666;
+			text-decoration: none;
+			font-size: 1.4rem;
+			padding: $space / 2 0 $space / 2 $space * 2;
+		}
+
+		&.current > a,
+		> a:active,
+		> a:hover {
+			color: #111;
+		}
+
+		&.top-level > a {
+			line-height: 1.5;
+			font-weight: 600;
+			padding-left: $space;
+		}
+
+	}
+}
+
+
+.nav-item-header {
+	display: block;
+	font-family: "Open Sans", sans-serif;
+	line-height: 1;
+	margin: 0;
+
+	nav:not(.full-navigation) & > ul {
+		display: none;
+	}
+
+	nav:not(.full-navigation) &.current > ul {
+		display: block;
+	}
+
+	span {
 		
 		> a {
 			color: #666;
