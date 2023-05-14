@@ -249,7 +249,7 @@ nav > ul {
 .nav-item {
 	display: block;
 	font-family: "Open Sans", sans-serif;
-	line-height: 1;
+	// line-height: 1;
 	margin: 0;
 
 	nav:not(.full-navigation) & > ul {
@@ -312,7 +312,7 @@ nav > ul {
 	}
 
 	&.top-level > a {
-		line-height: 1.5;
+		line-height: 1.8;
 		font-weight: 600;
 		padding-left: $space;
 	}
