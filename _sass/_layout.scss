@@ -288,7 +288,7 @@ nav > ul {
 	align-items: center;
 	font-family: "Open Sans", sans-serif;
 	line-height: 1;
-	margin: 6px 0 0 0;
+	margin: $space / 2 0 0 0;
 
 	nav:not(.full-navigation) & > ul {
 		display: none;
@@ -542,4 +542,8 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.push-left {
+	margin-left: $space / 2;
 }
