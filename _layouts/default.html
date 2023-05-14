@@ -63,7 +63,7 @@
 					{% for group in grouped %}
 						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
 							{% assign items = group.items | sort: 'order' %}
-							<div class="nav-item-header-link">
+							<div class="nav-item">
 								<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
 								<span class="nav-item-size-badge">{{ items.size }}</span>
 							</div>
