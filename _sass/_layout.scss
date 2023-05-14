@@ -98,6 +98,7 @@ header {
 		align-items: center;
 		justify-items: center;
 		background-color: $brand-colour;
+		cursor: pointer;
 	}
 
 	.link-title-sidebar {
@@ -109,6 +110,7 @@ header {
 		font-weight: 600;
 		text-indent: 0;
 		text-decoration: none;
+		cursor: pointer;
 	}
 
 	h1 {
@@ -127,7 +129,6 @@ header {
 		@include flex-direction(row);
 		@include align-items(center);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-		cursor: pointer;
 	}
 
 $nav-image: $baseurl + "/images/menu.svg";
