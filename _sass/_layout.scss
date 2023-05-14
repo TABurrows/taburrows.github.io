@@ -298,7 +298,7 @@ nav > ul {
 		color: #333;
 		text-decoration: none;
 		font-size: 1.6rem;
-		padding: $space / 3 0 $space / 2 $space * 2;
+		padding: $space / 2 0 $space / 2 $space * 2;
 	}
 
 	&.current > a,
@@ -530,7 +530,10 @@ img {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+	transform: translateY(-2px);
+	margin-left: 8px;
 }
+
 .nav-item-header-link {
 	display: flex;
 	justify-content: center;
