@@ -76,7 +76,7 @@ body {
 }
 
 header {
-	$emblem-size: 35px;
+	$emblem-size: 40px;
 	$emblem-vertical-padding: ($nav-header-height - $emblem-size) / 2;
 	$emblem-horizontal-padding: $space;
 
@@ -96,7 +96,7 @@ header {
 
 	.icon-title-sidebar {
 		display: flex;
-		flex-direction: center;
+		align-items: center;
 		justify-items: center;
 		background-color: $brand-colour;
 	}
@@ -121,7 +121,6 @@ header {
 		img {
 			height: $emblem-size;
 			width: $emblem-size;
-			margin-right: $space - 5;
 		}
 	}
 
