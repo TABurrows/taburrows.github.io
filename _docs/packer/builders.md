@@ -14,4 +14,24 @@ Packer has the following builders:
 There are also Custom and Community Supported builders.
 
 ```
+packer {
+    required_plugins {
+        docker = {
+            version = ">= 0.0.7"
+            source = "github.com/hashicorp/docker"
+        }
+    }
+}
 
+source "docker" "ubuntu" {
+    image = "ubuntu:xenial"
+    commit = true
+}
+
+build {
+    name = "packer-ubuntu"
+    sources = [
+        "source.docker.ubuntu"
+    ]
+}
+```
