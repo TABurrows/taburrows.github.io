@@ -36,3 +36,29 @@ Created via one of the following:
 ```
 bigquery.datasets.create
 ```
+
+List datasets:
+```
+bq ls
+```
+
+List datsets in JSON:
+```
+bq ls --format=prettyjson
+```
+
+Label filter datasets:
+```
+bq ls --filter labels.<key>:<value>
+```
+
+Show information about the datasets:
+```
+bq show <project_id>:<dataset>
+```
+
+
+Show information about the datasets in JSON:
+```
+bq show --format=prettyjson <project_id>:<dataset>
+```
