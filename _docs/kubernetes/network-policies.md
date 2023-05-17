@@ -1,5 +1,5 @@
 ---
-title: network-policies
+title: Network Policies
 category: Kubernetes
 order: 1
 ---
