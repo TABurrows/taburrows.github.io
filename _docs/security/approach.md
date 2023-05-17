@@ -3,11 +3,11 @@ title: Approach
 category: Security
 order: 1
 ---
-Approach
+#### Approach
 
 Three principles to defense-in-depth securing of environments:
 
-###### Secure your internet-facing services
+##### Secure your internet-facing services
 
 - Close off access to your cloud resources from the Internet, unless absolutely necessary
 - Leverage tools like App Amor for policy-based WAF/L7 protection
@@ -16,7 +16,7 @@ Three principles to defense-in-depth securing of environments:
 
 
 
-###### Secure your VPC for private deployments
+##### Secure your VPC for private deployments
 
 - Deploy VMs with only Private IP address ranges
 - Deploy Kubernetes private clusters
@@ -27,7 +27,7 @@ Three principles to defense-in-depth securing of environments:
 - Micro-segment access to your applications and services
 
 
-###### Micro-segment access to your applications and services
+##### Micro-segment access to your applications and services
 
 - micro-segmentaion of VM-Base applications: control the comms of your VM-based applications by setting up Firewall Rules.  You can group your applications with tags or service accounts (preferred)
 - micro-segmentation of Kubernetes based applications: you can control communication between your container-based applications by setting up network policies. You can group your applications based on namespaces or labels.
