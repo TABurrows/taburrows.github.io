@@ -35,10 +35,10 @@ sudo systemctl status grafana-server
 
 Simple test (admin/admin on first use)
 ```
-http://<server-ip-address>:3000
+http://<grafana-server-ip-address>:3000
 ```
 
-Add Data Source
+Add a Prometheus Data Source
 ```
-Menu -> Connections -> Connect data
+Menu -> Connections -> Connect data -> Prometheus -> Create a Prometheus data source -> http://<prometheus-server-ip-address>:9090 -> Save & Test
 ```
