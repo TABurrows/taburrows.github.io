@@ -42,3 +42,8 @@ Add a Prometheus Data Source
 ```
 Menu -> Connections -> Connect data -> Prometheus -> Create a Prometheus data source -> http://<prometheus-server-ip-address>:9090 -> Save & Test
 ```
+
+Sample dashboards
+```
+https://grafana.com/grafana/dashboards/
+```
