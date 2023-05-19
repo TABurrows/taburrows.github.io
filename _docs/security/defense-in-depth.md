@@ -1,9 +1,9 @@
 ---
-title: Approach
+title: Defense in Depth
 category: Security
 order: 1
 ---
-#### Approach
+#### Defense in Depth
 
 Three principles to defense-in-depth securing of environments:
 
