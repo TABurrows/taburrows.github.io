@@ -24,7 +24,6 @@ Three principles to defense-in-depth securing of environments:
 - Access Managed Services privately
 - Provide secure outbound internet connections with NAT Services such as Cloud NAT
 - Use VPC Service Controls, to mitigate exfiltration risks by preventing your data from moving outside the boundaries of a trusted perimeter
-- Micro-segment access to your applications and services
 
 
 ##### Micro-segment access to your applications and services
