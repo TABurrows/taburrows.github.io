@@ -15,3 +15,9 @@ API Request Authentication  Strategies:
 - Client Certificates
 - Bearer Tokens
 - Authenticating Proxies
+
+As HTTP Requests are made to the API Server, PLUGINS attempt to associate the following ATTRIBUTES with the request:
+- Username
+- UID
+- Groups - a set of strings each of which indicates the user's MEMBERSHIP in NAMED LOGICAL COLLECTION of users eg. system:masters, devops-team
+- Extra Fields - a map of strings to list of strings which holds additional information Authorizers may find useful
