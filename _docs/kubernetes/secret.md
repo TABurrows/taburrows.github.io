@@ -7,6 +7,8 @@ Secret
 
 Decoupled from the lifecycle of a Pod.
 
-Base64 encoded key-value pairs provided to Pods that require them.
+- Base64 encoded key-value pairs provided to Pods that require them.
 
-Can be injected as environment variables.
+- Can be injected as environment variables.
+
+- Stored in memory, never written to disk
