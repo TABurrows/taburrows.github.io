@@ -7,8 +7,16 @@ Config Map
 
 Decoupled from the Pod lifecycle.
 
+Create imperatively:
 ```
 kubectl create configmap <name> 
-    --from-literal=
-    --from-env=
+    --from-literal=<literal-values>
+    --from-env=<env-file.env>
+    --from-file=<file-name>
+    --from-file=<directory-name>
+```
+
+Create declaratively:
+```
+
 ```
