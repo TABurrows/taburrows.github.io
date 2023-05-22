@@ -1,9 +1,9 @@
 ---
-title: Secrets
+title: Secret
 category: Kubernetes
 order: 1
 ---
-Secrets
+Secret
 
 Decoupled from the lifecycle of a Pod.
 
