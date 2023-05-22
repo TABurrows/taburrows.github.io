@@ -5,6 +5,8 @@ order: 1
 ---
 Secrets
 
+Decoupled from the lifecycle of a Pod.
+
 Base64 encoded key-value pairs provided to Pods that require them.
 
 Can be injected as environment variables.
