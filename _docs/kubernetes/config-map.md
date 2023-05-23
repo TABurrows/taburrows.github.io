@@ -1,9 +1,9 @@
 ---
-title: Config Map
+title: ConfigMap
 category: Kubernetes
 order: 1
 ---
-Config Map
+ConfigMap
 
 Decoupled from the Pod lifecycle.
 
@@ -19,4 +19,8 @@ kubectl create configmap <name>
 Create declaratively:
 ```
 apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: backend-config
+data:
 ```
