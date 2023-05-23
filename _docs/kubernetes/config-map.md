@@ -23,4 +23,6 @@ kind: ConfigMap
 metadata:
     name: backend-config
 data:
+    database_url: jdbc:postgresql://localhost/test
+    user: fred
 ```
