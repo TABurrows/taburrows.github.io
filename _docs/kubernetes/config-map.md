@@ -29,7 +29,7 @@ data:
 
 To inject as Environment Variables declaratively using 
 ```
-spec.containers.image.envFrom.configMapRef
+spec.containers[image].envFrom.configMapRef
 ```
 
 In use:
@@ -58,5 +58,38 @@ USER=fred
 
 You can re-assign env var keys for ConfigMap entries with:
 ```
-spec.containers.image.name.valueFrom.configMapRef
+spec.containers[image].env[name].valueFrom.configMapKeyRef
+```
+
+In use:
+```
+apiVersion: v1
+kind: Pod
+metadata: configured-pod
+spec:
+    containers:
+    - image: nginx:1.19.0
+      name: app
+      env:
+      - name: DATABASE_URL
+        valueFrom:
+            configMapKeyRef:
+                name: backend-config
+                key: database_url
+      env:
+      - name: USERNAME
+        valueFrom:
+            configMapKeyRef:
+                name: backend-config
+                key: user
+```
+
+Inspect:
+```
+kubectl exec configured-pod -- env
+...
+DATABASE_URL=jdbc:/postgresql://localhost/test
+USERNAME=fred
+...
+```
 
