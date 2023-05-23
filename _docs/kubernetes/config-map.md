@@ -29,7 +29,7 @@ data:
 
 To inject as Environment Variables declaratively using 
 ```
-envFrom.configMapRef
+spec.containers.image.envFrom.configMapRef
 ```
 
 In use:
@@ -55,4 +55,8 @@ database_url=jdbc:postgresql://localhost/test
 USER=fred
 ...
 ```
+
+You can re-assign env var keys for ConfigMap entries with:
+```
+spec.containers.image.name.valueFrom.configMapRef
 
