@@ -18,5 +18,5 @@ kubectl create configmap <name>
 
 Create declaratively:
 ```
-
+apiVersion: v1
 ```
