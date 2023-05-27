@@ -38,4 +38,11 @@ Finally Actions:
 Ensure Billing Health Checks are green:
 ```
 Billing -> Overview -> Billing Health checks -> View all health checks
-``` 
+```
+
+
+Billing Health checks:
+- Remove 'Billing Account Creator' role for domain
+- Link a Project or close unused account
+- Assign multiple billing account admins
+- grant access to view billing reports

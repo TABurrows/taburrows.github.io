@@ -75,3 +75,13 @@ Steps 1-2 as the regular non-admin Cloud user:
     - Set Bulk Permissions (optional)
         - IAM -> All Projects (select), then add the Org Admin as Owner to all projects
 
+
+
+    Manage user accounts and groups for employees
+    Set up billing
+    Create organizational structure and centrally control all of your organization’s projects and resources
+    Set up logging and monitoring
+    Configure security guardrails 
+
+
+
