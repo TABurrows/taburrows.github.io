@@ -1,5 +1,13 @@
+---
+title: Foundation
+category: Google Cloud
+order: 1
+---
+Foundation
 
 
+Set up your foundation:
+https://console.cloud.google.com/cloud-setup
 
 
 1. CLOUD IDENTITY & ORGANIZATION
@@ -49,4 +57,43 @@ Instructions:
     Once you have added your admin users, return to this tab and click Continue to complete the users and groups setup. 
 
 
-    
+
+    https://admin.google.com/ac/users?authuser=0&hl=en_US
+
+
+ADD MEMBERS
+
+ Add your administrative users to groups
+
+In this step, you add members to the admin groups you created earlier.
+The group creator will always be added as a group member at creation time. We recommend that you have more than one member per group.
+Instructions:
+
+    Add members to your groups by clicking Add members in the table below.
+    Repeat this for each group listed. 
+
+You can also manage group members from the Groups page in the Cloud Console.
+Group
+	
+Members
+	
+	
+gcp-organization-admins@thing.industries	1 	
+	
+gcp-billing-admins@thing.industries	1 	
+	
+gcp-network-admins@thing.industries	1 	
+	
+gcp-logging-admins@thing.industries	1 	
+	
+gcp-logging-viewers@thing.industries	1 	
+	
+gcp-monitoring-admins@thing.industries	1 	
+	
+gcp-security-admins@thing.industries	1 	
+	
+gcp-developers@thing.industries	1 	
+	
+gcp-devops@thing.industries	1 	
+	
+
