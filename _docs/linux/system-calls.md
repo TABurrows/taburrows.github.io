@@ -11,3 +11,6 @@ System Calls
 - execve - run an executable
 - chown - change the owner of a file
 - clone - create a new process
+
+c - glibc library
+go - syscall package
