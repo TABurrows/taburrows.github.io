@@ -12,4 +12,40 @@ Routes:
 - Apply to traffic that EGRESSES a VM
 - The engine Forwards traffic to the MOST SPECIFIC route
 - Deliver traffic only if it also MATCHES a FIREWALL RULE
-- Can be fine-tuned with Network Tags (if a Route has a Network Tag, it can only be APPLIED to instances that have the same Network Tag)
+- Can be fine-tuned with Network Tags (if a Route has a Network Tag, it can only be APPLIED to instances that have the SAME Network Tag. Routes WITHOUT Network Tags can apply to ALL VM Instances in the Network)
+- Routing Tables are APPLIED to VMs (VM Routing Table) - simplified example:
+  ```
+  192.168.5.0/24
+  10.146.0.0/20
+  10.128.1.0/20
+  0.0.0.0/0
+  ```
+
+A Route is created when a Network or Subnet is created, enabling traffic delivery from anywhere (allowing VMs on the same Network to communicate)
+
+Route Types:
+- System-generated
+- Custom Static Routes
+- Dynamic Routes
+- Peering
+
+(eg. Custom Routes can be used to route traffic between Subnets through a Network Virtual Appliance)
+
+
+
+System Generated Routes:
+eg. Default Route 0.0.0.0/0 ( IPv6 Default Route ::/0 for Dual-stack ) [ nb. Specificity matters, these routes are the Default Routes as they are the least Specific ]
+
+IPv6 default:  ::/0 added on Dual-stacks
+
+If the Default Route doesn't exist, it is not added
+
+The IPv4 and IPv6 Default Routes that serve these purposes define a path OUT of the VPC Network to External IP Addresses of the internet
+
+If you access Google APIs and Services without using a PRIVATE SERVICE CONNECT Endpoint, the Default Route can serve as the Path to Google APIs and Services
+
+PRIVATE SERVICE CONNECT enables you to publish and consume Services by using the Internal IP Addresses that you define 
+[ see Configuring Private Google Access and Accessing APIs from VM with External IP Addresses ]
+
+DESTINATION SPECIFICITY
+ROUTE PRIORITY INFLUENCE ROUTE SELECTION [ Routing Order ]
