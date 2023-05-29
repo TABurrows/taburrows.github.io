@@ -49,3 +49,27 @@ PRIVATE SERVICE CONNECT enables you to publish and consume Services by using the
 
 DESTINATION SPECIFICITY
 ROUTE PRIORITY INFLUENCE ROUTE SELECTION [ Routing Order ]
+
+To Completely Isolate the Network from the Internet (or if you want to replace the Default Route with a Custom Route eg a Proxy VM), delete the Default Route
+
+If you delete the Default Route and do not replace it, packets to IP Ranges not covered by other Routes are dropped
+
+
+If you don't have Custom Static Routes that meet the routing requirements for PRIVATE GOOGLE ACCESS, deleting the Default Route might disable PRIVATE GOOGLE ACCESS
+
+
+Some Orgs do not want a Default Route pointing to the Internet; instead they want the Default Route to point to an on-prem Network (by creating a Custom Route)
+
+When you create a Subnet, system-generated Subnet Routes are automatically created
+
+
+Subnet Routes:
+- Apply to the Subnet, not to the whole network
+- Always have the most specific destinations
+- Cannot be overridden by higher priority routes (lower number equals higher priority)
+
+Each Subnet has at least one Subnet Route whose destination matches the Subnet's Primary IP Range
+
+If the Subnet has Secondary IP Ranges, each Secondary IP Address range has a corresponding Subnet Route
+
+
