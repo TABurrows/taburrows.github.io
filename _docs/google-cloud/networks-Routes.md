@@ -5,10 +5,11 @@ order: 1
 ---
 Networks - Routes
 
+SDWAN: Routes are APPLIED to VMs, rather than table-building at the edge
 
 Routes:
 - Define Network traffic Paths from a VM to other Destinations
 - Apply to traffic that EGRESSES a VM
 - The engine Forwards traffic to the MOST SPECIFIC route
 - Deliver traffic only if it also MATCHES a FIREWALL RULE
-- Can be fine-tuned with Network Tags
+- Can be fine-tuned with Network Tags (if a Route has a Network Tag, it can only be APPLIED to instances that have the same Network Tag)
