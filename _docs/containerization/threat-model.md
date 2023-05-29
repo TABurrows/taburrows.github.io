@@ -20,3 +20,8 @@ Attack Vectors:
 - Container application - vulnerable code exploits
 - Orchestrator application - vulnerable code exploits
 
+Example breaching security boundaries:
+1. Application dependency vulnerability -> remote code execution
+2. Container escape vulnerability -> access data outside the container
+3. Root privilege escalation -> container running as root on the host
+4. Execution environment traversal
