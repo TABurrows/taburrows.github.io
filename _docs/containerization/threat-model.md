@@ -5,6 +5,7 @@ order: 1
 ---
 Threat Model
 
+Containers run Linux processes that are visible from the Host. A containerized process uses system calls and needs permissions and privileges in just the same way that a regular process does.
 
 Attack Vectors:
 - Physical machine
