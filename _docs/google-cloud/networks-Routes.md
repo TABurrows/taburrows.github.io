@@ -73,3 +73,16 @@ Each Subnet has at least one Subnet Route whose destination matches the Subnet's
 If the Subnet has Secondary IP Ranges, each Secondary IP Address range has a corresponding Subnet Route
 
 
+
+Custom Static Routes:
+- Custom Static Routes forward packets to a Static Route next Hop and are useful for Small, Stable Topologies
+- Benefits over Dynamic Routing:
+  - Quicker Routing Performance (lower processing overhead)
+  - More Security (no Route Advertisement)
+- Limitations:
+  - Cannot point to a VLAN Attachment
+  - Require more maintenance, because Routes are not Dynamically updated
+
+
+
+
