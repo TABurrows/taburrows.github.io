@@ -17,5 +17,5 @@ Manually created Networks do not have such rules - they must be created
 
 Projects can containe MULTIPLE VPCs (unless you creat an Org Policy that prevents this)
 
-New Projects start with an Auto-Mode VPC Network that has 1 Subnet in each Region
+New Projects start with an Auto-Mode VPC Network that has 1 Subnet in each Region.  It is BEST PRACTICE to create a Custom-Mode Network and include Subnets only in the Regions which are necessary.
 
