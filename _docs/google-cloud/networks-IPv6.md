@@ -23,6 +23,7 @@ To enable Internal IPv6 on a Subnet you must first assign an Internal IPv6 range
 
 A /48 Unique Local Address from within fd20::/20 is assigned to the VPC Network
 
+Any Interface can have IPv6 Addresses
 
 Assigning IPv6 Address Ranges to a Subnet:
 - When you enbal IPv6 on a VM, the VM is assigned a /96 range from the subnet
@@ -30,3 +31,4 @@ Assigning IPv6 Address Ranges to a Subnet:
 - You don't configure whether a VM gets Internal ULAs or External GLAs - the VM inherits from the Subnet
 
 
+Dual-stack not supported on Auto-mode VPC networks and Legacy Networks - convert them to Custom-mode
