@@ -50,7 +50,12 @@ Billing Health checks:
 - grant access to view billing reports
 
 
+
+Billing -> Billing Export
+
 Export to BigQuery:
 - Standard usage cost
 - Detailed usage cost
 - Pricing
+
+Export to file:
