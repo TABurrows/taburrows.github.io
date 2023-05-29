@@ -81,7 +81,22 @@ Custom Static Routes:
   - More Security (no Route Advertisement)
 - Limitations:
   - Cannot point to a VLAN Attachment
-  - Require more maintenance, because Routes are not Dynamically updated
+  - Require more maintenance, because Routes are not Dynamically updated ( a topology change for instance, requires updates )
+The Controller is kept informed of all Routes from the Network's Routing Table - Route changes are propagated to the VM Controllers
+```
+Destination Range:
+10.100.0.0/16
+Priority: 100
+Next hop: (instance) 10.100.20.37, VM2, VPC-2
+```
+Can be created:
+- Manually:
+  -  gcloud compute routes create
+  - routes.insert API
+- Automatically:
+  - console to create a Classic VPN Tunnel with policy-base routing
+  - console to create a Classic VPN as route-based VPN
+  
 
 
 
