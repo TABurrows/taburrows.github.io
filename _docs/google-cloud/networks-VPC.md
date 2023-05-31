@@ -10,6 +10,8 @@ VPC Networks are isolated private networking domains by default
 - VPC Networks are Global Resources
 - Subnets are Regional Resources
 
+There are two types of VPC Network Subnet creation modes: Auto-mode & Custom-mode
+
 VM Instances within a VPC Network can communicate between themselves with the Private Internal IP Address ranges (as long as Firewall Rules allow)
 
 No Private Internal IP Address traffic is allowed BETWEEN VPC Networks (unless you setup VPC Peering or attach a VPN)
