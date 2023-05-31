@@ -14,6 +14,8 @@ There are two types of VPC Network Subnet creation modes [ 'SUBNET_MODE: AUTO' |
 
 VM Instances within a VPC Network can communicate between themselves with the Private Internal IP Address ranges (as long as Firewall Rules allow)
 
+VPC networks have an internal DNS service that allows you to address instances by their DNS names instead of their internal IP addresses. When an internal DNS query is made with the instance hostname, it resolves to the primary interface (nic0) of the instance.
+
 No Private Internal IP Address traffic is allowed BETWEEN VPC Networks (unless you setup VPC Peering or attach a VPN)
 No internal IP address communication is allowed between networks, unless you set up mechanisms such as VPC peering or VPN
 
