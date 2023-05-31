@@ -7,7 +7,7 @@ Networks - IPv6
 
 VPC Networks support IPv6 Addresses with Subnets support IPv6 on an individual basis
 
-Single-stack Subnets are IPv4
+Single-stack Subnets are IPv4 [ 'STACK_TYPE: IPV4_ONLY' ]
 
 Dual-stack Subnets are IPv4 and IPv6 (no Subnet type supports only IPv6)
 
