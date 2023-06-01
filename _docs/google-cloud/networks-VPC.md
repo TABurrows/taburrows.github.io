@@ -37,3 +37,7 @@ A NIC can only be attached to one VPC Network at a time and will have an Interna
 Max vNICs: 8
 VMs with >2 vCPUs, 1 NIC per vCPU to a Max vNIC: 8
 VMs with <=2 vCPUs, Max vNICs: 2
+
+
+
+In a multiple interface instance, every interface gets a route for the subnet that it is in. In addition, the instance gets a single default route that is associated with the primary interface eth0. Unless manually configured otherwise, any traffic leaving an instance for any destination other than a directly connected subnet will leave the instance via the default route on eth0.
