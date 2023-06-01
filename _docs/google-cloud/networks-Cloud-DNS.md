@@ -17,7 +17,7 @@ Different policy types:
     - setup Hybrid deployments for DNS Resolution (eg. DNS forwarding zones can be created to an on-prem DNS Resolver with an Outbound Server Policy)
     - on-prem workloads can resolve names on Google Cloud (Inbound Server Policy)
     - Max one DNS Server Policy for each VPC Network
-    - The one policy can specify Inbound DNS Forwarding, Outbound DNS Forwarding or both
+    - The one policy Per VPC Network - can specify Inbound DNS Forwarding, Outbound DNS Forwarding or both
   [ nb. Outbound Server Policy is one POSSIBLE method for implementing Outbound DNS Forwarding, Inbound DNS Server Policy refers to a single method ]
 - RESPONSE POLICIES: enable the modification of the DNS Resolver by using defined rules - a Response Policy is a Cloud DNS Private Zone that contains RULES instead of DNS Records
   - You can use Resonse Policies to create a DNS Firewall by returning modified DNS Record results to clients (similar to DNS Response Policy Zones RPZ concepts)
@@ -29,6 +29,7 @@ Different policy types:
   - Weighted Round Robin Routing Policy lets you specify different weights per DNS Target
   - Used to support manual Active-Active or Active-Passive configurations
   - Can be used to split A/B or Blue-Green traffice based on the Traffic's Origin
+  - Can be used with Internet Traffic, External Traffic or with Traffic originating within GCP and bound for Internal Load Balancers
 nb. Public Zones are used to provide Authoritative DNS resolution to clients on the Public Internet
 
 nb. Google Public DNS 8.8.8.8 is a Public Internet recursive resolver
