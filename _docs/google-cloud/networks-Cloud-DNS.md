@@ -30,8 +30,14 @@ Different policy types:
   - Used to support manual Active-Active or Active-Passive configurations
   - Can be used to split A/B or Blue-Green traffice based on the Traffic's Origin
   - Can be used with Internet Traffic, External Traffic or with Traffic originating within GCP and bound for Internal Load Balancers
+  - GCP uses the region where queries enter GCP as the Source Geography
 nb. Public Zones are used to provide Authoritative DNS resolution to clients on the Public Internet
 
 nb. Google Public DNS 8.8.8.8 is a Public Internet recursive resolver
 
+
+
+nb. Only ONE type of Routing Policy can be applied to a Resource Record Set at a time
+
+nb. Nesting or otherwise combining routing policies is not supported
 
