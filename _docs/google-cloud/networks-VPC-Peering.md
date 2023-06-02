@@ -5,6 +5,8 @@ order: 1
 ---
 Networks - Virtual Private Clouds Peering
 
+Decentralized - Cross Org - Within Project
+
 Allows Private RFC 1918 IP comms - no network latency, security or costs
 
 VPC Networks remain Administratively separate
@@ -18,3 +20,6 @@ To create, 2 PEERING RELATIONSHIPs must be created
 Producer Network Admin must peer
 Consumer Network Admin must peer
 then VPC Network Peering Seession is activated
+
+
+You must know the remote VPC Network Name to complete one leg of the VPC Peering Process
