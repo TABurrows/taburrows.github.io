@@ -1,5 +1,5 @@
 ---
-title: Networks - VPC Custom Routes
+title: IAM - Policy Inheritance
 category: Google Cloud
 order: 1
 ---
