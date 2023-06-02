@@ -17,3 +17,5 @@ Org Policy Administrators configure constraints across the entire Resource Hiera
 
 An ORG POLICY is a Configuration of restrictions, set on Orgs, Folders and Projects for cascading enforcement
 
+An ORG POLICY is defined by choosing a CONSTRAINT (which is a particular type of Restriction) against either a GCP Service or a group GCP Services.  The CONSTRAINT is given the desired RESTRICTIONS. Descendants of the targeted Resource Hierarchy Node inherit the ORG POLICY. By Applying an ORG POLICY to the root Org Node you can drive ENFORCEMENT of RESTRICTIONS across the entire ORG.
+
