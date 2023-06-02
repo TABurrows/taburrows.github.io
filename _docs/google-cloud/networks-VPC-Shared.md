@@ -8,3 +8,4 @@ Networks - Shared Virtual Private Clouds
 Centralized - Not inter-org - only works ACROSS Projects
 
 
+Host Project  + Service Project(s)

@@ -15,3 +15,8 @@ Either Security Policy is:
 First matching stops further processing
 
 Priority levels 1...
+
+
+GLOBAL Load Balancers - HTTP(s), SSL Proxy and TCP Proxy
+
+GLOBAL Load
