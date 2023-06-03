@@ -29,7 +29,7 @@ The Load Balancer uses the URL Map to determine where to route incoming traffic.
 
 Each URL in the URL MAP is composed of a Route Rule, a Rule Match and a Rule Action.
 
-YAML File:
+YAML File for pathMatchers:
 defaultService: /path/to/default/service/web-backend-service
 hostRules:
 - hosts:
@@ -46,3 +46,46 @@ pathMatchers:
   - paths:
     - aLongerRule
     service: /path/serviceB
+
+
+
+
+Each URL MAP can contain either Simple or Advanced Rules or Both
+
+
+
+Advanced Routing Mode 'routeAction'
+- uses Route Rules instead of Path Rules
+  
+  empty string = match all
+  weight = percent of traffic
+
+
+
+
+YAML File for routeRules:
+defaultService: /path/to/default/service/web-backend-service
+hostRules:
+- hosts:
+  - '*'
+  pathMatcher: routeMatcher1
+name: lb-map
+pathMatchers:
+- defaultService: /path/to/default
+  name: routeMatcher1
+  - matchRules:
+    - prefixMatch: ''
+    routeAction:
+        weightedBackendServices:
+        - backendService: global/backendServices/service-a
+          weight: 95
+        - backendService: global/backendServices/service-b
+          weight: 5
+
+The top defaultService is used when there is no matching HOST rule
+
+The pathMatchers defaultlService is used when there's a matching host but no matching Route Rule
+
+
+nb. Wildcards asterisk is supported only after a forward slash
+nb. Regexs are not suppported
