@@ -28,3 +28,21 @@ Traffic management features are configured in a URL MAP.
 The Load Balancer uses the URL Map to determine where to route incoming traffic.
 
 Each URL in the URL MAP is composed of a Route Rule, a Rule Match and a Rule Action.
+
+YAML File:
+defaultService: /path/to/default/service/web-backend-service
+hostRules:
+- hosts:
+  - '*'
+  pathMatcher: pathmap
+name: lb-map
+pathMatchers:
+- defaultService: /path/to/default
+  name: pathmap
+  pathRules:
+  - paths:
+    - aShortRule
+    service: /path/serviceA
+  - paths:
+    - aLongerRule
+    service: /path/serviceB
