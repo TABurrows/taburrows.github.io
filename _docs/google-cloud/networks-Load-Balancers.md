@@ -7,6 +7,12 @@ Networks - Load Balancing
 
 Load Balancers can serve source traffic from outside of GCP as well as internal GCP resources
 
+Cloud Load Balancing offers Backend Services in addition to traffic management, including:
+- health checks
+- session affinity
+- balancing mode
+- capacity scaling
+
 Google Cloud Armor policies are applied to the Load Balancer:
 Either Security Policy is:
 - deny, then allow
