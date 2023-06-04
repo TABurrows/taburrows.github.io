@@ -80,7 +80,7 @@ Backend Services are typically Gateway VMs, Gateway Virtual Appliances, multi-NI
 
 Custom Static Routes are included in VPC Network Peering sharing (unlike the Default Static Route to the Internet)
 
-
+Client VMs send packets to the LB BEs through VPC Net Routing, in a bump-in-the-wire fashion
 
 A Hub-and-Spoke Topology can be configured with your next-hop firewall virtual appliances located in the hub VPC Network by doing the following:
 - In the Hub VPC Network, create an Internal TCP/UDP Load Balancer with the Firewall Virtual Appliances as the Backends.
@@ -90,4 +90,5 @@ A Hub-and-Spoke Topology can be configured with your next-hop firewall virtual a
 - For each peering, configure the hub network to export its custom routes
 - configure the corresponding Spoke Network to import Custom Routes ( the route with the Load Balancer Next Hop is one of the routes that the Hub Network Exports )
 Subject to the routing order, the next hop firewall appliance load balancer in the hub VPC Network is available in the spoke networks.
+(If global access is enabled, the firewall appliance is availalbe according to the routing order. If global access is disabled, then resources are only available to requestors in the same region)
 
