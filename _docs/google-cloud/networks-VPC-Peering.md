@@ -23,3 +23,5 @@ then VPC Network Peering Seession is activated
 
 
 You must know the remote VPC Network Name to complete one leg of the VPC Peering Process
+
+You can configure Peering to export and import Custom Static and Dynamic Routes. ( Custom Static Routes that have a Next Hop of the Default Internet Gateway are excluded ) 

@@ -78,5 +78,16 @@ Each Internal TCP/UDP Load Balancer operates within a Single VPC Network, distri
 
 Backend Services are typically Gateway VMs, Gateway Virtual Appliances, multi-NIC Gateways and Router VMs (all Internal resources)
 
+Custom Static Routes are included in VPC Network Peering sharing (unlike the Default Static Route to the Internet)
 
+
+
+A Hub-and-Spoke Topology can be configured with your next-hop firewall virtual appliances located in the hub VPC Network by doing the following:
+- In the Hub VPC Network, create an Internal TCP/UDP Load Balancer with the Firewall Virtual Appliances as the Backends.
+- In the Hub VPC Network, create a Custom Static Route 
+- and set the Next Hop to be the Internal TCP/UDP Load Balancer
+- then use VPC Network Peeing to connect the Hub VPC Network to each of the spoke VPC Networks
+- For each peering, configure the hub network to export its custom routes
+- configure the corresponding Spoke Network to import Custom Routes ( the route with the Load Balancer Next Hop is one of the routes that the Hub Network Exports )
+Subject to the routing order, the next hop firewall appliance load balancer in the hub VPC Network is available in the spoke networks.
 
