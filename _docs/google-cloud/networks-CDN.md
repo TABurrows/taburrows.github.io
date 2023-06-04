@@ -23,7 +23,9 @@ Ingress traffic is free for all regions
 Egress charges only apply to data that leaves Compute Engine or Cloud Storage
 ( reduced rate for allowListed CDN provider )
 
-
+Create:
+- Add Origin
+- Give origin a name
 
 To make Storage Bucket Public:
 - Clear Enforce public access prevention on this bucket and select Fine-grained
