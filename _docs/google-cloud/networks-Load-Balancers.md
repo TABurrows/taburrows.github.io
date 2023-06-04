@@ -50,3 +50,7 @@ To Create, Delete or Manage mixed Zonal and Hybrid Connectivity NEGs backends in
 nb. Regional Dynamic Routing and Static Routes are not supported; the Cloud Router used for Hybrid connectivity must be enabled with GLOBAL DYNAMIC ROUTING. Internal HTTP(s) Load Balancing must be configured in the same region (if in different regions, you may see Backends as healthy, but client reqs will not be forwarded to the Backend)
 
 nb. HA Cloud VPN connections are currently encrypted by default, Cloud Interconnect connections are not encrypted by default.
+
+
+
+INTERNAL Load Balancers
