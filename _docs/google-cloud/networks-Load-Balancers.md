@@ -92,3 +92,12 @@ A Hub-and-Spoke Topology can be configured with your next-hop firewall virtual a
 Subject to the routing order, the next hop firewall appliance load balancer in the hub VPC Network is available in the spoke networks.
 (If global access is enabled, the firewall appliance is availalbe according to the routing order. If global access is disabled, then resources are only available to requestors in the same region)
 
+Caveats:
+- Enable GLOBAL ACCESS on the VPC Network so that the next Hop is usable from All Regions
+- Even if ALL health checks fail, the LB Next Hop is still in effect
+- The LB must use an IP Address that is unique to a LB Forwarding Rule
+- Two or More Custom Static Route next hops with the SAME destination that use different LBs are never distributed by using ECMP
+- To route idential source IP Addresses to the same backend, use the Client IP, No Destination (CLIENT_IP_NO_DESTINATION) session affinity option
+- network tags
+  
+Highest priority
