@@ -1,0 +1,14 @@
+---
+title: Networks - Cloud CDN
+category: Google Cloud
+order: 1
+---
+Networks - Cloud CDN
+
+Caching modes control the factors that determine whether and how Cloud CDN caches your content
+
+Three Cache Modes:
+- USE_ORIGIN_HEADERS: reguires Origin Responses to set valid Cache Directives and caching Headers
+- CACHE_ALL_STATIC: automatically caches static content that doesn't have the no-store, private or no-cache directive
+- FORCE_CACHE_ALL: unconditionally caches response, overriding any cache directives set by the origin
+
