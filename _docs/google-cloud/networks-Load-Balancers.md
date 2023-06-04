@@ -54,3 +54,29 @@ nb. HA Cloud VPN connections are currently encrypted by default, Cloud Interconn
 
 
 INTERNAL Load Balancers
+
+Used as a routing next hop
+
+Fastest of the Load Balancers with the most minimal of processing
+
+Routes connections directly from Client to the healthy Backend without interruption (no intermediary device or single point of failure)
+
+Client reqs to the LB IP Address go directly to the healthy Backend VMs
+
+Responses from healthy Backends go DIRECTLY to Clients (not back through the LB)
+
+TCP Response use Direct Server Return
+
+Use-cases:
+- Load Balance traffic across multiple VMs that are functioning as Gateway or Router VMs
+- You can use Gateway Virtual Appliances as the next hop for a default route (eg VM instances send traffic TO the internet through a set of Load Balanced Virtual Gateway VMs)
+- You can sent traffic through multiple LBs in 2 or more directions by using the same set of multi-NIC gateway or router VMs as Backends
+  ( eg. create a LB and use it as a Next Hop for a Custom Static Router in each VPC network )
+
+
+Each Internal TCP/UDP Load Balancer operates within a Single VPC Network, distributin traffic to Backend VM NICs in that network
+
+Backend Services are typically Gateway VMs, Gateway Virtual Appliances, multi-NIC Gateways and Router VMs (all Internal resources)
+
+
+
