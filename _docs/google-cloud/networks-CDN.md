@@ -12,3 +12,15 @@ Three Cache Modes:
 - CACHE_ALL_STATIC: automatically caches static content that doesn't have the no-store, private or no-cache directive
 - FORCE_CACHE_ALL: unconditionally caches response, overriding any cache directives set by the origin
 
+URL Map decides which Backend to send the content to.
+
+Used with a HTTP(s) LB and Monitoring and Logging ( indicating a Cache Hit or Cache Miss )
+
+Ingress traffic is free for all regions
+
+Egress charges only apply to data that leaves Compute Engine or Cloud Storage
+( reduced rate for allowListed CDN provider )
+
+CDN Interconnect lets select 3rd party CDN Providers establish Direct Interconnect links at Edge Locations in the Google Network.
+- reduces Cloud CDN Cache Population costs
+- consider using this for High-Volume CDN egress traffic and/or large file delivery
