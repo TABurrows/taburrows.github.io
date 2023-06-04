@@ -21,6 +21,7 @@ Producer Network Admin must peer
 Consumer Network Admin must peer
 then VPC Network Peering Seession is activated
 
+nb Compute Engine internal DNS names created in a network are not accessible to peered networks
 
 You must know the remote VPC Network Name to complete one leg of the VPC Peering Process
 
