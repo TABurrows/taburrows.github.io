@@ -5,6 +5,8 @@ order: 1
 ---
 Networks - Cloud CDN
 
+Supports 2 types of Backend: GCE and Cloud Storage buckets
+
 Caching modes control the factors that determine whether and how Cloud CDN caches your content
 
 Three Cache Modes:
@@ -20,6 +22,15 @@ Ingress traffic is free for all regions
 
 Egress charges only apply to data that leaves Compute Engine or Cloud Storage
 ( reduced rate for allowListed CDN provider )
+
+
+
+To make Storage Bucket Public:
+- Clear Enforce public access prevention on this bucket and select Fine-grained
+```
+gsutil acl ch -u AllUsers:R gs://storage-bucket-name/object.ext
+```
+
 
 CDN Interconnect lets select 3rd party CDN Providers establish Direct Interconnect links at Edge Locations in the Google Network.
 - reduces Cloud CDN Cache Population costs
