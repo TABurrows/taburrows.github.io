@@ -1,7 +1,3 @@
-
-
-
-
 ---
 title: Networks - VPNs
 category: Google Cloud

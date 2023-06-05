@@ -16,3 +16,4 @@ Partner;
 - provided by a Partner/Service Provider who is connected to a Google Colo 
 - access with Internal IP Addresses
 
+
