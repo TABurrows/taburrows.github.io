@@ -35,3 +35,5 @@ HA VPN has 3 typical peer gateway configurations:
 - HA Gateway to two separate peer VPN devices, each with its own IP Addresses
 - One Peer VPN Device that uses two separate IP Addresses
 - One Peer VPN Device that uses one IP Address
+
+If your Peer-side Gateway is HW-based having a 2nd Peer-side Gateway provides redundancy and failover on the Peer-side of the Connection ( REDUNDANCY_TYPE takes the value TWO_IPS_REDUNDANCY )
