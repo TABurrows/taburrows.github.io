@@ -21,6 +21,11 @@ To order/connect:
 - Vendor notifies
 - Create VLAN Attachments and establish BGP Sessions
 - Confgure on-prem routers to establish BGP Session (you'll need VLAN ID, Interface IP Address and Peering IP Address provided by VLAN Attachment)
+Four Steps:
+- Order Dedicated Interconnect
+- Send LOA-CFAs to Vendor
+- Test the Interconnect
+- Create VLAN Attachments and establish BGP Sessions
 
 Partner:
 - Customer connects to a Service Provider (SP) point-of-presence/ colo facility
@@ -58,3 +63,6 @@ For Layer 2 Connections:
 For Layer 3 Connections:
 - traffic is passed to the SP network, the SP Provider establishes a BGP Session between your Cloud Routers and their on-prem routers for each VLAN Attachment
 - here the SP establishes a BGP Session between the VPC Cloud Routers and the SP's Routers, whilst no BGP Session needs to established between the SP and the Customer
+
+
+nb. LACP will need to be configured on all Interconnects: Google uses this technology so that they can expand the circuit later if required (after 24 hours, Google automatically test for basic IP Connectivity and LACP membership can be established)
