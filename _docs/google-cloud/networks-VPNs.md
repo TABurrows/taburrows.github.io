@@ -31,3 +31,7 @@ Supports site-to-site VPN for different configuration topologies:
 - An HA VPN Gateway to an AWS Virtual Private Gateway
 - Two HA VPN Gateways connected to each other
 
+HA VPN has 3 typical peer gateway configurations:
+- HA Gateway to two separate peer VPN devices, each with its own IP Addresses
+- One Peer VPN Device that uses two separate IP Addresses
+- One Peer VPN Device that uses one IP Address
