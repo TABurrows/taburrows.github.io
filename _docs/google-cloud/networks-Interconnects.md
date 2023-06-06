@@ -41,7 +41,8 @@ The VLAN Attachment automatically allocates a VLAN ID and BGP Peering IP Address
 
 For Layer 2 Connections:
 - you must configure and establish a BGP Session between your Cloud Routers and On-premise Routers
-
+- traffic passes through the SP Network to reach the VPC Network or on-prem Network
 
 For Layer 3 Connections:
 - traffic is passed to the SP network, the SP Provider establishes a BGP Session between your Cloud Routers and their on-prem routers for each VLAN Attachment
+- here the SP establishes a BGP Session between the VPC Cloud Routers and the SP's Routers, whilst no BGP Session needs to established between the SP and the Customer
