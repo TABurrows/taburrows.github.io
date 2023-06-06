@@ -66,3 +66,10 @@ For Layer 3 Connections:
 
 
 nb. LACP will need to be configured on all Interconnects: Google uses this technology so that they can expand the circuit later if required (after 24 hours, Google automatically test for basic IP Connectivity and LACP membership can be established)
+
+
+
+
+Troubleshooting:
+VPC Network -> Routes -> Dynamic:
+- observe the 'Destination IP Ranges' being Advertised to the on-prem router (listed in the 'Next Hop' APIPA BGP IP Address)
