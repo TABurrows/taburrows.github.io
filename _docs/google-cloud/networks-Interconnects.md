@@ -7,7 +7,11 @@ Networks - Interconnect
 
 Dedicated & Partner: Private connections directly to Google Networks
 
-Dedicated 
+Consider Bandwidth needs and availability when designing and installing Interconnects
+
+Dedicated:
+- Customer connects to a Google Colo facility
+- slower to procure
 - 10 Gbps or 100 Gbps per link - Eight 10Gbps Max or Two 100Gbps
 - provided by Google at a Google Colocation facility
 - access with Internal IP Addresses
@@ -18,7 +22,9 @@ To order/connect:
 - Create VLAN Attachments and establish BGP Sessions
 - Confgure on-prem routers to establish BGP Session (you'll need VLAN ID, Interface IP Address and Peering IP Address provided by VLAN Attachment)
 
-Partner;
+Partner:
+- Customer connects to a Service Provider (SP) point-of-presence/ colo facility
+- more quickly procured
 - 50 Mbps - 50 Gbps per connection
 - provided by a Partner/Service Provider who is connected to a Google Colo 
 - access with Internal IP Addresses
@@ -29,6 +35,12 @@ To order/connect:
 - Request a connection from your SP, SP will confirm
 - in the VLAN Attachment, activate your connection
 - finally configure the on-prem Routes to establish a BGP session with your Cloud Router
+Use Cases:
+- when you connect one VLAN to GCP and another to another Hyperscaler
+- For four nines:
+  - You must have at least 4 Cloud Interconnect connections: 2 connections in one Met Area, 2 in another
+  - Dynamic routing mode must be set to Global
+  - Each Cloud router must be attached to a pair of Cloud Interconnect connections: eg. the four Met Area connections above
 
 
 Redundancy with Peer Edge Placement, place an Interconnect in more than one Edge Availability Domain
