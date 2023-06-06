@@ -37,3 +37,8 @@ HA VPN has 3 typical peer gateway configurations:
 - One Peer VPN Device that uses one IP Address
 
 If your Peer-side Gateway is HW-based having a 2nd Peer-side Gateway provides redundancy and failover on the Peer-side of the Connection ( REDUNDANCY_TYPE takes the value TWO_IPS_REDUNDANCY )
+
+When configuring an HA VPN External VPN Gateway to AWS, you can use either a TRANSIT GATEWAY or a VIRTUAL PRIVATE GATEWAY. Only the Transit Gateway supports ECMP (Equal-cost Multipath) routing. When enabled, ECMP distributes traffic equally across Active Tunnels. In this topology, you configure three major Gateway components:
+- an HA VPN Gateway in GCP with two Network Interfaces
+- Two AWS Virtual Private Gateways that connect to your GCP HA VPN Gateway
+- an External VPN Gateway resource in GCP that represents you AWS Virtual Private Gateway (this resource provides info to GCP about your AWS Gateway) 
