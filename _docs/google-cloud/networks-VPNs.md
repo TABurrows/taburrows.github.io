@@ -42,3 +42,5 @@ When configuring an HA VPN External VPN Gateway to AWS, you can use either a TRA
 - an HA VPN Gateway in GCP with two Network Interfaces
 - Two AWS Virtual Private Gateways that connect to your GCP HA VPN Gateway
 - an External VPN Gateway resource in GCP that represents you AWS Virtual Private Gateway (this resource provides info to GCP about your AWS Gateway) 
+
+The supported AWS Config uses a total of four tunnels - two tunnels from one AWS Virtual Private Gatewway to one interface of the HA VPN Gateway and two tunnels from the other AWS Virtual Private Gateway to the other interface of the HA VPN Gateway.
