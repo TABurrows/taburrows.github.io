@@ -51,5 +51,9 @@ You can connect two GCP VPC Networks together by using an HA VPN Gateway in each
 
 VPN Tunnels connected to HA VPN Gateways must use dynamic (BGP) routing.
 
-Use an Active/Passive config for a consistent bandwidth experience; Active/Active configurations may offer a less consistent bandwidth experience.
+Use an Active/Passive config for a consistent bandwidth experience; Active/Active configurations may offer a less consistent bandwidth experience. Unless combined traffic for both tunnels is within single tunnel capacity, failure can cause the available bandwidth to be cut in half.
+
+Using Classic VPN for Dynamic Routing is no longer supported, one exception: to connect to VPN Gateway Software running inside a Compute Engine instance.
+
+
 
