@@ -48,3 +48,6 @@ The supported AWS Config uses a total of four tunnels - two tunnels from one AWS
 To connect to a Microsoft Azure Gateway, see 'Using Cloud VPN with Microsoft Azure VPN Gateway'.
 
 You can connect two GCP VPC Networks together by using an HA VPN Gateway in each network.
+
+
+VPN Tunnels connected to HA VPN Gateways must use dynamic (BGP) routing.
