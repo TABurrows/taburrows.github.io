@@ -49,5 +49,7 @@ To connect to a Microsoft Azure Gateway, see 'Using Cloud VPN with Microsoft Azu
 
 You can connect two GCP VPC Networks together by using an HA VPN Gateway in each network.
 
-
 VPN Tunnels connected to HA VPN Gateways must use dynamic (BGP) routing.
+
+Use an Active/Passive config for a consistent bandwidth experience; Active/Active configurations may offer a less consistent bandwidth experience.
+
