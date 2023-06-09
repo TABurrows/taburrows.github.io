@@ -101,3 +101,9 @@ Caveats:
 - network tags
   
 Highest priority
+
+
+
+nb. Load Balancers with '* Proxy' are reverse proxy 
+
+nb. Standard Network = Google not optimizing network traffic/shaping (and Global Load Balancers do not work)

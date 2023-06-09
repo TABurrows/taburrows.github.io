@@ -12,3 +12,5 @@
 Routes installed by Hub are treated as Dynamic Routes.
 
 Site-to-Site Data Transfer is only available in Support Regions.
+
+If a spoke has site-to-site data transfer enabled, the resources associated with the spokes cannot exchange 
