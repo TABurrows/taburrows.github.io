@@ -107,3 +107,10 @@ Highest priority
 nb. Load Balancers with '* Proxy' are reverse proxy 
 
 nb. Standard Network = Google not optimizing network traffic/shaping (and Global Load Balancers do not work)
+
+
+
+
+Additional Services:
+- Rename Services and Map them to URLs of your choice
+- You can configure LB to log all requests with Cloud Logging

@@ -44,3 +44,5 @@ nb. Nesting or otherwise combining routing policies is not supported
 Created by specifying different weights per ResourceRecordSet for the resolution of domain names, routing policies ensure that traffic is distributed across multiple IP Addresses by resolving DNS Requests according to configured Weights.
 WRR = Weighted Round Robin
 GEO - Geolocation Routing Policy, applies the NEAREST MATCH for SOURCE LOCATION when the traffic SOURCE LOCATION doesn't match policy items exactly.
+
+Cloud DNS does not support Partial Overrides, if you need Partial Overrides use BIND.
