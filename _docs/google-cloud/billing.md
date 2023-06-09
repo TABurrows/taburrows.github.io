@@ -51,11 +51,35 @@ Billing Health checks:
 
 
 
-Billing -> Billing Export
+Billing -> Billing Export - then specify Project Name and Dataset name
 
 Export to BigQuery:
 - Standard usage cost
 - Detailed usage cost
 - Pricing
+Using Labels you can query and optimize for network spend:
+```
+SELECT
+  TO_JSON_STRING(labels) as labels,
+  sum(cost) as cost
+FROM `project.dataset.table`
+GROUP BY labels;
+```
+
+With labels of 'location' and 'server' ( labels can be applied on creation and via the 'Info' panel ):
+```
+SELECT sku.description, SUM(cost)
+FROM `dataset.table`
+GROUP BY sku.description
+ORDER BY SUM(cost) DESC
+```
+
+Selecting the built-in Service Description column:
+```
+SELECT service.description, SUM(cost)
+FROM `dataset.table`
+GROUP BY service.description
+```
 
 Export to file:
+
