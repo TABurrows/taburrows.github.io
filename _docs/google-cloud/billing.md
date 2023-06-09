@@ -67,6 +67,18 @@ GROUP BY labels;
 ```
 
 With labels of 'location' and 'server' ( labels can be applied on creation and via the 'Info' panel ):
+
+And:
+```
+SELECT labels.value as location, SUM(cost) as cost
+FROM `dataset.table`
+LEFT JOIN UNNEST(labels) as labels
+ON lables.key = "location"
+GROUP BY location
+ORDER BY cost DESC
+```
+
+Using the built-in SKU Description column:
 ```
 SELECT sku.description, SUM(cost)
 FROM `dataset.table`
