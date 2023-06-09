@@ -28,11 +28,15 @@ With PRIVATE SERVICE CONNECT and an HTTP(S) LOAD BALANCER, you can:
 - Use a URL MAP to evaluate requests and route them to the correct VM or Service
 - Use Customer-Managed TLS Certificates
 - Enable Data Residency in-transit by connecting to Regional Endpoints for Google APIs from workloads in that SAME Region
+- When the LB directs requests to the appropriate Network Endpoint Group in a Consumer Network. Each Endpoint is associated with a Service Attachment.
+nb. unidirectional connectivity
+
 
 
 Private Services Access:
 Usage: Lets you use Internal IP Addresses to connect to specific Google and 3rd Party services by using VPC Network Peering
 Connection: Connect Google and 3rd Party Services privately and directly to your VPC Network with VPC Network Peering
+- Automates VPC Network peering
 
 
 Serverless VPC Access:
