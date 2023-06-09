@@ -67,6 +67,14 @@ GROUP BY labels;
 ```
 
 With labels of 'location' and 'server' ( labels can be applied on creation and via the 'Info' panel ):
+```
+SELECT labels.value as server, SUM(cost) as cost
+FROM `dataset.table`
+LEFT JOIN UNNEST(labels) as labels
+ON labels.key = "server
+GROUP BY server
+ORDER BY cost DESC
+```
 
 And:
 ```
