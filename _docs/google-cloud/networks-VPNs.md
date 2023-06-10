@@ -60,3 +60,4 @@ HA VPN is 99.99%
 
 
 
+In your own environment, if you run HA VPN to a remote VPN gateway on-premises for a customer, you can connect in one of the following ways:
