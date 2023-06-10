@@ -94,3 +94,18 @@ LIMIT
 ```
 
 
+
+To reduce costs, use Aggregation:
+
+The purpose of each field is explained below.
+
+Aggregation time interval: Sampled packets for a time interval are aggregated into a single log entry. This time interval can be 5 sec (default), 30 sec, 1 min, 5 min, 10 min, or 15 min.
+
+Metadata annotations: By default, flow log entries are annotated with metadata information, such as the names of the source and destination VMs or the geographic region of external sources and destinations. This metadata annotation can be turned off to save storage space.
+
+Log entry sampling: Before being written to the database, the number of logs can be sampled to reduce their number. By default, the log entry volume is scaled by 0.50 (50%), which means that half of entries are kept. You can set this from 1.0 (100%, all log entries are kept) to 0.0 (0%, no logs are kept).
+
+
+Setting the aggregation level to 30 seconds can reduce your flow logs size by up to 83% compared to the default aggregation interval of 5 seconds. Configuring your flow log aggregation can seriously affect your traffic visibility and storage costs.
+
+
