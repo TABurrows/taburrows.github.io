@@ -30,3 +30,7 @@ Traffic between GCP and your end user is delivered over ISP Networks instead of 
 
 Standard tier is a new, lower-cost offering. The network quality of this tier is comparable to the quality of other public cloud providers and regional network services, such as regional load balancing with one VIP per region, but lower than the quality of Premium tier.
 
+Standard tier is priced lower than Premium because the traffic between Google Cloud and your end user (internet) is delivered over transit (ISP) networks instead of Google’s network.
+
+
+
