@@ -11,3 +11,5 @@ When applied to a Subnet GCP automatically enables Private Google Access (and ca
 - is a distributed, software-defined managed service
 
 You configure a NAT Gateway on a Cloud Router which provides the Control Plane for NAT. Cloud Router contains the NAT configuration parameters.
+
+The Cloud NAT gateway implements outbound NAT, but not inbound NAT. In other words, hosts outside of your VPC network can only respond to connections initiated by your instances; they cannot initiate their own, new connections to your instances via NAT.
