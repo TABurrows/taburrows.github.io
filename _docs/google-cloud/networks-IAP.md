@@ -9,3 +9,5 @@ Networks - Identity Aware Proxy
 
 A mesh of proxies deployed in the Cloud
 
+
+IAP uses your existing project roles and permissions when you connect to VM instances. By default, instance owners are the only users that have the IAP Secured Tunnel User role.

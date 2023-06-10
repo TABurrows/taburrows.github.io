@@ -17,6 +17,8 @@ Delivered over the GCP Global Network.
 - Global Load Balancing, Cloud CDN
 - Performance is main consideration
 
+Premium tier delivers traffic over Google’s well-provisioned, low-latency, highly reliable global network. This network consists of an extensive global private fiber network with over 100 points of presence (POPs) across the globe.
+
 
 Standard Tier:
 Traffic between GCP and your end user is delivered over ISP Networks instead of Google's Global Network.

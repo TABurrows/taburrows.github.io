@@ -23,3 +23,12 @@ Export Cloud NAT logs to Stackdriver
 - Translation and errors
 - Translation only
 - Errors only
+
+
+Logs Explorer query:
+```
+resource.type="nat_gateway"
+resource.labels.region="us-central1"
+resource.labels.gateway_name="nat-config"
+resource.labels.router_id="4815398893085330369"
+```
