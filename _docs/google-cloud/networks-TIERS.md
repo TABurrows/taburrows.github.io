@@ -28,5 +28,5 @@ Traffic between GCP and your end user is delivered over ISP Networks instead of 
 - Regional Load Balancing
 - Cost is main consideration
 
-
+Standard tier is a new, lower-cost offering. The network quality of this tier is comparable to the quality of other public cloud providers and regional network services, such as regional load balancing with one VIP per region, but lower than the quality of Premium tier.
 
