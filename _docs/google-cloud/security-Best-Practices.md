@@ -20,7 +20,11 @@ User-managed Service accounts do not use the "Access Scope" concept, instead Per
 
 Applications running on Instances associated with the SVC ACC can make Authenticated requests to other Google APIs using the SVC Acc Identity;
 
+Access Scopes provide the ability to limit what permissions are allowed when using the DEFAULT SERVCIE ACCOUNT; before IAM ROLES, ACCESS SCOPES were the only mechanism for granting permissions to SVC Accounts; Although they are not the primary way of granting PERMS now, you must still configure ACCESS SCOPES when initiating an Instance to run under the Default Service Account; remember: that ACCESS SCOPES only apply on a PER-INSTANCE BASIS. You set ACCESS SCOPES when creating an Instance and the ACESS SCOPES persists only for the life of the Instance.
 
+There are several options when setting ACCESS SCOPES:
+- "Allow Default Access" is actually very narrow and allows READ-ONLY ACCESS to Cloud Storage as well as access to Cloud Logging and Cloud Monitoring; other API Access using the Default Service Account will obviously be restricted. The DEFAULT ACCESS SCOPE therefore does not include access to OTHER APIs such as BigQuery, Datastore, Cloud SQL, Pub/Sub, or Cloud BigTable
+- "Allow Full Access" access scope is also available and this grants access to ALL APIs.
 
 
 
