@@ -18,5 +18,7 @@ Google-curated images include:
   ( more in Marketplace )
 
 
+You can transform an existing VM into a Shielded VM that runs on Google Cloud: each time your VM starts up, secure boot makes certain that the software it is loading is Authentic and Unmodified by verifying that the firmware has been Digitally Signed with Google's Certificate Authority Service (CAS).  Shielded VM instances use Unified Extensible Firmware Interface (UEFI) firmware, which securely manages the certificates that contain the keys used by the software manufacturers to sign the System Firmware, the System Boot Loader and any Binaries Loaded.
 
+UEFI firmware verifies the Digital Signature of each boot component in turn against its secure store of approved keys, and if that component isn't properly signed (or isnt' signed at all) it is not allowed to run.
 
