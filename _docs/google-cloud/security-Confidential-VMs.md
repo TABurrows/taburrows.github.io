@@ -26,5 +26,6 @@ Attestation ( to attest means: "to declare something exists or is the case or to
 High Performance:
 - AMD SEV offers high performance for demanding computational tasks
 
+nb. Enabling Confidential VMs has LITTLE OR NO IMPACT on PERFORMANCE on most workloads, with only 0-6% degradation in performance measured.
 
 
