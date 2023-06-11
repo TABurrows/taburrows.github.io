@@ -22,3 +22,10 @@ You can transform an existing VM into a Shielded VM that runs on Google Cloud: e
 
 UEFI firmware verifies the Digital Signature of each boot component in turn against its secure store of approved keys, and if that component isn't properly signed (or isnt' signed at all) it is not allowed to run.
 
+This verification ensures that the Instance's firmware is unmodified and establishes the "Root of Trust" for Secure Boot.
+
+Measured Boot creates a Hash of each component as it loads, concatenates that Hash with other components that have already been loaded and then rehashes it.  This allows measured boot to record the number of components loaded on boot-up and their sequence.
+
+The first time your Shielded VM is booted, this initial hash is securely stored and used as the baseline for verification of that VM during subsequent boots.  This is called "integrity monitoring" and it helps ensure that your VMs boot components and boot sequend have not been altered.
+
+Shielded VMs use a Virtual Trusted Platform Module vTPM ( a "virtualized" version of a specialized computer chip you can use to protect objects, like keys and certificates, that are used to provide Authenticated Access to your system ).  The vTPM allows Measured Boot to perform measurements needed to create a known good boot baseline, called the integrity policy baseline, upon the first bootup of your Shielded VM.
