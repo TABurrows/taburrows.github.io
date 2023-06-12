@@ -21,3 +21,8 @@ Google CAS:
 
 Allows IT/Sec teams to simplify and automate the deployment, management and security of Private Certificate Authorities while staying in control of Private Keys
 
+Leverage descriptive RESTful APIs to acquire and manage certificates without a PKI expert.
+
+Pay-as-you-go service model
+
+Root CAs can be configured
