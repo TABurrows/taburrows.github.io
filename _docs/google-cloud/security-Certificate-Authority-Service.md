@@ -15,6 +15,9 @@ Google CAS:
 - scalable
 - highly avaialable
 - Google Managed
+- auditable
+- simpler deployment
+- simpler management
 
 Allows IT/Sec teams to simplify and automate the deployment, management and security of Private Certificate Authorities while staying in control of Private Keys
 
