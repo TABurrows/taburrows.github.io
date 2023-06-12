@@ -26,3 +26,16 @@ Leverage descriptive RESTful APIs to acquire and manage certificates without a P
 Pay-as-you-go service model
 
 Root CAs can be configured
+
+Define granular and context-aware access controls and virtual security perimeters with IAM and VPC Service Controls 
+
+CAS gives you the ability to:
+- proetect the keys with a HSM
+- Store the CA keys in Cloud HSM (FIPS 140-2 Level 3 validated)
+- Audit user activity
+- Obtain tamper-proof logs
+- gain visibility into who did what, when and where with Cloud Audit Logs
+
+- Supports 25 Queries per Second (QPS) per Instance
+- Can issue millions of certificates
+- comes with an enterprise-grade SLA
