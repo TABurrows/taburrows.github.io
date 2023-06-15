@@ -38,3 +38,16 @@ History highlights:
 
 
 cf Matt Turck' Data Landscape: 2012 vs 2021
+
+Shift in focus, from who has the 'biggest data' to concerns over data management, data governance, data discovery and data quality improvements
+
+an emphasis on decentralization and agility
+
+Data Engineering sits upstream from Data Science and Analytics
+cf Monica Rogati: The Data Science Hierarchy of Needs: (highest) AI/Deep Learning -> Learn/Optimize -> Aggregate/Label -> Move/Store -> Collect (lowest)
+    Enterprises, she says, should build a solid data foundation (bottom 3 layers)
+
+
+A DE optimizes along the axes of cost, agility, scalability, simplicity, reuse and interoperability
+
+Data maturity: progression toward higher data utilization, capabilities and integration across the org - the way data is levraged as a competitive advantage
