@@ -67,3 +67,8 @@ To control who can can start the VM, you can do this by granting a user (the Ide
 
 
 
+storage.admin = Role that can be granted to Service Account, so that it has control over objects and buckets in Cloud Storage
+
+eg Role: bigquery.user = When applied to a project, access to run queries, create datasets, read dataset metadata, and list tables. When applied to a dataset, access to read dataset metadata and list tables within the dataset.
+
+eg Role: bigquery = Access to view datasets and all of their contents
