@@ -55,3 +55,15 @@ To create a service account:
 ```
 gcloud iam service-accounts create my-sv-acc --display-name "My Service Account"
 ```
+
+#### Granting Roles to Service Accounts
+When granting IAM Roles, you can treat a Service Account either as a Resource or as an Identity.
+
+Service Accounts as Identity:
+If you have a GCE VM running as a Service Account, you can grant the Editor Role to the Service Account (the Identity) for a Project (the Resource)
+
+Service Accounts as Resources:
+To control who can can start the VM, you can do this by granting a user (the Identity) the 'serviceAccountUser' Role for the Service Account (where here it is a Resource)
+
+
+
