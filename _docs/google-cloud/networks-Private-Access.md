@@ -12,14 +12,23 @@ Networks - Private Access
 
 
 Private Google Access:
-Usage: Lets you use Google APIs and Services withou giving your Google Cloud resources External IP Addresses
+Usage: Lets you use Google APIs and Services without giving your Google Cloud resources External IP Addresses
 Connection: Connect to the Public IP addresses of Google APIs and Services through the Default Internet Gateway of the VPC Network
 nb. enabled on the Subnet
 
 
-Private Service Connect:
+Private Service Connect (Service Consumers, Service Producers):
 Usage: Lets you use Internal IP Addresses to consume, produce and make services available
-Connection: Connect to Googel, 3rd Party or your own Services by using Internal IP Addresses
+Connection: Connect to Google, 3rd Party or your own PUBLISHED Services by using Internal IP Addresses 
+- traffic remains entirely within Google Cloud
+- Service-Oriented Access - Producer Services are published through Load Balancers that expose a single IP Address to the Consumer VPC Network.
+- Explicit Authorization - provides an authorization model that gives Consumers and Producers granular control
+- Consumer -> Producer uses NAT = no IP Address Co-ordination required = No Shared Dependencies
+- Line-rate Performance - NAT is performed directly on the Physical Host Machines that host the Consumer and Producer VMs
+
+
+PRIVATE SERVICE CONNECT TYPES = Endpoint, Backend, Interface
+PRIVATE SERVICE CONNECT supported GOOGLE SERVICES = Apigee, BeyondCorp Enterprise, Cloud Composer 2, Cloud SQL (soon), Dataproc Metastore, GKE Public Clusters (>1.23), Integration Connectors (soon)
 
 nb. use a PRIVATE SERVICE CONNECT ENDPOINT to SERVICE ATTACHMENT then to a FORWARDING RULE = fast and grows with Org
 nb. if you access Google APIs and Services wihtout using a Private Service Connect endpoint, the default route can serve as the path to Google APIs and Services
