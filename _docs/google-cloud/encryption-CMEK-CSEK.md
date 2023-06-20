@@ -71,4 +71,66 @@ How it works:
 - In the target Project, you then create a Cloud EKM key using the URI or Key Path for the externally Managed Key.
 - In GCP, the key appears with other Cloud KMS and Cloud HS keys with PROTECTION LEVELs: *EXTERNAL* or *EXTERNAL_VPC*
 
+With CSEK, GCP Services store only a cryptographic hash of the customer's key so that future requests can be validated against the hash - otherwise the key is purged from after use.
 
+
+Create a keyring:
+```
+gcloud services enable cloudkms.googleapis.com
+gcloud kms keyrings create $KEYRING_NAME --location us
+```
+
+Create a key on the above keyring:
+```
+gcloud kms keys create $CRYPTOKEY_NAME --location us \
+--keyring $KEYRING_NAME --purpose encryption
+```
+
+View the current default key for a bucket:
+```
+gsutil kms encryption gs://$DEVSHELL_PROJECT_ID-kms
+```
+
+Give the Cloud Storage Service Account permission to use a key:
+[ Crypto Key URL has form: projects/[PROJECT_STORING_KEYS]/locations/[LOCATION]/keyRings/[KEY_RING_NAME]/cryptoKeys/[KEY_NAME] ]
+```
+gsutil kms authorize -p $DEVSHELL_PROJECT_ID \
+   -k projects/$DEVSHELL_PROJECT_ID/locations/us/keyRings/$KEYRING_NAME/cryptoKeys/$CRYPTOKEY_NAME
+```
+
+Set a Default Cryptographic Key for a bucket:
+```
+gsutil kms encryption -k \
+projects/$DEVSHELL_PROJECT_ID/locations/us/keyRings/$KEYRING_NAME/cryptoKeys/$CRYPTOKEY_NAME \
+gs://$DEVSHELL_PROJECT_ID-kms
+```
+
+
+To see a Crypto Key URL that is the default for a bucket:
+```
+gsutil kms encryption gs://$DEVSHELL_PROJECT_ID-kms
+```
+
+
+Encrypt a file with a specific Key:
+```
+gsutil -o "GSUtil:encryption_key=projects/$DEVSHELL_PROJECT_ID/locations/us/keyRings/$KEYRING_NAME/cryptoKeys/$CRYPTOKEY_NAME" \
+cp file.txt gs://$DEVSHELL_PROJECT_ID-kms
+```
+
+Identify the key used to encrypt an object:
+```
+gsutil ls -L gs://$DEVSHELL_PROJECT_ID-kms/file.txt
+```
+[ The Crypto Key URL for the used key is under "KMS Key" value ]
+
+
+In Cloud KMS, a Key Rotation is triggered by generating a new version of a key and marking that version as the PRIMARY VERSION. Each key as a designated Primary Version at any point in time, which Cloud KMS uses to encrypt data. After rotating the Primary Version however, previous versions of the key are not disabled or destroyed and remain available for decrypting data.
+
+You set Cloud KMS to automatically rotate keys for you using the Cloud Console or the gcloud command-line tool.
+
+When you rotate a key:
+
+- A new version will be created and made the primary version.
+- New data will be encrypted with the new version.
+Older versions can be used to decrypt data. Data encrypted using older key versions will remain so unless explicitly re-encrypted.
