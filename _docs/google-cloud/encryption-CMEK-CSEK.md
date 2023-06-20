@@ -134,3 +134,19 @@ When you rotate a key:
 - A new version will be created and made the primary version.
 - New data will be encrypted with the new version.
 Older versions can be used to decrypt data. Data encrypted using older key versions will remain so unless explicitly re-encrypted.
+
+* If you suspect unauthorized use of a key, you should re-encrypt the data protected by that key and then disable or schedule destruction of the prior key version. *
+
+
+Destroying a key:
+```
+Do not make destruction decisions based on key usage information alone as this information may be delayed or incomplete. You cannot recover key versions after they have been destroyed.There are steps to take before destroying key versions.
+When you schedule a key version for destruction, this immediately happens:
+The version will be disabled
+Data encrypted by this version will not be decryptable
+Data signed by this version will not be verifiable
+Per this key's settings, this version will be destroyed after 1 day.
+```
+
+
+
