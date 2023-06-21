@@ -62,3 +62,19 @@ Show information about the datasets in JSON:
 ```
 bq show --format=prettyjson <project_id>:<dataset>
 ```
+
+Load data from bucket:
+```
+bq load --autodetect $DEVSHELL_PROJ:source_data.events gs://cloud-training/gcpsec/labs/bq-authviews-source.csv
+```
+
+To create a view where a Session User can only see their own data:
+```
+SELECT
+  *
+FROM
+  `qwiklabs-gcp-04-823283f36166.source_data.events`
+WHERE
+  email = SESSION_USER()
+```
+[ use the SESSION_USER() function ]
