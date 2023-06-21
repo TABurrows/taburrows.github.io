@@ -26,3 +26,13 @@ BQ least privilege: leverage Authorized View to limit users to only a subset of 
 Control storage costs and optimize usage by settting the Default Table Expiration for newly created tables in a dataset.  (if you set the property when the dataset is created, any table created in the dataset is deleted after the expiration period - if set after creation, only NEW tables are deleted after the expiration period)
 
 In Cloud Storage, administrative operations that modify the configuration or metadata of a bucket, or object, is logged automatically. Data Access operations that modify objects or read a project, bucket, or object, is not recorded by default and must be configured.
+
+all logs can be viewed in Cloud Logging and analyzed in BigQuery
+
+Signed URLs and Signed Policy Documents give limited time permissions
+
+Signed URLs provide a way to give time-limited read or write access to anyone in possession of the URL, even if they don’t have a Google account
+
+Signed Policy Documents specify what can be uploaded to a bucket with a form POST
+
+BigQuery uses Identity and Access Management (IAM) to manage access to resources. Permissions that are granted at the dataset level and tables, rows and columns are child resources of datasets. IAM roles include Admin, Data Owner, Data Editor, Data Viewer, Job Editor, and User
