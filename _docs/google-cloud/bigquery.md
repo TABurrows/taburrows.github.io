@@ -78,3 +78,12 @@ WHERE
   email = SESSION_USER()
 ```
 [ use the SESSION_USER() function ]
+
+
+Share a dataset:
+```
+Dataset -> Sharing -> Permissions -> Add Principal & Define Roles (eg BigQuery -> BigQuery Data Viewer)
+
+
+Dataset -> Sharing -> Authorize Views -> Choose an Authorized View -> Add Authorization
+```
