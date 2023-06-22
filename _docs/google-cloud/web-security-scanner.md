@@ -21,3 +21,23 @@ OWASP Top Ten: a document that ranks and provides remediation guidance for the t
 
 A scan will attempt to exercise or activate as many user inputs, controls, and event handlers as possible.
 
+For the scan you can provide:
+- Authentication
+- user agent type
+- maximum request rate (qps)
+
+Scanner report appears in:
+- Results section
+- Security Command Center
+- Cloud Logging
+
+Scans can run on a schedule or manually
+
+Large, complex applications can take hours to be completely scanned and as a result such scans may need to be run less frequently.
+
+Best practices:
+- run in a test environment (but as close to production as possible)
+- run with test data
+- block specific urls
+- use a 'normal user' ie first-time user workflows eg. new user's first sign-on
+- backup data before a scan
