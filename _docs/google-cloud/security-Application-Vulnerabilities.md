@@ -18,3 +18,14 @@ Some of the most common application vulnerabilities are categorized as "Injectio
 Authentication, Access Control and Session Management are "Application Logic" functions that are often implemented insecurely.
 
 When insufficient control over Authentication and Access is exercised, this vulnerability allows attackers to compromise passwords, keys or session tokens, or to exploit other implementation flaws to assume other user's identities.
+
+Applications and Web Applications also do not properly protect sensitive user data.  Attackers may steal or modify weakly-protected data to facilitate credit card fraud, identity theft, or other data and identity crimes.
+
+Sensitive data risks being compromised any time it is transferred without extra protection.  Secure data transfer requires encryption at rest and in transit and special precautions when exchanged with a browser.
+
+Security misconfiguration is commonly a result a insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages. Not only must all operating systems, frameworks, libraries and applications be securely configured, but they must also be patched and upgraded in a timely fashion in order to keep them secure.
+
+* Applications using components with known vulnerabilities my undermine application defenses and enable various attacks and impacts. *
+
+Components such as libraries frameworks and other software modules generally run with the same privileges as the main application itself.  As a result, when a vulnerable component is exploited an attach may facilitate serious data loss or even a server takeover.
+
