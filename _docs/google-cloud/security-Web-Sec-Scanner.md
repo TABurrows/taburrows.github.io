@@ -1,9 +1,9 @@
 ---
-title: Web Security Scanner
+title: Security - Web Security Scanner
 category: Google Cloud
 order: 1
 ---
-Web Security Scanner
+Security - Web Security Scanner
 
 Used to identify vulnerabilities in you applications.
 
