@@ -34,3 +34,39 @@ Practical Steps:
 - Set up OAuth Access Credentials
 - Set up IAP Access for the deployed Application
 - Use IAP to restrict access to the Application
+
+
+Enable the IAP API:
+Identity-Aware Proxy
+The Identity-Aware Proxy(Cloud IAP) controls access to your cloud applications and VMs running on Google Cloud Platform(GCP). 
+
+
+Consent Screen:
+Choose how you want to configure and register your app, including your target users. You can only associate one app with your project.
+
+User Type:
+- Internal
+Only available to users within your organization. You will not need to submit your app for verification. 
+- External
+Available to any test user with a Google Account. Your app will start in testing mode and will only be available to users you add to the list of test users. Once your app is ready to push to production, you may need to verify your app.
+
+
+Scopes express the permissions you request users to authorize for your app and allow your project to access specific types of private user data from their Google Account
+
+
+Add Principal:
+Type in email address of user
+Assign Roles -> Cloud IAP   -> IAP-secured Web App User
+                            -> IAP Settings Admin
+                            -> IAP Policy Admin
+
+Test IAP with: 
+```
+curl -kvi https://130.211.9.220
+```
+
+Look for the following headers:
+< x-goog-iap-generated-response: true
+x-goog-iap-generated-response: true
+
+Follow the HTTP/2 302 redirect to see the Auth Login

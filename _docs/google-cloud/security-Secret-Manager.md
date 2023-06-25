@@ -45,3 +45,18 @@ Admin Activity Access Audit Logs cannot be turned off or disabled and they do no
 
 * Secret Manager does not write System Event Audit Logs *
 Data Access Audit Logs are disabled by default.  Data Access Logs do count toward your log ingestion quota and therefore there is a cost involved. When Data Access Audit Logs are enabled, API Calls that read the Configuration or Metadata of resources, as well as user-driven API Calls that create, modify or read user-provided Resource Data. Data Access Audit Logs do not record the Data-Access Operations on Resources that are Publicly Shared. Inn other words, nothing is recorded for anything that is available to All Users or All Authenticated Users that can be accessed without logging into Google Cloud.
+
+To echo a Secret with gcloud:
+```
+# access version 1 of the secret
+gcloud secrets versions access 1 --secret="<secret-name>"
+# version 2 of the secret
+gcloud secrets versions access 2 --secret="<secret-name>"
+# to access the latest
+gcloud secrets versions access latest --secret="<secret-name>"
+```
+
+Disabled secrets return a DISABLED state:
+```
+ERROR: (gcloud.secrets.versions.access) FAILED_PRECONDITION: Secret Version [projects/955011405911/secrets/password/versions/1] is in DISABLED state.
+```
