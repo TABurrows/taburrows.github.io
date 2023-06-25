@@ -17,3 +17,16 @@ Common use cases:
 - provide Data Loss Prevention protections for corporate data
 - Gate access based on a User's location
 - protect application in hybrid deployments that use a mix of Google Cloud and other hyperscalers or on-prem resources 
+
+
+The Baseline Solution components for BeyondCorp Enterprise include:
+- Cloud Identity
+- Endpoint Verification
+- Google Frontend (capturing time, ip, session age and location)
+- Access Context Manager
+- IAP, IAM, Cloud Identity, VPC SC
+in front of Apps and Data: Web Apps, VMs, SaaS Apps, Infrastructure, APIs
+
+Three Key Enforcement Points:
+- Cloud Identity - Securing Access to Google Cloud (Managing Security) - used to extend context-awareness for Google Workspace tools, enforce access controls for Gmail, Docs, Sheets and 3rd party solutions via SAML
+- VPC Service Controls: allow the mitigation of Data Exfiltration risks, configure Private Communications between cloud resources and hybrid VPC Networks and enforce context-aware access controls
