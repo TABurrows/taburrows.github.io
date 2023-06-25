@@ -29,4 +29,6 @@ in front of Apps and Data: Web Apps, VMs, SaaS Apps, Infrastructure, APIs
 
 Three Key Enforcement Points:
 - Cloud Identity - Securing Access to Google Cloud (Managing Security) - used to extend context-awareness for Google Workspace tools, enforce access controls for Gmail, Docs, Sheets and 3rd party solutions via SAML
-- VPC Service Controls: allow the mitigation of Data Exfiltration risks, configure Private Communications between cloud resources and hybrid VPC Networks and enforce context-aware access controls
+- VPC Service Controls: allow the mitigation of Data Exfiltration risks, configure Private Communications between cloud resources and hybrid VPC Networks and enforce context-aware access controls (allow access based on User Location or source IP Address)
+- IAP: central management of Virtual Security Perimeters
+
