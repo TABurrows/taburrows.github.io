@@ -12,6 +12,8 @@ Leverage IAM to determine Secret access and what can be done to the Secret
 
 Global Resource, Global Names and Global Replication - but optionally the data can be stored Regionally
 
+Simplifies the management of sensitive data by placing it in a single place, controlled by IAM
+
 Secrets can be versioned (unlimited) with each version having different Secret data
 
 Only Project Owners have permission to create and access Secrets within their Project. Other Roles must explicitly be granted permissions through IAM. Use IAM to grant roles and permissions at the level of the Google Cloud Organization, Folder, Project or Secret.

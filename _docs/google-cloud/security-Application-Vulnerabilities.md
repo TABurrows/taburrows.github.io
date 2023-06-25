@@ -14,6 +14,7 @@ Some of the most common application vulnerabilities are categorized as "Injectio
 - LDAP
 - HTML
 - XSS ( JS is injected into an application to be subsequently executed in a victim's browser )
+- OAuth ( Exploits the trust relationships users have with well-known online service providers and 3rd party applications )
 
 Authentication, Access Control and Session Management are "Application Logic" functions that are often implemented insecurely.
 
