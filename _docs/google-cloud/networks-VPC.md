@@ -10,6 +10,10 @@ VPC Networks are isolated private networking domains by default
 - VPC Networks are Global Resources
 - Subnets are Regional Resources
 
+You should host Compute Engine resources that require network communication on the same VPC network. If the resources aren't related and don't require network communication among themselves, consider hosting them on different VPC networks. For most applications implemented in Google Cloud, Google also recommends creating separate subnets within a network for each tier of an application ( eg. separate subnet for Web Front End, separate subnet for Services Layer, separate subnet for Database Back End ) 
+
+* this approach works because subnetting is a convenient way to implement inter-network firewall restrictions *
+
 There are two types of VPC Network Subnet creation modes [ 'SUBNET_MODE: AUTO' | 'SUBNET_MODE: CUSTOM' ]: Auto-mode & Custom-mode ( Default: Auto-mode and this is created in the 'default' VPC Network )
 
 VM Instances within a VPC Network can communicate between themselves with the Private Internal IP Address ranges (as long as Firewall Rules allow)
