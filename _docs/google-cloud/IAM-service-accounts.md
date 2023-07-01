@@ -5,7 +5,34 @@ order: 1
 ---
 IAM Service Accounts
 
-nb. Service Accounts are not recommended, they are long term and a risk of loss
+Service Accounts are a special type of Google Account that grant permissions to VMs instead of end users. Primarily used to ensure safe, managed connections to APIs and Google Cloud Services ( used in granting access to trusted connections and rejecting malicious ones )
+
+Service Accounts belong to Applications or VMs instead of Principals. The Application of VM will use Service Account credentials to call a Google Service API.
+
+A Service Account is identified by its email address - which is unique to the account.
+
+User-Managed Service Accounts:
+When you create a new Cloud Project using Google Cloud Console and if Compute Engine API is enabled for your project, a Compute Engine Service Account is created for you by default:
+```
+PROJECT-NUMBER-compute@developer.gserviceaccount.com
+```
+
+If you project contains an App Engine Application, the default App Engine Service Account is create in your Project by default:
+```
+PROJECT_ID@appspot.gserviceaccount.com
+```
+
+Google APIs Service Account
+Not visible in the Service Accounts section of the console, but visible in IAM Policy and in the Console, there are Service Accounts created and owned by Google representing Google Services and each account is automatically granted IAM Roles to access the Project.
+
+Example:
+```
+PROJECT-NUMBER@cloudservices.gserviceaccount.com
+```
+This Service Account is designed specifically to run internal Google processes on Tenant's behalf.  By default, the account is automatically granted the Project Editor Role on the project and is listed in the IAM section of console. This service account is deleted only when the project is deleted.
+
+
+nb. Service Accounts are long living and are a risk if lossed
 
 
 GKE Cluster: use Workload Identities, or Workload Identity Federation if you use an external Identity Provider

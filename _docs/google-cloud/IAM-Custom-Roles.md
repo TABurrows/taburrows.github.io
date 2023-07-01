@@ -158,6 +158,7 @@ Use the command ' glcoud iam roles delete ' command to delete a Custom Role. Onc
 ```
 gcloud iam roles delete viewer --project $DEVSHELL_PROJECT_ID
 ```
+[ TO CONFIRM, in the output returned you should see the value 'deleted: true' ]
 After the Role has been delete, existing bindings remain but are INACTIVE. The Role can be UNDELETED within 7 days. AFter 7 Days, the Role enters a PERMANENT DELETION Process that lasts 30 Days.  After 37 Days, the Role ID is available to be used again.
 
 If a Role is being Phased out, change its role.stage property to DEPRECATED and set the ' deprecation_message' to let users know what alternative Roles should be used or where to get more information.
@@ -167,4 +168,11 @@ If a Role is being Phased out, change its role.stage property to DEPRECATED and 
 To UNDELETE a Custom Role within the 7 Days Window, you can make it available again by changing its ' --stage ' flag value from 'DISABLED' with this command:
 ```
 gcloud iam roles undelete viewer --project $PROJECT_ID
+```
+
+
+
+To see the PREDEFINED ROLES ( as opposed to the Custom Roles created at the PROJECT or ORG LEVEL ):
+```
+gcloud iam roles list
 ```
