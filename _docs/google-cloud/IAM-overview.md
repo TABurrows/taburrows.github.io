@@ -32,7 +32,7 @@ In addition to BASIC ROLES, PREDEFINED ROLES (ROLE=Collection of Permissions):
 - prevent unwanted access to other resources
 
 PERMISSIONS = CLASSES and METHODS:
-eg compute.networks.list = service.resource.verb
+eg compute.networks.list = <service>.<resource>.<verb>
 compute.addresses.list
 compute.backendBuckets.list
 compute.firewalls.
@@ -46,3 +46,6 @@ Security Admin: create modify and delete Firewall Rules and SSL Certificates
 
 CUSTOM ROLES
 Combine distinct permissions together for fine-grained principle-of-least-privilege access
+
+
+GRANT ACCESS -> Add Principal -> Assign Role
