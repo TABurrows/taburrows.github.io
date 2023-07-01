@@ -29,15 +29,41 @@ Example:
 ```
 PROJECT-NUMBER@cloudservices.gserviceaccount.com
 ```
-This Service Account is designed specifically to run internal Google processes on Tenant's behalf.  By default, the account is automatically granted the Project Editor Role on the project and is listed in the IAM section of console. This service account is deleted only when the project is deleted.
+This Service Account is designed specifically to run internal Google processes on Tenant's behalf.  By default, the account is automatically granted the Project Editor Role on the project and is listed in the IAM section of console. This service account is deleted only when the project is deleted. Do not touch.
+
+98 other accounts can be added to your Project.
+
+To create a Service Account:
+```
+gcloud iam service-accounts create service-account-name --display-name "my service account"
+```
+
+When granting IAM Roles, you can treat a Service Account either as a RESOURCE or as an IDENTITY. Your Application uses a Service Account as an Identity to authenticate Google Cloud Services. eg. if you have a Compute Engine VM running as a Service Account, you can Grant the Editor Role to the Service Account ( the IDENTITY ) for a PROJECT ( the RESOURCE ), at the same time, you might also want to control who can Start the VM.  You can do this by Granting a User ( the IDENTITY ) the 'serviceAccountUser' Role for the Service Account ( the RESOURCE ).
+
+Granting Roles to a Service Account for specific Resources
+You Grant Roles to a Service Account so that the Service Account has permission to complete specific actions on the resources in your Cloud Platform project.
+eg. you might grant the 'storage.admin' Role to a Service Account so that it has control over objects and buckets in Cloud Storage
 
 
-nb. Service Accounts are long living and are a risk if lossed
+Applications and principals authenticate as a service account by doing one of the following:
+
+- Obtaining short-lived credentials. In many cases, such as attached service accounts and commands using the gcloud CLI --impersonate-service-account flag, these credentials are obtained automatically—you don't need to create or manage them yourself
+- Using a service account key to sign a JSON Web Token (JWT) and exchanging it for an access token. Service account keys are a security risk if they aren't managed correctly.
+
+nb. Using a Service Account Key to sign a JSON Web Token (JWT) and exchanging it for an access token can be a method of authenticating, however Service Account Keys are a security risk if they aren't managed correctly - they are long lived and if they are lost, represent a security risk.
+
+
+Granting Roles to Service Accounts:
+```
+ gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member serviceAccount:my-sa-name@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com --role roles/editor
+```
+
 
 
 GKE Cluster: use Workload Identities, or Workload Identity Federation if you use an external Identity Provider
 
-Short-lived credentials
+
+
 
 
 
