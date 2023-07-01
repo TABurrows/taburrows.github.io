@@ -116,3 +116,55 @@ includedPermissions:
 - appengine.versions.delete
 ```
 
+Then to Create the Role:
+```
+gcloud iam roles create editor --project $PROJECT_ID --file role.yaml
+```
+
+To create a Custom Role using Cli flags:
+```
+gcloud iam roles create viewer --project $DEVSHELL_PROJECT_ID \
+--title "Role Viewer" --description "Custom role description." \
+--permissions compute.instances.get,compute.instances.list --stage ALPHA
+```
+
+List Custom Roles:
+```
+gcloud iam roles list --project $PROJECT_ID
+```
+To list deleted roles, you can also specify the ' --show-deleted ' flag.
+
+Etags are used to prevent write conflicts - download the Custom Role locally, update it and write it back.  If the Etags match at the Google IAM API then the changes are written to the Project or Org, if they do not then no changes are made.
+
+To UPDATE a Custom Role with Flags:
+' --add-permissions '
+' --remove-permissions '
+```
+gcloud iam roles update viewer --project $DEVSHELL_PROJECT_ID \
+--add-permissions storage.buckets.get,storage.buckets.list
+```
+
+
+When a Custom Role is disabled, any Policy Bindings related to the Role are Inactivated, meaning that the Permissions in the Role will NOT be Granted, even if you Grant the Role to a User.
+
+The easiest way to Disable an existing Custom Role is to use the ' --stage ' flag and set it to ' DISABLED '
+```
+gcloud iam roles update viewer --project $DEVSHELL_PROJECT_ID \
+--stage DISABLED
+```
+
+
+Use the command ' glcoud iam roles delete ' command to delete a Custom Role. Once deleted the Role is Inactive and cannot be used to create new IAM Policy Bindings:
+```
+gcloud iam roles delete viewer --project $DEVSHELL_PROJECT_ID
+```
+After the Role has been delete, existing bindings remain but are INACTIVE. The Role can be UNDELETED within 7 days. AFter 7 Days, the Role enters a PERMANENT DELETION Process that lasts 30 Days.  After 37 Days, the Role ID is available to be used again.
+
+If a Role is being Phased out, change its role.stage property to DEPRECATED and set the ' deprecation_message' to let users know what alternative Roles should be used or where to get more information.
+
+
+
+To UNDELETE a Custom Role within the 7 Days Window, you can make it available again by changing its ' --stage ' flag value from 'DISABLED' with this command:
+```
+gcloud iam roles undelete viewer --project $PROJECT_ID
+```
