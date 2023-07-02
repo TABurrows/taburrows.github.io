@@ -70,3 +70,16 @@ Look for the following headers:
 x-goog-iap-generated-response: true
 
 Follow the HTTP/2 302 redirect to see the Auth Login
+
+
+
+
+
+
+In use, IAP can:
+- Display a consent screen
+- Pass on User Identity information to the protected App
+- Use Cryptographic verification to prevent spoofing of user identity information
+
+IAP is a GCP Service that intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service and only lets the request through if they come from a User you Authorize. In addition, it can modify the request headers to include information about the Authenticated User.
+
