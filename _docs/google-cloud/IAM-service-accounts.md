@@ -53,11 +53,22 @@ Applications and principals authenticate as a service account by doing one of th
 nb. Using a Service Account Key to sign a JSON Web Token (JWT) and exchanging it for an access token can be a method of authenticating, however Service Account Keys are a security risk if they aren't managed correctly - they are long lived and if they are lost, represent a security risk.
 
 
-Granting Roles to Service Accounts:
+Granting Roles to Service Accounts
+To grant Roles to a Service Account for a specific Resource:
 ```
  gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID --member serviceAccount:my-sa-name@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com --role roles/editor
 ```
 
+When an Identity calls a Google Cloud API, Google Cloud Identity and Access Management requires that the Identity has the appropriate permissions to use the Resource.
+Three types of Role:
+- Primitive: Owner ( roles/owner ), Editor ( roles/editor ), Viewer ( roles/viewer )
+- Predefined:
+- Custom Roles
+
+
+```
+
+```
 
 
 GKE Cluster: use Workload Identities, or Workload Identity Federation if you use an external Identity Provider
@@ -116,7 +127,7 @@ Service Accounts as Identity:
 If you have a GCE VM running as a Service Account, you can grant the Editor Role to the Service Account (the Identity) for a Project (the Resource)
 
 Service Accounts as Resources:
-To control who can can start the VM, you can do this by granting a user (the Identity) the 'serviceAccountUser' Role for the Service Account (where here it is a Resource)
+To control who can can start the VM, you can do this by granting a user (the Identity) the 'serviceAccountUser' ( "Requires the Service Account User role (roles/iam.serviceAccountUser) to be set for users who want to access VMs with this service account" ) Role for the Service Account (where here it is a Resource)
 
 
 
