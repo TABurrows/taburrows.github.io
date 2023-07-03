@@ -83,3 +83,43 @@ In use, IAP can:
 
 IAP is a GCP Service that intercepts web requests sent to your application, authenticates the user making the request using the Google Identity Service and only lets the request through if they come from a User you Authorize. In addition, it can modify the request headers to include information about the Authenticated User.
 
+
+Cloud IAP > IAP Policy Admin
+Cloud IAP > IAP Settings Admin
+Cloud IAP > IAP-Secured Web App User
+
+IAP Clear Login Cookie URI:
+```
+/_gcp_iap/clear_login_cookie
+```
+
+
+
+Use Cryptographic Verification
+If there is a risk of IAP being turned off or bypassed, your app can check to make sure the identity information it receives is valid. This uses a third web request header added by IAP, called X-Goog-IAP-JWT-Assertion. The value of the header is a cryptographically signed object that also contains the user identity data. Your application can verify the digital signature and use the data provided in this object to be certain that it was provided by IAP without alteration.
+
+Digital signature verification requires several extra steps, such as retrieving the latest set of Google public keys. You can decide whether your application needs these extra steps based on the risk that someone might be able to turn off or bypass IAP, and the sensitivity of the application.
+
+Test the Spoofing of IAP Headers:
+```
+curl -X GET <your-url-here> -H "X-Goog-Authenticated-User-Email: totally fake email"
+```
+
+```
+
+def user():
+    assertion = request.headers.get('X-Goog-IAP-JWT-Assertion')
+    if assertion is None:
+        return None, None
+    info = jwt.decode(
+        assertion,
+        keys(),
+        algorithms=['ES256'],
+        audience=audience()
+    )
+    return info['email'], info['sub']
+
+```
+The above assertion is the cryptographically signed data provided in the specified request header. The code uses a library to validate and decode that data. Validation uses the public keys that Google provides for checking data it signs, and knowing the audience that the data was prepared for (essentially, the Google Cloud project that is being protected). Helper functions keys() and audience() gather and return those values.
+
+The signed object has two pieces of data we need: the verified email address, and the unique ID value (provided in the sub, for subscriber, standard field).
