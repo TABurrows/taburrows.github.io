@@ -45,3 +45,13 @@ VMs with <=2 vCPUs, Max vNICs: 2
 
 
 In a multiple interface instance, every interface gets a route for the subnet that it is in. In addition, the instance gets a single default route that is associated with the primary interface eth0. Unless manually configured otherwise, any traffic leaving an instance for any destination other than a directly connected subnet will leave the instance via the default route on eth0.
+
+
+
+
+Example Create:
+```
+gcloud compute networks create managementnet --project=qwiklabs-gcp-02-9ebc0aa75678 --subnet-mode=custom --mtu=1460 --bgp-routing-mode=regional
+
+gcloud compute networks subnets create managementsubnet-us --project=qwiklabs-gcp-02-9ebc0aa75678 --range=10.130.0.0/20 --stack-type=IPV4_ONLY --network=managementnet --region=us-east1
+```
