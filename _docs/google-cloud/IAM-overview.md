@@ -5,6 +5,10 @@ order: 1
 ---
 Identity & Access Management
 
+
+IAM lets you control who (identity) has what (roles) permission to which resources by setting IAM policies. IAM policies grant specific role(s) to a project member, giving that identity certain permissions.
+
+
 Org Heirarchy:
 - Org Root Node
 - Folders
