@@ -23,3 +23,8 @@ Compute Security Admin
 
 Permissions to create, modify, and delete firewall rules and SSL certificates, and also to configure Shielded VM settings.
 
+
+
+The Compute Engine default service account does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles.
+
+

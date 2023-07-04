@@ -136,3 +136,15 @@ storage.admin = Role that can be granted to Service Account, so that it has cont
 eg Role: bigquery.user = When applied to a project, access to run queries, create datasets, read dataset metadata, and list tables. When applied to a dataset, access to read dataset metadata and list tables within the dataset.
 
 eg Role: bigquery = Access to view datasets and all of their contents
+
+
+
+
+
+
+When changing the Permissions for a Role, you do not have to update the credentials file
+
+Once you have the credentials.json file local, you can authorize the VM with the credentials you just uploaded with:
+```
+gcloud auth activate-service-account --key-file credentials.json
+```
