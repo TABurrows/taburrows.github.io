@@ -114,3 +114,18 @@ nb. Standard Network = Google not optimizing network traffic/shaping (and Global
 Additional Services:
 - Rename Services and Map them to URLs of your choice
 - You can configure LB to log all requests with Cloud Logging
+
+
+Internal Load Balancers (Regional Service, so you can leverage Zonal redundancy)
+Offered for TCP/UDP-based traffic. Internal Load Balancing enables you to run and scale your services behind a private load balancing IP Address that is accessible only to your internal VMs.
+- Forwarding Rule
+- Backend Service
+
+Tasks:
+- Create HTTP an health check Firewall Rules: configure firewall rules to allow HTTP traffic to the LB Backends and allow TCP traffic from the Google Cloud Health Checker
+- Configure instance templates: a managed instance group uses an instance template to create a group of identical instances.  Often used as backends for Internal LBs. An Instance Template is an API Resource that you can use to define the Machine Type, Boot Disk Image, Subnet, Labels, and other Instance properties.
+
+Health Checks:
+Determine which instances of a Load Balancer can receive new connections.
+For Internal Load Balancing, the health check probes to your Load Balanced Instances come from Addresses in the ranges: 130.211.0.0/22 and 35.191.0.0/16, so you will need to build allow firewall rules from these connections.
+
