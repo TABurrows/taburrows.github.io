@@ -129,3 +129,13 @@ Health Checks:
 Determine which instances of a Load Balancer can receive new connections.
 For Internal Load Balancing, the health check probes to your Load Balanced Instances come from Addresses in the ranges: 130.211.0.0/22 and 35.191.0.0/16, so you will need to build allow firewall rules from these connections.
 
+
+In the Cloud Console, navigate to Navigation menu > Network Services > Load balancing, and then click Create load balancer.
+Under TCP Load Balancing, click on Start configuration.
+For Internet facing or internal only, select Only between my VMs.
+Note: Choosing Only between my VMs makes this Load Balancer internal. This choice requires the backends to be in a single region (us-central1) and does not allow offloading TCP processing to the Load Balancer.
+
+
+
+
+Health checks determine which instances can receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.
