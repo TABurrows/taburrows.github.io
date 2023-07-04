@@ -141,10 +141,33 @@ eg Role: bigquery = Access to view datasets and all of their contents
 
 
 
-
+Access Denied message:
+```
+ERROR: (gcloud.compute.firewall-rules.list) Some requests did not succeed:
+  - Request had insufficient authentication scopes.
+```
 When changing the Permissions for a Role, you do not have to update the credentials file
 
 Once you have the credentials.json file local, you can authorize the VM with the credentials you just uploaded with:
 ```
 gcloud auth activate-service-account --key-file credentials.json
+```
+
+Sample credentials.json contents:
+(note Client x509 Cert URL is downloadable)
+```
+{
+  "type": "service_account",
+  "project_id": "project-e46dc511c45b",
+  "private_key_id": "40c9509bd6aaa9a6fa54f754872d4dfbcef2093a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCVpGCVrmE1Zr0v\ngvQC+YOBw+DN3yqPERastSVFLyrebpKZEFlipRAZKnBb8tG/FfSWfPLvo6hVJB3k\n2MLowM0PWk6yETvusNHU8aZ7EHmYYQDs1iGearZfZR3/gULeqWS0+C32Z0Re20qL\nZjEmI1KDAvAFCbIalX8TR9+ao0paFOwL8A8XPYJXQvqb6in0mCtwMaoapN+5tuND\nKgJgPdVO+ZZU4ArBcHMxmD
+  (redacted ...)+jYaYtooVV\nRlfAQgMoY6A8T63FzTfVvWDxxK4VwyDrtw2091lJEQKBgAfAGJ8bujsRo5hGa2rH\nFtZIIkUKnxfsoEVnxjryZlZkJVu07PCHHBsk6V9M3otiKDeBetBXRQEyMYqEdSnH\nKIBgDlBx7atCG0GXfCxnJCRtzaHJBYArj3ooJFgJsd2wZV4QV+gN0cBTxKR8z+UL\nNMKkl15AOMAP5Sk2GXjZ1FQZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "network-admin@qwiklabs-gcp-00-e46dc511c45b.iam.gserviceaccount.com",
+  "client_id": "105759752284160033512",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/network-admin%40project-e46dc511c45b.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
 ```
