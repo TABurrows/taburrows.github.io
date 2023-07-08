@@ -5,6 +5,10 @@ order: 1
 ---
 Billing
 
+
+Important: The Google Cloud project you select to contain your dataset should be linked to the same Cloud Billing account that contains the data that you plan to export to the BigQuery dataset. A Google Cloud project is linked to exactly one Cloud Billing account at a time. A Cloud Billing account is linked to one or more projects.
+
+
 Rename the default Billing Account to something more meaningful
 
 ```

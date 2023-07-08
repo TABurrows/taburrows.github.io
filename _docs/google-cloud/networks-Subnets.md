@@ -18,3 +18,11 @@ gcloud compute --project=qwiklabs-gcp-02-9ebc0aa75678 firewall-rules create mana
 
 gcloud compute firewall-rules list --sort-by=NETWORK
 ```
+
+
+Example 2 Create:
+```
+gcloud compute networks create vpc-prod-a --project=thing-industries-prod-a --subnet-mode=custom --mtu=1460 --bgp-routing-mode=regional 
+
+gcloud compute networks subnets create vpc-prod-a-subnet-eu-w2 --project=thing-industries-prod-a --range=10.0.10.0/24 --stack-type=IPV4_ONLY --network=vpc-prod-a --region=europe-west2
+```
