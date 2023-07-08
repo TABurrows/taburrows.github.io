@@ -34,3 +34,9 @@ Standard tier is priced lower than Premium because the traffic between Google Cl
 
 
 
+
+### Standard Tier
+Traffic enters and exits the Google network at a peering point closest to the Cloud region it's destined for or originated in.
+
+### Premium Tier
+Traffic traverses Google's high quality global backbone, entering and exiting at Google edge peering points closest to the user
