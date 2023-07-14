@@ -18,3 +18,15 @@ You can create, save and run tests to help verify the impact of configuration ch
 Firewall Insights Metrics - hit counts
 
 Insight types eg. google.compute.firewall.Insight
+
+
+
+### Connectivity Tests
+
+gcloud beta network-management connectivity-tests create  --destination-port=80 --destination-project=thing-industries-dev-a --protocol=TCP --source-project=thing-industries-dev-a --project=thing-industries-dev-a
+
+Destination Endpoint options:
+VM Instance
+IP Address
+Cloud SQL Instance
+GKE Cluster Control Plane
