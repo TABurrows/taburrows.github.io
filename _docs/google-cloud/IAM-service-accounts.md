@@ -3,7 +3,7 @@ title: IAM - Service Accounts
 category: Google Cloud
 order: 1
 ---
-IAM Service Accounts
+## IAM Service Accounts
 
 Service Accounts are a special type of Google Account that grant permissions to VMs instead of end users. Primarily used to ensure safe, managed connections to APIs and Google Cloud Services ( used in granting access to trusted connections and rejecting malicious ones )
 
@@ -170,4 +170,26 @@ Sample credentials.json contents:
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/network-admin%40project-e46dc511c45b.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
+```
+
+
+
+## Rotation of User-managed Service Account Keys
+
+Using the GCP Console:
+You configure automatic key rotation in the GCP Console for existing keys by following these steps:
+
+- Open the Key Management page from the Google Cloud Console
+- Select the name of the key ring that contains the key you want to rotate
+- Select the key you want to set up automation rotations
+- Choose Edit Rotation Period in the header
+
+
+
+## Authorize Service Account
+
+Use the gcloud auth activate-service-account command to import the credentials from the JSON file with the private authorization key for the service account and activate it for use
+
+```
+gcloud auth activate-service-account
 ```

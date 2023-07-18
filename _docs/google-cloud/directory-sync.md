@@ -5,6 +5,7 @@ order: 1
 ---
 Google Cloud Directory Sync (GCDS)
 
+You can use Google Cloud Directory Sync (GCDS) to automatically synchronize users, groups, and contacts so that the data in your Google Account matches the data in your LDAP server, such as Microsoft Active Directory.
 
 Synchronize the data in your Google Account with your Microsoft Active Directory or LDAP server. GCDS doesn't migrate any content (such as email messages, calendar events, or files) to your Google Account. You use GCDS to synchronize your Google users, groups, and shared contacts to match the information in your LDAP server.
 
