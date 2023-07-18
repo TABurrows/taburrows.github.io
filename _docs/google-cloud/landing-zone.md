@@ -15,11 +15,19 @@ Actions:
 - Decide the security for your Google Cloud landing zone 
 
 
-Elements:
+Core Elements:
 - Identity Provisioning
 - Resource hierarchy
 - Network
 - Security Controls
+
+Secondary Elements:
+- Monitoring and Logging
+- Backup and Disaster Recovery
+- Compliance
+- Cost Efficiency and Control
+- API Management
+- Cluster Management
 
 
 
