@@ -23,3 +23,29 @@ IAM and ACLs can work in tandem to grant access to buckets and objects. A user o
 to make an entire bucket public: 'Storage Object Viewer' Role to 'allUsers' Group on the bucket.
 
 for individual objects in a bucket, to make them public grant the 'Reader' access to 'allUsers' on individual objects.
+
+
+### Enable logging within a Bucket
+
+- make a bucket to hold the logs
+- allow write access to the bucket
+
+```
+
+gsutil mb gs://example-logs-bucket
+
+gsutil acl ch -g cloud-storage-analytics@google.com:W gs://example-logs-bucket
+
+gsutil defacl set project-private gs://example-logs-bucket
+
+gsutil logging set on -b gs://example-logs-bucket gs://example-bucket
+
+```
+
+### Making a bucket Public
+
+To make a bucket public grant 'allUsers' the 'Storage Object Viewer' IAM role ( a 'Storge Object Viewer' has 4 assigned permissions: 'resourcemanager.projects.get', 'resourcemanager.projects.list', 'storage.objects.get', 'storage.objects.list' )
+
+To make an object public grant 'allUsers' 'Reader' access
+
+( nb. Permissions are inherited from higher levels )
