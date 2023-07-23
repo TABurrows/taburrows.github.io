@@ -193,3 +193,40 @@ Use the gcloud auth activate-service-account command to import the credentials f
 ```
 gcloud auth activate-service-account
 ```
+
+
+## Alternatives to using SERVICE ACCOUNT KEYS
+
+- Authenticate with User Credentials
+- Impersonate a SERVICE ACCOUNT
+- Configure Workload Identity
+- Attach a SERVICE ACCOUNT
+- Configure Workload Identity Federation
+- Lastly, use a SERVICE ACCOUNT KEY =(
+
+
+
+## Best Practices
+
+Since SERVICE ACCOUNTS use RSA Key Pairs for authentication, they are vulnerable to capture and misuse.
+
+If you know the PRIVATE KEY of a SERVICE ACCOUNTS Key Pair, you can use the PRIVATE KEY to CREATE A JWT BEARER TOKEN and use the bearer tokenn to request an ACCESS TOKEN. The resulting ACCESS TOKEN reflects the SERVICE ACCOUNTS IDENTITY and you canuse it to interact with Google Cloud APIs on the SERVICE ACCOUNTS behalf.  The PRIVATE KEY lets you AUTHENTICATE as the SERVICE ACCOUNT, so having access to a private key is similar to having access to a password.
+
+MAIN THREATS:
+- Credential Leakage ( keys ending up where they are not supposed to )
+- Privilege Escalation  ( key used to escalate privs )
+- Information Disclosure ( disclosure via metadata )
+- Non-repudiation ( threat actor can conceal their activity )
+
+AVOID USER-MANAGED SERVICE ACCOUNT KEYS - use IAM CONDITIONS and VPC SERVICE CONTROLS ot restrict what resources can potentially be accessed by a compromised SERVICE ACCOUNT.
+
+
+The PRIVATE KEY is known as the SERVICE ACCOUNT KEY.
+
+The KEY-PAIRS used by SERVICE ACCOUNTS fall into 2 categories:
+
+- GOOGLE-MANAGED
+
+
+- USER-MANAGED
+

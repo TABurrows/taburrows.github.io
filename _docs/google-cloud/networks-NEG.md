@@ -7,7 +7,7 @@ Networks - Network Endpoint Group
 
 A NEG is a Configuration Object that specifies a group of Backend Endpoints or Services.  Each endpoint is specified by an IP Address or Socket.
 
-Backend services define hot to handle traffic:
+Backend services define how to handle traffic:
 - which health check to use
 - session affinity
 - how traffic is distributed
