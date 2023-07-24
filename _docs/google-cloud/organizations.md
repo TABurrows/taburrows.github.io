@@ -265,4 +265,64 @@ Flow logs, Private access, and Cloud NAT use default options. You can change the
 
 
 
+## Policies
 
+DENY values always take precedence during policy reconciliation.
+
+When a Resource sets 'inheritFromParent: FALSE' and includes the 'restoreDefault' value, the policy from the Parents are not inherited so the effective policy can become the DEFAULT CONSTRAINT BEHAVIOUR if no inheritance takes place at all.
+
+You need the 'Organization Policy Administrator' Role to set Organization Policy.
+
+### Hierarchy Evaluation Rules
+
+If you don't set an ORG POLICY, then a Resource Node inherits from its lowest ancest with a Policy Set.  If there is no Policy set anywhere in the ancestor Hierarchy, then the default behaviour of the constraint is enforced.
+
+If 'inheritFromParent: true', then the effective Policy of the Parent Resource is inherited, merged and reconciled to evaluate the resulting effective policy.
+
+In LIST POLICY EVALUATION based on LIST CONSTRAINTS (a hierarchy subtree string eg. a list of PROJECT IDs in the form of projects/<PROJECT_ID> fro 'constraints/compute.trustedImageProjects'), DENY VALUES always take precedence.
+
+[ It's best not to include a value in both the allowed and denied list - confusing ]
+
+In BOOLEAN POLICY EVALUATION base on BOOLEAN CONSTRAINTS (where POLICIES do not MERGE and RECONCILE)
+eg. A folder sets 'enforced: true' for 'constraints/compute.disableSerialPortAccess', whilst a Project underneath that folder sets 'enforced: false' for 'constraints/compute.disableSerialPortAccess', then the resulting policy is 'enforced: false' because that is what was defined on the immediate parent.  No Merging or Reconciliation is done.
+
+
+### Reset to Default Policy
+
+By invoking 'RestoreDefault', the Org Policy will use the default behaviour of the constraint for this resource hierarchy node. 
+
+
+### Types of Constraint
+
+#### List Constraints
+
+Allows or disallows a list of values that is defined in an Org Policy
+
+- Allow a SPECIFIC set of VALUES: 
+    - Set the ALLOWED VALUES field ( 'ListPolicy.allowed_values' ) to a list of strings
+    - Set 'ListPolicy.all_values' to 'ALL_VALUES_SPECIFIED'
+- Deny a SPECIFIC set of VALUES:
+    - Set the DENIED VALUES field ( 'ListPolicy.denied_values' ) to a list of strings
+    - Set 'ListPolicy.all_values' to 'ALL_VALUES_UNSPECIFIED'
+- Deny a value and ALL of its CHILD VALUES:
+    - Set the DENIED VALUES field ( 'ListPolicy.denied_values' ) to a SUBTREE string, such as 'organizations/1234'
+    - Set the 'ListPolicy.all_vaules' to 'ALL_VALUES_UNSPECIFIED'
+- Allow ALL VALID VALUES:
+    - Set 'ListPolicy.all_values' to 'ALLOW
+    - Do not set 'ListPolicy.allowed_values' or 'ListPolicy.denied_values'
+- Deny ALL VALUES:
+    - Set 'ListPolicy.all_values' to DENY
+    - Do not set 'ListPolicy.allowed_values' or 'ListPolicy.denied_values'
+
+nb. Values can be given a prefix:value to augment meaning:
+    - is: comparison against an exact value
+    - under: a comparison against a value and all of its child values ( if a resource is allowed or denied with this prefix, its child resources are also denied ) [ the value provided must be a HIERARCHY SUBTREE STRING eg. organizations/<ORG_ID>, folders/<FOLDER_ID>, projects/<PROJECT_ID> ]
+
+#### Boolean Constraint
+
+A Boolean Constraint is either IN ENFORCEMENT or NOT. The policy is enforced by setting 'Policy.enforced' to 'True'.
+
+Example: 'constraints/compute.disableSerialPortAccess' will have two states: 
+    - TRUE - the 'disableSerialPortAccess' constraint is enforced and serial port access is not allowed
+    - FALSE - the 'disableSerialPortAccess' constraint is not enforced or checked so serial port access is allowed
+If not policy is set, or the policy is set to 'RestoreDefault', then serial port access is allowed because the constraint default is to allow
