@@ -81,7 +81,7 @@ Ensure the access permissions and ownership details are restricted to the local 
 
 Now authorize Service Account access to Google Cloud.  We will use the GCP Key created above for this authorization.
 ```
-gcloud auth activate-service-account --key-file=~/.gcp/gcp-iam-key-svc-acc-ansible.json
+gcloud auth activate-service-account --key-file=/home/user/.gcp/gcp-iam-key-svc-acc-ansible.json
 ```
 Output will be something like:
 ```
@@ -93,10 +93,37 @@ Activated service account credentials for: [svc-acc-ansible@<MY_PROJECT_ID>.iam.
 To login in with the private ssh key we generated above, we need to assign the public ssh key to our Service Account user within the OS Login service.
 
 ```
-gcloud compute os-login ssh-keys add --key-file=~/.ssh/ssh-key-svc-acc-ansible.pub
+gcloud compute os-login ssh-keys add --key-file=/home/user/.ssh/ssh-key-svc-acc-ansible.pub
 ```
 
 nb. Ensure you choose the public key
+
+
+#### Establish local Auth
+
+The above activation process will set your local gcloud configuration environment to those of the Service Account.  
+
+This can be confirmed with gcloud:
+```
+gcloud config list
+
+gcloud auth list
+```
+
+To set the local gcloud configuration environment back to your own authentication and authorization details:
+```
+gcloud config set account user@domain.com
+```
+
+And confirm the above action with gcloud:
+```
+gcloud config list
+
+gcloud auth list
+```
+
+
+
 
 
 
@@ -115,6 +142,27 @@ Output will be something like:
 ```
 104583570194198810035
 ```
+So here the  OS Login username will be:
+```
+sa_104583570194198810035
+```
 
+And we can test that username against our instance with:
+```
+ssh -i ~/.ssh/ssh-key-svc-acc-ansible sa_104583570194198810035@<INSTANCE_IP>
+```
+
+Success will be indicated via a command prompt on the remote machine:
+```
+sa_104583570194198810035@<INSTANCE-NAME>:~$ 
+```
+
+NOTE: If the connection appears to hang or is unresponsive on establishing a connection, then a Firewall Rule or policy may be present/absent and therefore dropping any ssh connection attempts to the remote host
+
+
+
+#### Use with Ansible
+
+You can specify the ssh key and user in locations such as host_vars and group_vars
 
 
