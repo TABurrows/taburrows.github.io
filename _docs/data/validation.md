@@ -46,3 +46,19 @@ eg. 10-digit pre-2007
 - Presence check
 - Range check
 - Spelling and grammar check
+- Uniqueness check
+- Table look-up check
+
+### Post-Validation actions
+- Enforcement action
+- Advisory action
+- Verification action
+- Log of Validation
+
+Failures or omissions in Data Validation can lead to DATA CORRUPTION or a SECURITY VULNERABILITY. Data validation checks that DATA ARE:
+- Fit for purpose
+- Valid
+- Sensible
+- Reasonable
+- Secure
+Before they are processed
