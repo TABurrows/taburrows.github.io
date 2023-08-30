@@ -14,6 +14,20 @@ IAP uses your existing project roles and permissions when you connect to VM inst
 
 
 
+The Identity Aware Proxy CIDR netblock is 35.235.240.0/20
+
+
+To tunnel ssh traffic through IAP:
+```
+gcloud compute ssh NAME_OF_VM_INSTANCE --tunnel-through-iap
+```
+
+```
+gcloud compute start-iap-tunnel INSTANCE_NAME INSTANCE_PORT \
+    --local-host-port=localhost:LOCAL_PORT \
+    --zone=ZONE
+```
+
 TCP Forwarding
 
 It is possible to use IAP Desktop to connect to instances using a graphical user interface from an instance with Windows Desktop. You can read more about IAP Desktop on the GitHub repository hosting the download for the tool.
