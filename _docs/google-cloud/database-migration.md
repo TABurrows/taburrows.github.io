@@ -167,4 +167,21 @@ Cloud SQL DBs scale vertically increasing MEMORY, vCPUs and Disk Space.
 
 
 
+Planning:
+- Application Inventory
+- Database Dependencies
+- App Catalogue
+
+
+Making the business case:
+- Value vs risk assessment
+
+
+
+### Google's Implementation Methodology
+
+
+There can be: Delays, bugs, downtime and cost overruns
+
+Over time it is easy to lose track of Database Dependencies - then when things are switched, unexpected things fail.
 
