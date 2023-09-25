@@ -78,6 +78,11 @@ Service-oriented Applications can be the easiest to move to the cloud because th
 
 
 
+Approach:
+- Use UNIT and INTEGRATION testing for all STORED PROCEDURES and DATA MIGRATION CODE
+- Make sure you have a DEPENDABLE Backup and Restore process in place
+- Take an inventory of Client Applications
+
 
 ## Optimize DBs in the Cloud
 
@@ -125,5 +130,35 @@ To handle high volumes of reads:
 - Replicas are Synchronised ASYNCHRONOUSLY
 
 For Global Applications:
-- create read replicas in MULTIPLE REGIONS - one or more READ REPLICAs can be added for very large applications
+- create read replicas in MULTIPLE REGIONS - one or more READ REPLICAs can be added for very large applications:
+    - the 'main' replica is responsible for the data, it synchronizes the data with remaining 'read' replicas
+    - these 'read' replicas run the SELECT queries
+- replicate across regions for lower latency to customers:
+    - beware of latency when replicating
+    - strong vs eventual consistency
+(here requests from users are routed to the region geographically closest to them - automate this with Google's GLOBAL LOAD BALANCERS)
+(here a 'main' will still handle writes and synchronize changes to the replicas)
+
+If you use ASYNCHRONOUS REPLICATION across regions, the replicas can have stale data for a short period of time ie. eventual consistency (as opposed to immediate consistency)
+
+
+
+#### Distributed DBs
+
+Distributed databases use clusters of nodes and multiple shards to process high-volume writes.
+If you split data into smaller pieces, you can use multiple servers to distribute the workload. As the workload increses, you can keep adding more nodes and more shards - thus providing a system that seems to be infinitely scalable. This is known as 'horizontal-scalling'/'scaling-out' where you make the DB server bigger to handle greater workloads.
+
+
+#### Cloud Spanner Scaling
+
+Cloud Spanner is a relational DB that scales horizontally by adding nodes.
+
+#### Cloud SQL Scaling
+
+Cloud SQL DBs scale vertically increasing MEMORY, vCPUs and Disk Space.
+
+
+
+
+
 
