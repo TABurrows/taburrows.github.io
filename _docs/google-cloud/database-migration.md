@@ -185,3 +185,43 @@ There can be: Delays, bugs, downtime and cost overruns
 
 Over time it is easy to lose track of Database Dependencies - then when things are switched, unexpected things fail.
 
+1.) Assess - determine the requirements, dependencies to migrate apps to Google Cloud. You gain deep knowledge about the apps you want to migrate, understand your starting point.
+    - build a comprehensive inventory of your apps:
+        - dependencies of each app
+        - services supporting your app infrastructure
+        - Servers - physical or virtual
+        - Physical appliances - such as network devices, firewalls and other dedicated hardware
+        When you move the database changes to your dependencies will need to be made. This analysis is largely about identifying dependencies and dependence. It is important to catalogue applications that are dependent on a database. Care must be taken not to break those apps when the database is moved.
+    - catalog the apps according to their properties and dependencies
+    - train and educate your teams on Google Cloud
+    - build an experiment and PoC on Google Cloud
+    - calculate the total cost of ownership of the target environment
+    - choose the workloads you want to migrate first
+2.) Plan
+    A good PoC should include: 
+        - a broad set of use cases your apps need to support
+        - defined performance, availability, failover and network requirements
+        - the Google Cloud services you want to investigate
+    Experimentation and testing that should validate assumptions, and demonstrate the value of Cloud to business leaders.
+        - a comprehensive list of use cases
+        - all the requirements for each use case such as performance and scalability requirements
+        - expected consistency guarantees, fail over mechanisms and network requirements
+        - a potential list of technologies and products that you want to investigate and test
+    You should design PoCs and experiments to validate all the use cases on your list.
+    Each experiment should have a precise validity context, scope, expected outputs and measurable business impact.
+    A PoC will help you calculate the total cost of ownership fo a Cloud Solution.
+    When you have a clear view of the Resources you need in the new environment, you can build a total cost of ownership model that lets you compare your cost on Google Cloud with the cost of your current environment. When building this cost model, you should consider both the costs for the hardware and software. Also all the operational cost of running your own data center such as power, cooling, maintenance and other support services. Its typically easier to reduce costs in an elastic environment like the Cloud than it is on-prem.
+    Once you have an exhaustive view of you current environment, you need to complete your migration plan by choosing the initial order in which you want to migrate apps.
+    The apps you migrate first are the ones that let's your teams build their knowledge and experience on Google Cloud. Greater Cloud exposure and experience from your team can lower the risk of complications during the deployment phase of your migration and make subsequent migrations easier and quicker. For this reason, choosing the right first-movers is crucial for a successful migration.
+    You can pick one app or put many apps from across your apps matrix in your first movers list. Some criteria:
+        - consider the business value of the app, but don't choose a mission-critical app where the risk is too great
+        - consider the team responsible for development, deployment and operations fo the App
+        - make sure you understand the number, type and scope of dependencies of the app
+        - More dependencies can create a more difficult migration
+        - be careful to understand the compliance and licensing requirements of the app
+        - make sure the licenses allow you to run in the Cloud - don't violate any compliance rules
+3.) Deploy
+    Automate resource creation through scripting.
+    Terraform is considered a First-Class citizen on Google Cloud
+4.) Optimize
+    Assess the current environment, set your optimization goals and then optimize for those goals. Re-assess.
