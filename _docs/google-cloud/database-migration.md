@@ -225,3 +225,40 @@ Over time it is easy to lose track of Database Dependencies - then when things a
     Terraform is considered a First-Class citizen on Google Cloud
 4.) Optimize
     Assess the current environment, set your optimization goals and then optimize for those goals. Re-assess.
+
+
+### Database Migration
+
+Five Steps to migrate a db:
+- transfer the data 
+    - Interconnect - increments of 10Gb
+    - Transfer Appliance (you keep the encryption key, in case of theft or loss, data is secured)
+    - Consider using Cloud Storage as a Staging Area
+    - Storage Transfer Service can be used to transfer data from another CSP's buckets or from on-prem file servers
+        - Transfer jobs are simple to create and can be run on a recurring schedule if needed
+- resolve any data integration issues
+    - For Data Transformations, use Cloud Dataflow (Apache Beam), Cloud Data Fusion (Apache Spark) or Cloud Composer (Apache Airflow)
+    - 3rd party tools such as Striim
+- validate the migration
+    - use automated testing:
+        - Unit tests verify each individual function, property, stored procedure, trigger etc.
+        - Integration tests ensure that different components work together eg. clients can use services, services can use their databases
+        - Regression tests ensure that the new platform is consistent with the older one, that new functionality does not break older code
+        For lower-level tests, use an automation framework that works with your favourite programming language. There are also many third-party testing tools that you can use for system, security and black-box testing
+- promote the new database
+    - use SRE techniques to ensure that the new server works before the switchover
+    With a Green/Blue deployment, you run both environments at the same time. You test the new environment before migrating workloads on to it. Then when ready switch environments where the Blue environment becomes Green and vice versa. With a Canary deployment you run both the old and new environments simultaneously, gradually migrating production requests to the new environment and monitoring for errors. If there are no errors increase the traffic to the new environment until all traffic has been moved.
+- retire the old database
+
+
+### Database Migration Approaches
+
+Generally four choices, choose based on how much downtime can be tolerated and the complexity of the environment:
+- Scheduled Maintenance
+    For when you can tolerate some downtime. Define a time window when the database and applications will be unavailable. Migrate to the new Database, then migrate Client connections. The length of the window will depend on the amount of data you need to transfer. It might be possible to do an initial migration of historical data, then only load the diff during the window.
+- Continuous Replication
+    Use the built-in replication tools to synch old and new DBs. Then move client connections and then retire the old DB. Makes sense for on-prem Oracle to BMS.
+- Split Reading and Writing
+    Here the clients read and write to both the old and new databases for some amount of time. (requires code changes)
+- Data Access Microservice
+    All data access is encapsulated or hidden behind the serivce.  First migrate all client connections to the service, the service then handles migration from the old to new DB (making split reading and writing seamless to the client). Complex but is useful when you have many clients to migrate and can tolerate minimal or no downtime.
