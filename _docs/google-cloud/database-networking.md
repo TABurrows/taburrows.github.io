@@ -37,9 +37,9 @@ This DEFAULT NETWORK contains a subnet for EACH REGION in GCP's - along with def
 When creating a SUBNET, make sure the INTERNAL IP ADDRESS ranges DO NOT OVERLAP. Try to use SMALL CIDR ranges to reduce the chance of IP Overlap Conflicts.
 
 The parameters for configuring a Firewall Rule include:
-- Name (unique, use a consistent naming convention)
+- Name (unique, use a consistent naming convention: [network name]-[allow or deny]-[protocol or port] )
 - Network
-- Priority
+- Priority ( Lower Number === Higher Priority )
 - Ingress or Egress (DIRECTION - Ingress is DENIED by default, Egress is ALLOWED by default)
 - Allow or Deny
 - Target and Sources (TARGETS: all VMs, a tag(s) or a service account(s); SOURCES: usually IP Address ranges )
@@ -50,3 +50,5 @@ Each FIREWALL RULE is SCOPED to a NETWORK. If multiple rules conflict, then the 
 Avoid using external IPs, they increase costs and weaken security.
 
 Within Google Cloud all traffic is encrypted by default.  Try to use SSL/TLS outside. When you need to connect on-prem networks to Google Cloud resources use VPNs or Cloud Interconnect rather than External IPs.
+
+Use 0.0.0.0/0 with care - and only when appropriate
