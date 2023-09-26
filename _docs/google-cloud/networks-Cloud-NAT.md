@@ -5,6 +5,7 @@ order: 1
 ---
 Networks - Cloud NAT
 
+
 When applied to a Subnet GCP automatically enables Private Google Access (and can't be disabled manually) for that range thus any VMs in that Subnet use Private Google Access to connecto to Google APIs and Services. With Private Google Access, Cloud NAT never performs NAT for traffic sent to the select external IP addresses of Google APIs and Services.
 
 - Not dependent on a single, physical gateway device
@@ -32,3 +33,4 @@ resource.labels.region="us-central1"
 resource.labels.gateway_name="nat-config"
 resource.labels.router_id="4815398893085330369"
 ```
+

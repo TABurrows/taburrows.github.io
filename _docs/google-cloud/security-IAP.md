@@ -5,6 +5,7 @@ order: 1
 ---
 Security - Identity Aware Proxy
 
+
 IAP is an enterprise security model that enables every employee to work from untrusted networks without the use of a VPN.
 
 IAP provides a central authentication and authorization layer for your applications over HTTPs.
@@ -123,3 +124,16 @@ def user():
 The above assertion is the cryptographically signed data provided in the specified request header. The code uses a library to validate and decode that data. Validation uses the public keys that Google provides for checking data it signs, and knowing the audience that the data was prepared for (essentially, the Google Cloud project that is being protected). Helper functions keys() and audience() gather and return those values.
 
 The signed object has two pieces of data we need: the verified email address, and the unique ID value (provided in the sub, for subscriber, standard field).
+
+
+
+
+
+
+
+
+
+Allows one to connect to all of the VMs created privately within a project without configurint SSH keys:
+```
+gcloud services enable iap.googleapis.com
+```
