@@ -56,3 +56,12 @@ Creation:
 Can start as a single Node. 
 Google recommends you keep CPU usage below 65% and add more nodes if this is exceeded.
 
+
+#### Cloud SQL - GUI Options
+
+- Enable Automatic Storage increases - allows you to start off with smaller disks and grow them as needed
+- Can have a Private IP, Public IP or both
+    A Private IP is most secure, however you have to configure or authorize clients to connect to that instance throught the Private IP using a PEERED NETWORK. Enabling Private IP creates a VPC PEERING between the Cloud SQL Database network and the Customer's VPC. So only VMs in the PEERED NETWORK can access the Cloud SQL Database.
+    With Public IPs, a firewall is used to protect instances.
+- Backups are disk snapshots - can only be restored to another Cloud SQL DB.
+- Patch management is included in the service
