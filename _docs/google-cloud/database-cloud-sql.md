@@ -65,3 +65,5 @@ Google recommends you keep CPU usage below 65% and add more nodes if this is exc
     With Public IPs, a firewall is used to protect instances.
 - Backups are disk snapshots - can only be restored to another Cloud SQL DB.
 - Patch management is included in the service
+
+- Highly available
