@@ -262,3 +262,35 @@ Generally four choices, choose based on how much downtime can be tolerated and t
     Here the clients read and write to both the old and new databases for some amount of time. (requires code changes)
 - Data Access Microservice
     All data access is encapsulated or hidden behind the serivce.  First migrate all client connections to the service, the service then handles migration from the old to new DB (making split reading and writing seamless to the client). Complex but is useful when you have many clients to migrate and can tolerate minimal or no downtime.
+
+
+
+
+### Testing
+- Unit
+- Integration
+- Regression
+
+
+Three categories of testing a database migration/verifications:
+
+- Structural - validates everything that should have been moved, has successfully been moved. eg. every table, procedure, index, foreign key, trigger, login etc. has been brought over and that the new environment is structurally the same as the original
+    - Write automated Structural tests to ensure that all tables have been migrated
+    - Write automated Structural tests to ensure that fields, data-types, links and constraints were migrated
+    - Write automated Structural tests to ensure that all indexes have been created, Primary foreign key relationships were created and that primary and foreign keys match correctly in related tables
+    - Write automated Structural tests to ensure that all stored procedures and and triggers were migrated and that all user logins were migrated
+
+- Functional - goes to the next level and makes sure that all of the data has been migrated successfully. It ensures:
+    - all of the views, stored procedures work as intended
+    - that users can log in and see what they are supposed to see and not what they shouldn't
+    Write Automated Functional tests to ensure that all data was migrated correctly, that stored procedures and triggers work as expected and user logins grant and deny access appropriately and that queries and views continue to return expected results
+
+- Non-Functional - ensures the migrated database can perform well and can withstand peak usage scenarios. Loading stress tests will push the server to its limit to see whether it can handle the intended workload - and how far it will go before degraded service.  This will help determine resource allocation levels.
+
+
+### Monitoring
+
+Download and install the Monitoring Agent and Loggin Agent ( these are now combined into Ops Agent? )
+
+
+
