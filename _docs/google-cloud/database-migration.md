@@ -293,4 +293,8 @@ Three categories of testing a database migration/verifications:
 Download and install the Monitoring Agent and Loggin Agent ( these are now combined into Ops Agent? )
 
 
+### Tools
+assess - plan - deploy - optimize
 
+migVisor - helps find dependencies and dependents (first two steps)
+striim - helps with the third (deploy step)
