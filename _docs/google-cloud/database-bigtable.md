@@ -28,6 +28,16 @@ An instance can have TABLES - a table is associated with a cluster id.
 Recommended to use the Client SDK libraries to perform CRUD operations, and 'cbt' for debugging, evaluating and exploring.
 
 
+To create an instance:
+```
+gcloud bigtable instances create sandiego \
+--display-name="San Diego Traffic Sensors" \
+--cluster-storage-type=SSD \
+--cluster-config=id=sandiego-traffic-sensors-c1,zone=ZONE,nodes=1
+```
+
+
+
 To connect to an instance with 'cbt', first update the local '~/.cbtrc' file with the correct 'project id' and 'Bigtable instance ID'.
 ```
 echo project=`gcloud config get-value project` >> ~/.cbtrc
@@ -39,6 +49,8 @@ echo instance=<instance-id> >> ~/.cbtrc
 
 # to see a list of tables
 cbt ls
+
+
 ```
 
 
@@ -70,6 +82,8 @@ A BEST PRACTICE for Bigtable is to store data with SIMILAR Schemas in the SAME T
 
 ```
 cbt createtable <table-name>
+
+cbt createtable <table-name> families="lane"
 ```
 
 ### Delete a table
@@ -156,3 +170,47 @@ cbt read <table-id> count=5 columns="<column-family>:.*"
 cbt read <table-id> count=5 columns="<column-family>:<column>"
 
 ```
+
+
+### Monitoring
+
+To ensure the performance of your Bigtable instance, it is important to monitor the disk and CPU usage for each cluster in your instance. When the disk or CPU usage for a cluster exceeds the recommended thresholds, the cluster is not performant and may return errors for attempts to read or write data.
+
+In this task, you use the Monitoring tab in Bigtable to review disk and CPU utilization for a cluster to ensure that the values are under the recommended thresholds.
+
+
+### Monitor disk utilization
+
+In Bigtable, the storage capacity of each cluster is determined by the storage type (SSD or HDD) and the number of nodes. As the amount of data in a cluster increases, Bigtable redistributes the data across the nodes in the cluster.
+
+In general, we recommend that you utilize less than 70% of disk storage in a cluster. For latency-sensitive applications, we recommend that storage utilization per node remain below 60%. As your data grows, you can add more nodes to maintain low latency.
+
+You can calculate the storage usage per node by dividing the storage utilization in bytes by the number of nodes in the cluster.
+
+You may need to increase the number of nodes to satisfy the recommended levels for compute and storage. Bigtable provides options for either manual allocation or autoscaling of node count in a cluster.
+
+When autoscaling is enabled for a cluster, Bigtable adjusts the number of nodes to meet the targets for CPU and storage utilization.
+
+To apply AUTOSCALING:
+```
+gcloud bigtable clusters update sandiego-traffic-sensors-c1 \
+--instance=sandiego \
+--autoscaling-min-nodes=1 \
+--autoscaling-max-nodes=3 \
+--autoscaling-cpu-target=60
+```
+
+
+### Replication
+
+If an instance has only one cluster, the durability and availability of your data are limited to the zone where that cluster is located. Replication can improve both durability and availability by storing separate copies of your data in multiple zones or regions and automatically failing over between clusters if needed.
+
+
+### Backup and Restore
+
+In Bigtable, you can back up the schema and data of a table, and then restore the backup to a new table as needed. While replication is intended to enable failover to different regions or zones, backups are intended to help recover data from application-level data corruption or operational errors such as accidental table deletions.
+
+The cluster ID identifies the cluster from which the table is backed up and the cluster where the backup is stored.
+
+In Bigtable, backups are not readable. To access the data in a backup, you can use the option for Restore on the Backups tab for Bigtable.
+

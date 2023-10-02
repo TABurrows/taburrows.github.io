@@ -57,3 +57,26 @@ provide a manifest.json to seed the import. The manifest file specifies the tabl
     ]
 }
 ```
+
+
+
+Enable Dataflow API enable:
+```
+gcloud services enable dataflow.googleapis.com
+```
+
+
+Run a Dataflow job:
+```
+gcloud dataflow flex-template run \
+    serve-recommendation-workload \
+    --template-file-gcs-location \
+    "gs://tcd_repo/scripts/bigtable/dataflow/generate-reads.json" \
+    --parameters \
+    bigtableInstanceId="sandiego" \
+    --parameters \
+    bigtableTableId="current_conditions" \
+    --parameters \
+    workloadRate="1000000" --region \
+    us-west3
+```
