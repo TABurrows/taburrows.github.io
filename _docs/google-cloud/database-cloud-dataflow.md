@@ -29,6 +29,9 @@ Ensure the proper APIs and permissions are set:
 ```
 gcloud services disable dataflow.googleapis.com --force
 gcloud services enable dataflow.googleapis.com
+
+gcloud services disable dataflow.googleapis.com --force
+gcloud services enable dataflow.googleapis.com
 ```
 
 Console -> Analytics -> Dataflow -> Create Job From Template
@@ -36,14 +39,14 @@ Console -> Analytics -> Dataflow -> Create Job From Template
 
 Two types of template: Stream or Batch
 
-provide a manifest.json to seed the import. The manifest file specifies the table, name and type of the columns (in the order that they appear in the CSV file), and the CSV file itself, which is also stored in a Google Cloud Storage bucket.
+provide a manifest.json to seed the import. The manifest file specifies the table, name and type of the columns (in the order that they appear in the CSV file), and the CSV file itself, which is also stored in a Google Cloud Storage bucket - create one if needed:
 ```
 {
     "tables": [
         {
             "table_name": "Customer",
             "file_patterns": [
-                "gs://cloud-training/OCBL372/Customer_List.csv"
+                "gs://cloud-training/OCBL372/Customer_List_500.csv"
             ],
             "columns": [
                 {"column_name" : "CustomerId", "type_name" : "STRING" },
@@ -54,6 +57,3 @@ provide a manifest.json to seed the import. The manifest file specifies the tabl
     ]
 }
 ```
-
-
-
