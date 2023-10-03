@@ -144,6 +144,9 @@ When you create a new migration job, you first define the source database instan
 
 ### Flags
 
+alloydb.iam_authentication 'on'
+alloydb.enable_pgaudit 'on'
+
 An instance can also be configured with the 'enable_pgaudit' database flag set. Pgaudit is a popular feature of PostgreSQL that provides detailed session and object audit logging via the standard logging facility. To fully enable pgaudit you must also enable the corresponding database extension.
 
 In the Instances in your cluster section, select the <instance-name>, and then click Edit Primary. To add a database flag to your instance, click 'Add flag'.
@@ -176,7 +179,7 @@ To add a read pool instance click 'Add Read Pool' or 'Add Read Pool Instance' in
 nb. the Private IP is in the same pool of addresses as the Primary Instance. This allows for the funnelling of read-specific queries to the read pool, enhancing cluster performance.
 
 
-### Setup Backups
+### Backups & Restore
 
 Automatic backups are configured by default when every AlloyDB cluster is created. You can however create backups on-demand.
 
@@ -184,6 +187,7 @@ Under 'Databases' click 'AlloyDB for PostgreSQL' then 'Backups'
 
 AlloyDB checks that the source cluster is in the Ready state and then starts a long-running operation to perform the backup. The Backups page shows the backup with a status of In progress until the operation finshes. The speed varies based on the size of the instance.
 
+To restore a backup, you need to configure a new cluster to host its data.
 
 ### Monitoring
 
@@ -193,7 +197,78 @@ The AlloyDB Monitoring dashboard contains a great deal of information about the 
 Use the Postgres tool 'pgbench' to generate a synthetic dataset and run a simulated workload:
 ```
 # Pressure test on an instance
+# The largest table pgbench_accounts will be loaded with 5 million rows
 pgbench -h $ALLOYDB -U postgres -i -s 50 -F 90 -n postgres
+# load with 50 million rows
+pgbench -h $ALLOYDB -U postgres -i -s 500 -F 90 -n postgres
+
+# The operation corresponds to a load of fifty (50) clients, across two (2) threads, 
+# polling every thirty (30) seconds, over the course of three (3) minutes.
+pgbench -h $ALLOYDB -U postgres -c 50 -j 2 -P 30 -T 180 postgres
+# Note Mean CPU utilization, Minimum available memory, Connections, Transactions 
+# per second, Cluster storage, Maximum replication lag, and Active nodes.
 
 select count (*) from pgbench_accounts;
+```
+
+Run the following query to turn on timings for all query operations:
+```
+\timing on
+```
+
+### Accelerating Analytical Queries using the AlloyDB Columnar Engine
+
+The Columnar Engine can significantly accelerate the speed at which AlloyDB processes SQL scans, joins, and aggregates.
+
+The Columnar Engine provides the following features:
+- a column store that contains table data for selected columns, reorganized into a column-oriented format
+- a columnar query planner and execution engine to support use of the column store in queries.
+
+
+Note: testing tables as per below ( pgbench_accounts) can be relatively small, so you can add them directly to the Columnar Engine for evaluation. In a real-life deployment you would utilize the Columnar Engine's recommendation framework to automatically identify the most heavily used columns across all tables that would provide the most benefit from being managed by the engine.
+
+
+Run the following query to generate an explain plan for an unrestricted baseline query:
+```
+EXPLAIN (ANALYZE,COSTS,SETTINGS,BUFFERS,TIMING,SUMMARY,WAL,VERBOSE)
+ SELECT count(*) FROM pgbench_accounts WHERE bid < 189  OR  abalance > 100;
+```
+
+
+Flag:
+```
+google_columnar_engine.enabled 
+```
+
+Verify and enable exteions:
+```
+
+# Connect to the postgres DB
+\c postgres
+
+# List extensions
+\dx
+
+# Create the extension if it does not exist
+CREATE EXTENSION IF NOT EXISTS google_columnar_engine;
+
+```
+
+
+Test the Columnar Engine:
+```
+
+SELECT google_columnar_engine_add('pgbench_accounts');
+
+# Re-run the explain to see how performance has improved
+EXPLAIN (ANALYZE,COSTS,SETTINGS,BUFFERS,TIMING,SUMMARY,WAL,VERBOSE)
+ SELECT count(*) FROM pgbench_accounts WHERE bid < 189  OR  abalance > 100;
+# Note Planning Time and Execution Time values
+
+```
+
+
+To add a table to the columnar engine:
+```
+SELECT google_columnar_engine_add('<table_name>');
 ```
