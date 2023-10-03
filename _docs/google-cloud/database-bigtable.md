@@ -283,15 +283,3 @@ jsonPayload.work="2790839693022117026"
 ```
 
 
-
-
-Sample sequence files:
-Instance 'ecommerce-recommendations' on cluster 'ecommerce-recommendations-c1'
-
-Table 'SessionHistory' with column families 'Sales' and 'Engagements':
-Job 'import-sessions' uses sequence file:
-gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001
-
-Table 'PersonalizedProducts' with column family 'Recommendations':
-Job 'import-recommendations' uses sequence file:
-gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001
