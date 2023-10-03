@@ -214,3 +214,84 @@ The cluster ID identifies the cluster from which the table is backed up and the 
 
 In Bigtable, backups are not readable. To access the data in a backup, you can use the option for Restore on the Backups tab for Bigtable.
 
+
+
+### Scenario
+You have been hired as a database engineer for an ecommerce company that is interested in personalized sales. The company is interested in Bigtable to store online user interactions with products and personalized recommendations from machine learning models.
+
+Create a new Bigtable instance:
+```
+
+gcloud bigtable instances create INSTANCE --display-name=DISPLAY_NAME
+        [--async] [--cluster=CLUSTER]
+        [--cluster-config=[id=ID,zone=ZONE,nodes=NODES,kms-key=KMS_KEY,
+          autoscaling-min-nodes=AUTOSCALING_MIN_NODES,
+          autoscaling-max-nodes=AUTOSCALING_MAX_NODES,
+          autoscaling-cpu-target=AUTOSCALING_CPU_TARGET,
+          autoscaling-storage-target=AUTOSCALING_STORAGE_TARGET,...]]
+        [--cluster-num-nodes=CLUSTER_NUM_NODES]
+        [--cluster-storage-type=CLUSTER_STORAGE_TYPE; default="ssd"]
+        [--cluster-zone=CLUSTER_ZONE]
+        [--instance-type=INSTANCE_TYPE; default="PRODUCTION"]
+        [GCLOUD_WIDE_FLAG ...]
+
+
+
+gcloud bigtable instances create ecommerce-recommendations \
+--display-name="E-Commerce Recommendations" \
+--cluster-storage-type=SSD \
+--cluster-config=id=ecommerce-recommendations-c1,zone=ZONE,nodes=1
+
+```
+
+
+Create a Bigtable table:
+```
+
+# First configure cbtrc
+echo project=`gcloud config get-value project` >> ~/.cbtrc
+echo instance=<instance-id> >> ~/.cbtrc
+
+cbt createtable <table-id>
+
+
+# Create column families
+cbt createfamily <table-name> <column-family-name>
+
+```
+
+Create a data import job with Dataflow:
+```
+
+# Create temporary storage bucket location
+gcloud storage buckets create gs://<project-name>
+
+# Reset Dataflow APIs setting
+gcloud services disable dataflow.googleapis.com --force
+gcloud services enable dataflow.googleapis.com
+
+# Console -> Analytics -> Dataflow -> Create Job From Template
+
+
+# Log Request 
+resource.type="dataflow_step"
+resource.labels.job_id="2023-10-03_01_29_30-11412239558452042021"
+logName="projects/qwiklabs-gcp-03-1594eab7ff4f/logs/dataflow.googleapis.com%2Fworker"
+jsonPayload.work="2790839693022117026"
+
+
+```
+
+
+
+
+Sample sequence files:
+Instance 'ecommerce-recommendations' on cluster 'ecommerce-recommendations-c1'
+
+Table 'SessionHistory' with column families 'Sales' and 'Engagements':
+Job 'import-sessions' uses sequence file:
+gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001
+
+Table 'PersonalizedProducts' with column family 'Recommendations':
+Job 'import-recommendations' uses sequence file:
+gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001
