@@ -61,6 +61,12 @@ Service-Oriented Architecture:
 
 
 
+### DMS
+
+Database Migration Service provides options for one-time and continuous jobs to migrate data to Cloud SQL using different connectivity options, including IP allowlists, VPC peering, and reverse SSH tunnels.
+
+
+
 # Migration
 
 A key aspect to migrating DBs is finding DEPENDENTS and DEPENDENCIES
