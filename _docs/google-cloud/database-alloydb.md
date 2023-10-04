@@ -272,3 +272,116 @@ To add a table to the columnar engine:
 ```
 SELECT google_columnar_engine_add('<table_name>');
 ```
+
+
+
+### Example Creation Process
+
+```
+export CLUSTER_ID=lab-cluster
+export INSTANCE_ID=lab-instance
+export PASSWORD=supersecret
+export NETWORK=peering-network
+export REGION=us-east1
+export PROJECT_ID=my-project
+
+# Step 1: Create a cluster
+gcloud beta alloydb clusters create $CLUSTER_ID \
+    --password=$PASSWORD \
+    --network=$NETWORK \
+    --region=$REGION \
+    --project=$PROJECT_ID
+
+# Step 2: Creant an instance
+gcloud beta alloydb instances create $INSTANCE_ID \
+    --instance-type=PRIMARY \
+    --cpu-count=2 \
+    --region=$REGION  \
+    --cluster=$CLUSTER_ID  \
+    --project=$PROJECT_ID
+
+
+# Step 3: Create a table via a Jump Server with psql
+psql -h $ALLOYDB -U postgres
+
+
+CREATE TABLE regions (
+    region_id bigint NOT NULL,
+    region_name varchar(25)
+) ;
+ALTER TABLE regions ADD PRIMARY KEY (region_id);
+
+
+CREATE TABLE countries (
+    country_id char(2) NOT NULL,
+    country_name varchar(25),
+    region_id bigint NOT NULL,
+    PRIMARY KEY (country_id),
+    FOREIGN KEY (region_id) REFERENCES regions (region_id)
+) ;
+
+
+CREATE TABLE departments (
+    department_id smallint NOT NULL,
+    department_name varchar(30),
+    manager_id int,
+    location_id smallint,
+    PRIMARY KEY (department_id)
+);
+
+
+
+INSERT INTO regions 
+VALUES 
+(1, 'Europe'),
+(2, 'Americas'),
+(3, 'Asia'),
+(4, 'Middle East and Africa');
+
+
+
+INSERT INTO countries
+VALUES
+('IT', 'Italy', 1 ),
+('JP', 'Japan', 3 ),
+('US', 'United States of America', 2 ),
+('CA', 'Canada', 2 ),
+('CN', 'China', 3 ),
+('IN', 'India', 3 ),
+('AU', 'Australia', 3),
+('ZW', 'Zimbabwe', 4),
+('SG', 'Singapore', 3 );
+
+
+INSERT INTO departments
+VALUES
+(10, 'Administration', 200, 1700 ),
+(20, 'Marketing', 201, 1800 ),
+(30, 'Purchasing', 114, 1700 ),
+(40, 'Human Resources', 203, 2400 ),
+(50, 'Shipping', 121, 1500 ),
+(60, 'IT', 103, 1400 );
+
+
+
+
+# Step : Create a read pool
+export READ_POOL_INSTANCE_ID=lab-instance-rp1
+gcloud beta alloydb instances create $READ_POOL_INSTANCE_ID \
+    --instance-type=READ_POOL \
+    --cpu-count=2 \
+    --read-pool-node-count=2 \
+    --region=$REGION  \
+    --cluster=$CLUSTER_ID  \
+    --project=$PROJECT_ID
+
+
+
+# Step : Create backup
+export BACKUP_ID=lab-backup
+gcloud beta alloydb backups create $BACKUP_ID \
+    --cluster=$CLUSTER_ID \
+    --region=$REGION \
+    --project=$PROJECT_ID
+
+```
