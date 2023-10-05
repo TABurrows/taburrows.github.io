@@ -42,7 +42,7 @@ Client-Server:
 - business rules are implemented using constraints on fields
 - there are relationships implemented between tables, stored procedures are used as well as triggers
 - clients connect directly to the database
-- clients where intended to be as thin as possible
+- clients were intended to be as thin as possible
 - the work of managing transactions and enforcing rules was the domain of the DB server itself where this logic was centrally located and shared by the clients
 - Client-server dbs are fast and secure (often preferred architecture for many DBAs)
 
@@ -56,7 +56,7 @@ N-Tier/3-Tier:
 
 Service-Oriented Architecture:
 - DBs sit behind a firewall and their functionality is encapsulated or hidden behind a service that was made available over the network
-- Clients don't need to kno anything about the details of the DB
+- Clients don't need to know anything about the details of the DB
 - Clients only connect to the service via HTTP(s) using this technology to pass data back and forth using a text-space format like XML or JSON
 
 
