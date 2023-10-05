@@ -43,6 +43,11 @@ Create the necessary users on the MySQL destination instance, so that all users 
 Update DEFINER clauses to INVOKER on the MySQL source instance. This ensures that the security privileges used to access the data on the destination instance are set to the privileges for the user running the query, rather than the privileges for the user who defined the object.
 
 
+Process:
+First, you identify the existing MySQL users on the source instance and update DEFINER clauses to INVOKER for database objects on the source instance. Next, you create and save a Database Migration Service job. Before running the migration job, you create the necessary users on the destination database instance. Finally, you start the saved migration job; after the job runs successfully, you check the user metadata in the Cloud SQL for MySQL instance.
+
+
+
 ### Migrate from RDS for MySQL
 
 
