@@ -27,7 +27,7 @@ Add supporting features to the source database which are required in order for D
 
 - Installing and configuring the pglogical database extension.
 - Configuring the stand-alone PostgreSQL database to allow access from Cloud Shell and Cloud SQL.
-- Adding the pglogical database extension to the postgres, orders and gmemegen_db databases on the stand-alone server.
+- Adding the pglogical database extension to the DATABASES eg. postgres, orders and gmemegen_db databases on the stand-alone server.
 - Creating a migration_admin user (with Replication permissions) for database migration and granting the required permissions to schemata and relations to that user.
 
 
@@ -316,7 +316,7 @@ gcloud iam service-accounts keys create $CLOUDSQL_SERVICE_ACCOUNT.json \
 ```
 
 
-The application provided is a simple Flask-SQLAlchemy web application called gMemegen. It creates memes by supplying a set of photographs and capturing header and footer text, storing them in the database and rendering the meme to a local folder. It runs on a single pod with two containers; one for the application and one for the Cloud SQL Auth Proxy deployed in the side-car pattern.
+The application provided is a simple Flask-SQLAlchemy web application called gMemegen. It creates memes by supplying a set of photographs and capturing header and footer text, storing them in the database and rendering them to a local folder. It runs on a single pod with two containers; one for the application and one for the Cloud SQL Auth Proxy deployed in the side-car pattern.
 
 A load balancer will marshal requests between the app and the database through the side-car. This load balancer will expose an external Ingress IP address through which you will access the app in your browser.
 

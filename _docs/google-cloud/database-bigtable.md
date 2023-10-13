@@ -25,7 +25,7 @@ Node Scaling Mode:
 
 An instance can have TABLES - a table is associated with a cluster id.
 
-Recommended to use the Client SDK libraries to perform CRUD operations, and 'cbt' for debugging, evaluating and exploring.
+Recommended to use the Client SDK libraries to perform CRUD operations, and 'cbt' CLI for debugging, evaluating and exploring.
 
 
 To create an instance:
@@ -56,7 +56,7 @@ cbt ls
 
 ### Design a Schema and Row Key
 
-To design a SCHEMA and ROW KEY in Bigtable, it is helpful to first answer key questions about the data that will be store:
+To design a SCHEMA and ROW KEY in Bigtable, it is helpful to first answer key questions about the data that will be stored:
 - What does an individual row represent? (eg. an individual user, a unique sensor) - to identify row structure
 - What will be the most common queries to this data? - to create a row key
 - What values are collected for each row? - To identify the columns (referred to as COLUMN QUALIFIERS)
@@ -97,7 +97,7 @@ Best practice for COLUMNS and COLUMN FAMILIES include:
 - Organize related COLUMNS in the same COLUMN FAMILY
 - Choose short but meaningful names for the COLUMN FAMILIES (max size is 16KB)
 
-- Create as many columns as you need. Bigtable is sparse and there's not space penalty for a column that is not sued in a row. You can have millions of columns in a table, so long as no row exceeds the maximum limit of 256MB per row.
+- Create as many columns as you need. Bigtable is sparse and there's no space penalty for a column that is not stored in a row. You can have millions of columns in a table, so long as no row exceeds the maximum limit of 256MB per row.
 - Avoid using too many columns in any single row. Although a table can have millions of columns, a ROW SHOULD NOT. A few factors contribute to this best practice:
     - it takes time for Bigtable to process each cell in a row
     - Each cell adds some overhead to the amount of data that's stored in your table and sent over the network

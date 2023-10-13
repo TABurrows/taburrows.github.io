@@ -292,7 +292,7 @@ Suppose you wanted to fetch all rows of Categories that have CategoryNames value
 
 Adding a secondary index to an existing table REQUIRES A SCHEMA UPDATE. Like other schema updates, Cloud Spanner supports adding an index while the database continues to serve traffic. Cloud Spanner populates the index with data (also known as a "BACKFILL") under the hood. Backfills might take several minutes to complete, but you don't have to take the database offline or avoid writing to certain tables or columns during this process.
 
-You can a SECONDARY INDEX with Python or SQL DDL: 
+You can create a SECONDARY INDEX with Python or SQL DDL: 
 ```
 CREATE INDEX CategoryByCategoryName ON Categroy(CategoryName)
 ```
@@ -369,7 +369,7 @@ Remote servers that receive a subplan act as the "root" server for their subplan
 
 Cloud Spanner sends the execution plan to a root server that coordinates the query execution and performs the remote distribution of subplans.
 
-This execution plan starts with a serialization which orders all values returned. Then the plan completes an initial hash aggregate operator to preliminarily calculate results. Then a distributed union is executed which DISTRIBUTES SUBPLANS TO REMOTE SERVERS whose splits satisfy ProductId < 100. The distributed union sends results to a final hash aggregate operator. The aggregate operator performs the COUNT aggregation by ProductId and returns results to a serialize result operator. Finally a scan is conducted to order the results to be returned.
+This execution plan starts with a SERIALIZATION which orders all values returned. Then the plan completes an initial HASH AGGREGATE OPERATOR to preliminarily calculate results. Then a DISTRIBUTED UNION is executed which DISTRIBUTES SUBPLANS TO REMOTE SERVERS whose splits satisfy ProductId < 100. The DISTRIBUTED UNION sends results to a final hash aggregate operator. The aggregate operator performs the COUNT aggregation by ProductId and returns results to a serialize result operator. Finally a scan is conducted to order the results to be returned.
 
 Explanation view has:
 |
@@ -389,7 +389,7 @@ Table Scan
 
 ### Co-located join queries
 
-Interleaved tables are physically stored with their rows of related tables co-located. A join between interleaved tables is known as a co-located join. Co-located joins can offer performance benefits over joins that require indexes or back joins.
+Interleaved tables are physically stored with their rows of related tables co-located. A join between interleaved tables is known as a CO-LOCATED JOIN. Co-located joins can offer performance benefits over joins that require indexes or back joins.
 
 ```
 SELECT c.CategoryName, pr.ProductName
@@ -397,9 +397,9 @@ FROM Category AS c, Product AS pr
 WHERE c.PortfolioId = pr.PortfolioId AND c.CategoryId = pr.CategoryId;
 ```
 
-This execution plan starts with a distributed union, which distributes subplans to remote servers that have splits of the table Category. Because Product is an interleaved table of Category, each remote server is able to execute the entire subplan on each remote server without requiring a join to a different server.
+This execution plan starts with a distributed union, which distributes subplans to remote servers that have SPLITS of the table Category. Because Product is an interleaved table of Category, each remote server is able to execute the entire subplan on each remote server without requiring a join to a different server.
 
-The subplans contain a cross apply. Each cross apply performs a table scan on table Category to retrieve PortfolioId, CategoryId, and CategoryName. The cross apply then maps output from the table scan to output from an index scan on index CategoryByCategoryName, subject to a filter of the PortfolioId in the index matching the PortfolioId from the table scan output. Each cross apply sends its results to a serialize result operator which serializes the CategoryName and ProductName data and returns results to the local distributed unions. The distributed union aggregates results from the local distributed unions and returns them as the query result.
+The subplans contain a CROSS APPLY. Each cross apply performs a table scan on table Category to retrieve PortfolioId, CategoryId, and CategoryName. The cross apply then maps output from the table scan to output from an index scan on index CategoryByCategoryName, subject to a filter of the PortfolioId in the index matching the PortfolioId from the table scan output. Each cross apply sends its results to a serialize result operator which serializes the CategoryName and ProductName data and returns results to the local distributed unions. The distributed union aggregates results from the local distributed unions and returns them as the query result.
 
 
 

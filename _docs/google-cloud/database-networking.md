@@ -45,7 +45,7 @@ The parameters for configuring a Firewall Rule include:
 - Target and Sources (TARGETS: all VMs, a tag(s) or a service account(s); SOURCES: usually IP Address ranges )
 - Protocol and Ports (PROTOCOL: TCP, UDP or ICMP; PORTS: usually one or a range)
 
-Each FIREWALL RULE is SCOPED to a NETWORK. If multiple rules conflict, then the PRIORITY determines which rule wins (LOWER NUMBERS have HIGHER PRIORITY).
+Each FIREWALL RULE is SCOPED to a VPC NETWORK. If multiple rules conflict, then the PRIORITY determines which rule wins (LOWER NUMBERS have HIGHER PRIORITY).
 
 Avoid using external IPs, they increase costs and weaken security.
 

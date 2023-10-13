@@ -180,7 +180,7 @@ Planning:
 
 
 Making the business case:
-- Value vs risk assessment
+- A 'Value vs risk' assessment
 
 
 
