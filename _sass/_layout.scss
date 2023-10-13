@@ -184,7 +184,8 @@ $nav-image: $baseurl + "/images/menu.svg";
 }
 
 .content,
-.page-header {
+.page-header,
+.cert-bar {
 	max-width: $content-max-width;
 	padding: 0 ($space + 5) $space;
 	margin: $space auto 0 auto;
