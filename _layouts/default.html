@@ -63,6 +63,9 @@
 					{% assign grouped = site.docs | group_by: 'category' %}
 					{% for group in grouped %}
 						<li class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
+							
+
+
 							{% assign items = group.items | sort: 'order' %}
 							<div class="nav-item-header">
 								<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
@@ -70,6 +73,11 @@
 							</div>
 							<ul>
 								{% for item in items %}
+
+								{% if item.subcategory == 'Cyphers' %}
+									<div>Subcategory: {{ item.subcategory }}</div>
+								{% endif %}
+
 									<li class="nav-item push-left {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{% if item.url == page.url %}&gt;&nbsp;{% endif %}{{ item.title }}</a></li>
 								{% endfor %}
 							</ul>
@@ -88,7 +96,7 @@
 			<article class="content">
 				{{ content }}
 			</article>
-			{% if page.title and page.title == "Welcome" %}
+			{% if page.title and page.title == "Notes" %}
 			<div class="cert-bar" id="cert-bar">
 				<img class="cert-img" alt="Google Certified Associate Engineer" src="./images/ae.png" />
 				<img class="cert-img" alt="Google Certified Cloud Architect" src="./images/ca.png" />

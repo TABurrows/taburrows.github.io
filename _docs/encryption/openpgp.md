@@ -1,6 +1,7 @@
 ---
 title: OpenPGP
 category: Encryption
+subcategory: Cyphers
 order: 1
 ---
 OpenPGP
