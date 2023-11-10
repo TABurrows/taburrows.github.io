@@ -1,6 +1,6 @@
 ---
-title: APIs - Rate Limiting
-category: Encryption
+title: Rate Limiting
+category: APIs
 order: 1
 ---
 APIs - Rate Limiting
