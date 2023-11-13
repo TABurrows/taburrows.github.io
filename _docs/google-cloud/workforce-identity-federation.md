@@ -21,7 +21,7 @@ You can also define CUSTOM ATTRIBUTES (CUSTOM CLAIMS) in your IdP that can then 
 - Max size for ATTRIBUTE/CLAIMS MAPPINGS is 4KB
 
 
-Attributes:
+## Attributes:
 
 - 'google.subject' (REQUIRED) a Unique Identifier for the AUTHTENTICATING USER. it is often the 'subject assertion of the JWT' because Cloud Audit Logs record the contents of this field as THE PRINCIPAL.
     You can use this FIELD to configure IAM for AUTHORIZATION DECISIONS. (don't use a mutable JWT value because if you change the value in your IdP's USER DIRECTORY, the user loses access)
@@ -46,5 +46,24 @@ Attributes:
     Although there are no restrictions in place on the ATTRIBUTES you can map here, we strongly recommend that you choose attributes whose values are STABLE. eg. use 'attribute.role' instead of the less stable 'attribute.job_description'
 
 
-You can TRANSFORM ATTRIBUTE/CLAIMS VALUES using the STANDARD CEL FUNCTIONS. 
+You can TRANSFORM ATTRIBUTE/CLAIMS VALUES using the STANDARD CEL FUNCTIONS. You can also use two CUSTOM FUNCTIONS:
+    - 'split' function: splits a string on the PROVIDED SEPARATOR value. For example to extract the attribute 'username' from an email address ATTRIBUTE/CLAIM, split at the '@' symbol assigning only the first '0' element from the split array:
+    ```
+    attribute.username=assertion.email.split("@")[0]
+    ```
 
+    - 'join' function: joins a list of strings on the PROVIDED SEPARATOR value. To populate the custom attribute 'department', you might concatenate a list of strings with '.' as a separator:
+    ```
+    attribute.department=assertion.department.join(".")
+    ```
+
+
+## Attribute Conditions
+
+Attribute conditions are optional CEL expressions that let you set constraints on the identity attributes that Google Cloud accepts.
+
+The benefits of using attribute conditions include the following:
+
+- you can use attribute conditions to allow only a subset of external identities to authenticate to your Google Cloud project. For example, you might want to allow only those identities that are in a specific team to sign in, especially if you are using a public IdP. eg. allow Accounting, but not Engineering
+
+- Attribute conditions let you prevent intended for use with another platform from being used with Google Cloud and vice-versa. eg. avoid the 'confused deputy problem' ( a type of privilege escalation - capability-based security systems protect against confused deputy problems, whilst access-control list-based systems do not)
