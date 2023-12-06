@@ -1,7 +1,7 @@
 ---
-title: Probes
+title: Network Policies
 category: Kubernetes Application Developer
 order: 1
 ---
-Probes
+Network Policies
 
