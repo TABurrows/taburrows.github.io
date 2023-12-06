@@ -1,7 +1,7 @@
 ---
-title: Probes
+title: Persistent Volume Claims
 category: Kubernetes Application Developer
 order: 1
 ---
-Probes
+Persistent Volume Claims
 
