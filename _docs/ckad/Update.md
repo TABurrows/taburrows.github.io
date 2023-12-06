@@ -1,7 +1,7 @@
 ---
-title: Probes
+title: Update
 category: Kubernetes Application Developer
 order: 1
 ---
-Probes
+Update
 

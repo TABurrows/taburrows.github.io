@@ -1,6 +1,6 @@
 ---
-title: Secrets
+title: Services
 category: Kubernetes Application Developer
 order: 1
 ---
-Secrets
+Services
