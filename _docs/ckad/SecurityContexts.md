@@ -1,6 +1,6 @@
 ---
 title: Security Contexts
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 Security Contexts

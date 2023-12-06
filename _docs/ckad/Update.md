@@ -1,6 +1,6 @@
 ---
 title: Update
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 Update

@@ -1,6 +1,6 @@
 ---
 title: Rollback
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 Rollback

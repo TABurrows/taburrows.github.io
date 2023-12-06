@@ -1,6 +1,6 @@
 ---
 title: Network Policies
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 Network Policies

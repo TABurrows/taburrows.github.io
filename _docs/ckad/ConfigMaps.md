@@ -1,6 +1,6 @@
 ---
 title: ConfigMaps
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 ConfigMaps

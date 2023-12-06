@@ -1,6 +1,6 @@
 ---
 title: GCP Setup
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 GCP Setup

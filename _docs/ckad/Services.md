@@ -1,6 +1,6 @@
 ---
 title: Services
-category: Kubernetes Application Developer
+category: CKAD
 order: 1
 ---
 Services
