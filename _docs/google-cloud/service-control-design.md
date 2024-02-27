@@ -29,3 +29,7 @@ For an organization that handles healthcare data you might have one perimeter ar
 
 If your org complies with standards such as PCI DSS, you might want to have a separate perimeter around regulated data.
 
+Additionally if you host independent 3rd party tenants such as partners or customers, consider defining a perimeter for each tenant. If you consider data movement from one of these tenants to another to be exfiltration, it is recommended to implement a separate perimeter.
+
+## Perimeter Design
+
