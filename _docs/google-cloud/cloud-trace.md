@@ -5,7 +5,12 @@ order: 1
 ---
 Cloud Trace
 
-can answer the questions:
+- Surface Performance Degradations
+- Generate Latency reports
+
+
+Collects LATENCY DATA from App Engine, HTTPs Load Balancers and Applications Instrumented with the Cloud Trace API, it can answer the questions:
+
 - how long does it take my application to handle a given request?
 - why is it taking my application so long to handle a request?
 - why do some of my requests take longer than others?
@@ -15,3 +20,18 @@ can answer the questions:
 - what are my application's dependencies?
 
 
+Language-specific SDKs can analyze projects running on VMs (even those not on Google Cloud):
+- Java
+- Node.js
+- Ruby
+- Go
+
+The Trace API can be used to submit and retrieve trace data from any source. In addition a Zipkin connector allows Zipkin tracers to submit data to Cloud Trace.
+
+nb. Traces are automatically captured for projects running on App Engine.
+
+
+Dashboard:
+'Most frequent URIs' and 'Most frequent RPCs' from the previous day are listed, along with the average latency. Open a 'Trace list' window where you can view latency as a function of time, and investigate details of any individual trace.
+
+'Chargeable Trace Spans' pane displays the number of spans ingested in the current calendar month, and the total for the previous month.

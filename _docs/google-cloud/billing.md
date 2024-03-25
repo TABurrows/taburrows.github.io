@@ -85,7 +85,7 @@ And:
 SELECT labels.value as location, SUM(cost) as cost
 FROM `dataset.table`
 LEFT JOIN UNNEST(labels) as labels
-ON lables.key = "location"
+ON labels.key = "location"
 GROUP BY location
 ORDER BY cost DESC
 ```
@@ -107,3 +107,30 @@ GROUP BY service.description
 
 Export to file:
 
+
+
+
+```
+SELECT service.description, usage_start_time, usage_end_time, project.id, labels.key, labels.value, cost, usage.amount
+FROM()
+WHERE labels.key='cost_centre' and labels.value = 'playlist'
+```
+
+
+
+
+You can add labels to a session by including SET @@query_label = "KEY:VALUE"; at the beginning of a SQL statement. This will label the resulting job from that query session. However, this command cannot be used within the definition of a view.
+
+
+
+Example Billing Query with labels:
+```
+SET @@query_label = "cost_centre:eph-envs";
+
+
+-- SELECT SUM(cost) as TOTAL_COST
+SELECT service.description, usage_start_time, usage_end_time, project.id, label.key, label.value, cost, usage.amount
+FROM `MY_PROJECT.all_billing_data.gcp_billing_export_v1_01A067_73BD1C_30CD54`,
+UNNEST (labels) as label
+WHERE label.key = 'cost_centre' and label.value = 'eph-envs' OR label.key ='cost_centre' and label.value = 'poc-eph-env'
+```
