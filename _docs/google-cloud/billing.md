@@ -134,3 +134,4 @@ FROM `MY_PROJECT.all_billing_data.gcp_billing_export_v1_01A067_73BD1C_30CD54`,
 UNNEST (labels) as label
 WHERE label.key = 'cost_centre' and label.value = 'eph-envs' OR label.key ='cost_centre' and label.value = 'poc-eph-env'
 ```
+
