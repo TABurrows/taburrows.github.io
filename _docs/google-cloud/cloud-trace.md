@@ -35,3 +35,14 @@ Dashboard:
 'Most frequent URIs' and 'Most frequent RPCs' from the previous day are listed, along with the average latency. Open a 'Trace list' window where you can view latency as a function of time, and investigate details of any individual trace.
 
 'Chargeable Trace Spans' pane displays the number of spans ingested in the current calendar month, and the total for the previous month.
+
+After instrumenting you can inspect latency data for a single request and view aggregate latency for an entire application in the Trace console.
+
+
+Configurations with automatic tracing:
+- App Engine Standard: (Java 8, Python 2, and PHP 5 don't need to use the Cloud Trace Client libraries as these Runtimes automatically send latency data to Cloud Trace for requests to application URIs)
+- Cloud Functions and Cloud Run: for Incoming and Outgoing HTTP requests, LATENCY DATA is automatically sent to Cloud Trace
+
+
+
+nb. OpenTelemetry libraries are simpler to use than the Cloud Trace client libraries because they hide some of the complexity of the corresponding Trace API.
