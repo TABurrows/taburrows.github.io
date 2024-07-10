@@ -35,6 +35,9 @@ CLI commands are easier to write if gcloud has some predefined properties:
 # Set the default project property
 gcloud config set core/project $CLUSTER_PROJECT
 
+# Set the default compute region
+gcloud config set compute/region $COMPUTE_REGION
+
 # Set the default cluster property
 gcloud config set container/cluster $CLUSTER_NAME
 ```
@@ -76,4 +79,23 @@ A group of Access Parameters that define the target cluster, the user and the na
 
 ```
 kubectl config get-contexts
+```
+
+
+## Node Pools
+
+Node pools container the nodes available to the cluster.
+
+To list the node pools and their summary:
+
+```
+gcloud container node-pools list --region=europe-west2
+```
+
+To gather detailed information on a specific node pool:
+
+```
+gcloud container node-pools describe $NODE_POOL_NAME \
+    --cluster=$CLUSTER_NAME \
+    --region=$CLUSTER_REGION
 ```
