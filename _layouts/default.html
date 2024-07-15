@@ -74,11 +74,8 @@
 							<ul>
 								{% for item in items %}
 
-								{% if item.subcategory == 'Cyphers' %}
-									<div>Subcategory: {{ item.subcategory }}</div>
-								{% endif %}
 
-									<li class="nav-item push-left {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{% if item.url == page.url %}&gt;&nbsp;{% endif %}{{ item.title }}</a></li>
+									<li class="nav-item push-left {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{% if item.url == page.url %}{% endif %}{{ item.title }}</a></li>
 								{% endfor %}
 							</ul>
 						</li>
