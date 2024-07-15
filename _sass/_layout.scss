@@ -250,7 +250,7 @@ nav > ul {
 .nav-item {
 	display: block;
 	font-family: "Open Sans", sans-serif;
-	// line-height: 1;
+	line-height: 1;
 	margin: 0;
 
 	nav:not(.full-navigation) & > ul {
@@ -259,12 +259,13 @@ nav > ul {
 
 	nav:not(.full-navigation) &.current > ul {
 		display: block;
+		font-weight: 600;
 	}
 
 	> a {
 		color: #666;
 		text-decoration: none;
-		font-size: 1.4rem;
+		// font-size: 1.4rem;
 		padding: $space / 2 0 $space / 2 $space * 2;
 	}
 
