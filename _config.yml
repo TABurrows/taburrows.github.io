@@ -5,7 +5,7 @@ title: taburrows.github.io
 url: "https://taburrows.github.io"
 baseurl:
 google_analytics_key:
-show_full_navigation: true
+show_full_navigation: false
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
