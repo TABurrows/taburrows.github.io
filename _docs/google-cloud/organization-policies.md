@@ -28,3 +28,24 @@ iam.disableServiceAccountKeyCreation will restrict the creation of new external 
 iam.disableCrossProjectServiceAccountUsage will prevent Service Accounts from being attached to resources in other projects.
 
 
+Export the attached Org ID
+```
+export ORG_ID=$(gcloud organizations list --format 'value(ID)')
+```
+
+List Org Level Org Policies
+```
+gcloud resource-manager org-policies --organization $ORG_ID
+```
+
+List all set and unset Org Policies
+```
+gcloud resource-manager org-policies list --show-unset --organization $ORG_ID
+```
+
+List the names of the Org Polcy constraints
+```
+gcloud resource-manager org-policies list --organization $ORG_ID --format='value(constraint.basename())'
+```
+
+
