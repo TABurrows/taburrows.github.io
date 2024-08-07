@@ -1,4 +1,3 @@
-
 ---
 title: Organization Policies
 category: Google Cloud
