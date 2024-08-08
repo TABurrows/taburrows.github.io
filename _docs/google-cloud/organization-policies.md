@@ -47,4 +47,10 @@ List the names of the Org Polcy constraints
 gcloud resource-manager org-policies list --organization $ORG_ID --format='value(constraint.basename())'
 ```
 
+Use describe with a contraint name to see the set values
+```
+gcloud resource-manager org-policies describe constraints/gcp.resourceLocations --organization $ORG_ID
+```
+
+
 
