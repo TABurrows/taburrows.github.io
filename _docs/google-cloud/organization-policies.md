@@ -55,14 +55,24 @@ gcloud resource-manager org-policies describe constraints/gcp.resourceLocations 
 List constraints and their values under the Org
 ```
 for constraint in $(gcloud resource-manager org-policies list --organization $ORG_ID --format='value(constraint.basename())') 
-  do
-     gcloud  resource-manager org-policies describe $constraint --organization $ORG_ID 
-  done
+do
+    gcloud  resource-manager org-policies describe $constraint --organization $ORG_ID 
+done
 ```
 
 List all constraints iteratively down an Orgs folders
 ```
-
+for folder in $(gcloud resource-manager folders list --organization $ORG_ID  --format='value(name)')
+do
+    export FOLDER=$folder
+    echo "----------------------------------------------"
+    echo "Getting Org policies for - " $FOLDER
+    for constraint in $(gcloud resource-manager org-policies list --folder=$FOLDER  --format='value(constraint.basename())') 
+    do
+        gcloud  resource-manager org-policies describe $constraint --folder=$FOLDER 
+    done
+    echo "----------------------------------------------"
+done
 ```
 
 
