@@ -52,5 +52,17 @@ Use describe with a contraint name to see the set values
 gcloud resource-manager org-policies describe constraints/gcp.resourceLocations --organization $ORG_ID
 ```
 
+List constraints and their values under the Org
+```
+for constraint in $(gcloud resource-manager org-policies list --organization $ORG_ID --format='value(constraint.basename())') 
+  do
+     gcloud  resource-manager org-policies describe $constraint --organization $ORG_ID 
+  done
+```
+
+List all constraints iteratively down an Orgs folders
+```
+
+```
 
 
