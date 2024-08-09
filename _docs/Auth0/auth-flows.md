@@ -7,7 +7,7 @@ order: 1
 
 ## Authentication and Authorization Flows
 
-![OAuth2.0 - Authorization Code Flow](./images/AUTH0/AUTH-CODE-FLOW.png)
+![OAuth2.0 - Authorization Code Flow](/images/AUTH0/AUTH-CODE-FLOW.png)
 
 Terms for OAuth2.0:
 - Resource Owner (usually Client)
