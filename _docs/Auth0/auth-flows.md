@@ -38,6 +38,9 @@ This flow has advantages over the `Implicit Flow with Form Post` for SPAs includ
 - Native Application
 - Mobile Application
 
+### Implicit Flow with Form Post
+
+Use when the SPA does not need a `Refresh Token` however `Authorization Code with PKCE` is alwyas a better option.
 
 ### Resource Owner Password Flow
 
