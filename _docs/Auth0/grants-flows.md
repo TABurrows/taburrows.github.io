@@ -1,9 +1,8 @@
 ---
-title: Authentication and Authorization Flows
+title: Grants / Flows
 category: Auth0
 order: 1
 ---
-Authentication and Authorization Flows
 
 ![OAuth2.0 - Authorization Code Flow](/images/AUTH0/AUTH-CODE-FLOW.png)
 
