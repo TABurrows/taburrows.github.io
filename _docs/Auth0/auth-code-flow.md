@@ -53,3 +53,24 @@ On successful login, the application will have access to the user's `ID Token` a
 
 #### Login - Authorize User
 
+First step in the Auth Code Grant Flow, is to GET THE USER'S AUTHORIZATION.
+
+The steps to get the user's Authorization:
+1. Authenticate the User
+2. Redirect the User to an IdP to handle Authentication
+3. Obtain User's CONSENT for the REQUESTED PERMISSION LEVEL (unless consent has already been given)
+
+You can Authorize a User by calling the `Authorization URL`
+eg. example `Authorization URL` call:
+```
+https://{your_auth0_domain}/authorise?
+    response_type=code&
+    client_id={client_id}&
+    redirect_url={https://{your_redirect_domain/callback_path}&
+    scope={scope}&
+    state={state}
+```
+
+Parameters
+`response_type` 
+
