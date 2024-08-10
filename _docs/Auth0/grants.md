@@ -27,7 +27,7 @@ Use when:
 
 ### Authorization Code Flow
 
-(optional Refresh Token) Use when:
+(optionally returns Refresh Token) Use when:
 - Client is a Web App executing on a Server eg. no Web Browser = lower risk of exposure
 
 
