@@ -63,7 +63,7 @@ The steps to get the user's Authorization:
 You can Authorize a User by calling the `Authorization URL`
 eg. example `Authorization URL` call:
 ```
-https://{your_auth0_domain}/authorise?
+https://{your_auth0_domain}/authorize?
     response_type=code&
     client_id={client_id}&
     redirect_url={https://{your_redirect_domain/callback_path}&
@@ -71,6 +71,11 @@ https://{your_auth0_domain}/authorise?
     state={state}
 ```
 
-Parameters
-`response_type` 
+Parameters table
+
+| Parameter | Description
+| :--- | :--- |
+| `response_type` | Denotes `code` or `token` (eg. access token) that Auth0 `/authorize` will return. For the AUTHORIZATION CODE GRANT FLOW the value should always be `code` |
+| `client_id` | The Client ID value from Auth0's Application Settings |
+| `redirect_uri` | The callback URI.  This must exist as an endpoint on the Regular Web App and it must be registered as a redirect URL in Auth0's Application Settings nb. the OAuth spec, fragments are not honoured |
 
