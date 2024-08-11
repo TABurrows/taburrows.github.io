@@ -83,6 +83,7 @@ Parameters
 | `connection` | (OPTIONAL) ID of the organization to use when authenticating a user. When NOT provided, if your application is configured to `Display Organization Prompt` the user will be able to enter the Organization Name when Authenticating. So to send a user to Github for authentication, enable the Github social login within the Auth0 Application Settings at `Auth0 Dashboard > Authentication > Social` and get the CONNECTION NAME value from the `Settings` tab (which for Github is 'github').  Then add that name to request URL with `&connection=github&`.  The default connection value will always be Auth0 `auth0`.  In the response, the Subject claim `sub` will be prefixed with the `connection` name value eg `auth0|581xxx` or `github|439xxx` |
 | `invitation` | (OPTIONAL) Ticket ID of the Organization Invitation.  When Inviting a Member to an Organization, your app should handle invitation accpetance by forwarding the `invitation` and `organization` key-value pairs when the user accepts the invitation. |
 | `login_hint` | (OPTIONAL) Populates the Username/Email field for the login or signup page when redirecting to Auth0.  Suppuorted by the Universal Login Experience. |
+| `organization` | (OPTIONAL) ID of the organization to use when authenticating a User. When not provided and if your Auth0 Application Settings are configured to `Display Organization Prompt`, then the User will be able to enter the Organization Name when authenticating. |
 
 
 Sample HTML:
@@ -224,6 +225,5 @@ Note:
 
 - `refresh_token` tokens can be used to replace outdated `access_token` Access Tokens or `id_token` ID Tokens.  The `refresh_token` will only be present in the response if the request included the scope of `offline_access` and `Allow Offline Access` is enabled in the Auth0 Application Settings.
 (nb. `refresh_token` tokens must stored securely as they essentially allow a user to remain Authenticated for as long as the `refresh_token` is valid)
-
 
 
