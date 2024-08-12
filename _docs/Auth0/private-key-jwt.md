@@ -81,5 +81,72 @@ main();
 
 
 
+Output, a JWT that decode might look something like this:
+
+```
+{
+  "alg": "RS256",
+  "kid": "my kid"
+}
+{
+  "iat": 1626684584,
+  "iss": "my client id",
+  "sub": "my client id",
+  "aud": "https://mytenant.auth0.com/",
+  "exp": 1626684644,
+  "jti": "e4dc8ed1-b108-4901-8bbc-c07a791817e7"
+}
+```
+
+This JWT Assertion is now ready for use in Authenticating an Application against Auth0.
 
 
+## Exchanging JWT Assertions for Access Tokens
+
+This example uses the `Client Credential Flow` but Private Key JWT Authentication can be used for other Grant Types that also allow for the replacing of `client_secret` and `client_assertion` properties.
+
+To exchange the JWT Assertion for an Access Token, `POST` to the Auth0 Authentication API Token Endpoint `/oauth/token` with the following parameters:
+- `client_assertion` - the JWT Assertion
+- `resource_server_identifier` - where the resource server is the server that hosts and serves requests for protected resources
+
+An example with a cURL POST:
+
+```
+AUTH0_TENANCY=""
+CLIENT_ASSERTION=""
+RESOURCE_SERVER_IDENIFIER=""
+
+curl --location --request POST 'https://$AUTH0_TENANCY/oauth/token' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'grant_type=client_credentials' \
+  --data-urlencode 'client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer' \
+  --data-urlencode 'client_assertion=$CLIENT_ASSERTION' \
+  --data-urlencode 'audience=$RESOURCE_SERVER_IDENIFIER'
+```
+
+
+### Support Endpoints
+
+The following endpoints support `private_key_jwt` authentication for configured Auth0 Applications:
+
+- POST `/oauth/token`
+- POST `/oauth/revoke`
+    ( https://auth0.com/docs/api/authentication#revoke-refresh-token )
+- POST `/mfa/challenge`
+    ( https://auth0.com/docs/api/authentication#challenge-request )
+- POST `/passwordless/start`
+    ( https://auth0.com/docs/api/authentication#get-code-or-link )
+
+
+
+
+### Assertion Limits
+
+The Maximum Length of the JWT Assertion is 2048 bytes.
+
+Claims within the JWT Assertion have the following limits:
+
+- `iss` 64 Characters
+- `sub` 64 Characters
+- `jti` 64 Characters
+- `alg` 16 Characters
