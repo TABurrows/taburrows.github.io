@@ -15,3 +15,5 @@ Single-Page Apps Limitations
 - Cannot securely store a Client Secret because their entire source is available in the browser
 
 To address these scenarios, OAuth 2.0 provides Authorization Code Flow with Proof Key for Code Exchange (PKCE) (OAuth 2.0 - RFC 7636)
+
+The PKCE-Enhanced Authorization Code Flow introduces a secret created by calling the application that can be verified by the Authorization Server.
