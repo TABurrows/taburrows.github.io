@@ -1,10 +1,10 @@
 ---
-title: Grants
+title: Flows
 category: Auth0
 order: 1
 ---
 
-A Grant is an Authorization and Authentication Flow.
+A Flow (Grant) is an Authorization and Authentication Flow.
 
 
 ![OAuth2.0 - Authorization Code Flow](/images/AUTH0/AUTH-CODE-FLOW.png)
