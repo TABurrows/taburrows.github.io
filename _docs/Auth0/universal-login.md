@@ -28,6 +28,15 @@ With `Embedded Login` users interact with a Login Widget served from the same pa
 
 Universal Login is more secure than Embedded Login.  Authentication takes place over the same domain, eliminating cross-origin requests.  CROSS-ORIGIN AUTHENTICATION IS INHERENTLY MORE DANGEROUS.  Collecting user credentials in an application served from one origin and then sending them to another origin can present certain security vulnerabilities. Phishing Attacks are more likely, as are BUCKET BRIGADE ATTACKS. Universal Login does not send information between Origins, thereby negating cross-origin concerns. See Preventing Common Cyber Security Attacks (https://auth0.com/docs/secure/security-guidance/prevent-threats)
 
+Embedded User Agents are UNSAFE for Third Parties, including the Auth0 Authorization Server itself.  If an Embedded Login is used, the App has access to both the Authorization Grant and the User's Authentication Credentials.  As a consequence, this data is left vulnerable to recording or malicious use.  Even if the app is trusted, allowing it to access the Authorization Grant as well as the user's Full Credentials is unnecessary.  This violates the Principle of Least Privilage and increases attack surfaces.
+
+( https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html )
+
+
+
+## Universal Login with Auth0
+
+A Universal Login strategy, where Auth0 will show a login page if Authentication is required.  You can customize the Login Page using the Dashboard. you can use Auth0's Custom Domains (£) to persist the  across teh Login Page adn the App.  The redirect to the Login Page will be transparent to your Users becuse the domain will not change. ( https://auth0.com/docs/customize/custom-domains )
 
 
 
