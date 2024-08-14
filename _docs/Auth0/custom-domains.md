@@ -56,3 +56,18 @@ The following Auth0 authentication features support the use of Custom Domains:
 | `WS-Federation` | Auth0 as identity provider using WS-Fed add-on |
 | `OAuth 2.0 / OIDC Compliant Flows` | Using the `/authorize` and `/oauth/token` endpoints |
 
+
+
+### Certificate Management
+
+Auth0 Managed: 
+    - Add a CNAME record on the Domain
+    - Validate the record and generate the cert on Auth0 Servers
+    - auto-renewed every 3 months
+
+Self-Managed:
+    - Auth0 negotiates SSL with the proxy, not directly with the end-user client
+    - The proxy in turn negotiates SSL with the end-user.
+        (you need to add a header: cname-api-key to validate requests)
+    - You must be an Auth0 Enterprise subscriber to use this options
+    
