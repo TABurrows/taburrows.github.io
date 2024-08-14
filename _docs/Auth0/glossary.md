@@ -4,7 +4,11 @@ category: Auth0
 order: 1
 ---
 
+`Access Token`- an Authorization Credential in the form of an Opaque string or JWT used to access an API
 
+`Client ID` - Identification value given to your registered resource from Auth0
+
+`Client Secret` - Secret used by a client (application) to authenticate with the Authorization Server; it should be known only by the Client and the Authorization Server and must be sufficiently random to not be guessable
 
 `Authorization Server` - a Centralized Server that contributes to defining the Boundaries of a User's Access.  For example, you authorization server can control the Data, Tasks and Features available to a User
 
