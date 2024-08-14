@@ -53,7 +53,7 @@ Embedded Logins in Web Apps with Auth0 use Cross-Origin Authentication (https://
 
 Auth0 does not recommend using Cross-Origin Authentication.  However if you must, only do so when authenticating against a Directory using a Username and Password. Social IdPs and Enterprise Federation use a different mechanism, redirecting via standardized protocols such as OIDC and SAML.  Additionally, cross-origin authentication is only applicable to embedded login on the web (using Lock or auth0.js). Native Applications using Embedded Login make use of the standard OAuth 2.0 Token Endpoint.
 
-In addition, if you have not enabled Custom Domains, the end-user must have a browser that supports Third-Party Cookies.  Otherwise, in some Browsers, Cross-Origin Authentication will fail.  This limitation applies to both traditional Username/Password database connections as well as Passwordless database connections.
+In addition, if you have not enabled Custom Domains, the end-user must have a browser that supports Third-Party Cookies.  Otherwise, in some Browsers, Cross-Origin Authentication will fail.  This limitation applies to both traditional Username/Password database connections as well as Passwordless (a form of authentication that does not rely on a password as the first form factor) database connections.
 
 
 
