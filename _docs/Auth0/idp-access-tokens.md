@@ -22,7 +22,7 @@ For certain identity providers, Auth0 can store a REFRESH TOKEN:
 
 - BitBucket
 
-- Google OAuth 2.0 (pass the parameter `access_type=offline` as well as the `conneection_scope` parameter with required scopes when calling the Auth0 `/authorize` endpoint)
+- Google OAuth 2.0 (pass the parameter `access_type=offline` as well as the `connection_scope` parameter with required scopes when calling the Auth0 `/authorize` endpoint)
 
 - Sharepoint
 
