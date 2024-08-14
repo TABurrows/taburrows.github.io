@@ -77,3 +77,57 @@ The following Claims are subject to Auth0s Restrictions:
 `vot`
 `vtm`
 `x5t#S256`
+
+
+The Following Claims are only subject to General Restrictions:
+`address`
+`birthdate`
+`email`
+`email_verified`
+`family_name`
+`gender`
+`given_name`
+`locale`
+`middle_name`
+`name`
+`nickname`
+`phone_number`
+`phone_number_verified`
+`picture`
+`preferred_username`
+`profile`
+`updated_at`
+`website`
+`zoneinfo`
+
+
+Namespaced Guidelines
+
+- Use any non-Auth0 HTTP or HTTPS URL as a namespace identifier
+
+- The Auth0 domains cannot be use:
+    - auth0.com
+    - webtask.io
+    - webtask.run
+
+- Use a URL that you control as a Namespace Identifier - reduces likelihood of collisions
+
+- Begin the URL with http:// or https://
+
+- Create multiple namespaces as needed
+
+Once you have chosen your namespace, append the claim to it to create a namespaced claim, which can be added to a token:
+http://www.example.com/favourite_color
+
+
+
+
+## Creating Custom Claims
+
+Use Auth0 Actions to create custom claims. The `api` object allows you to use the method `setCustomClaim` on the `accessToken` access token object or ID tokens:
+
+```
+exports.onExecuteCredentialsExchange = async (event, api) => {
+  api.accessToken.setCustomClaim('myClaim', 'this is a private, non namespaced claim');
+};
+```
