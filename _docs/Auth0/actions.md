@@ -55,3 +55,15 @@ Select a `Successful Login` event and then choose from:
 - Context Data
 - Action Details
 to see the details of the event
+
+
+
+## Triggers
+
+References:
+- Event Object: provides contextual information about the request
+- API Object: provides methods for changing the behaviour of the flow
+
+
+
+
