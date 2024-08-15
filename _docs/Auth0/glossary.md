@@ -8,6 +8,8 @@ order: 1
 
 `Client ID` - Identification value given to your registered resource from Auth0
 
+`JSON Web Token (JWT)` - JSON Web Tokens are used for Secure Data Transmission, Authentication and Authorization in Auth0. They should be Parsed and Validated in Regular Web, Native and SPA applications to determine integrity, signature authenticity, tampering, misuse, expiration, structure, claims to assure the least amount of risk 
+
 `ID Tokens` - a type of JWT that is used in `Token-based Authentication` to cache a User's Profile Information and provide it to a Client Application for personalized experiences. ID Tokens should NEVER be used to directly access an API or to make Authorization Decisions. Requires VALIDATION before use. Ensure that ID Tokens are not vulnerable to XSS and can not be read by malicious JS. Default lifetime is 10 hours/ 36000 Seconds
 
 `Client Secret` - Secret used by a client (application) to authenticate with the Authorization Server; it should be known only by the Client and the Authorization Server and must be sufficiently random to not be guessable
