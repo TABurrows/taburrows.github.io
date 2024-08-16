@@ -21,3 +21,14 @@ Implementation guides from beginning to end:
 
 `Single Sign-On for Regular Web Apps`: How to configure and implement a Web App that uses SSO for employees using Active Directory and Contractors using a separate User Store
     (https://auth0.com/docs/architecture-scenarios/web-app-sso)
+
+`Server Application + API`: How to configurea Timesheet API using a Cron Job to timesheet entries
+    (https://auth0.com/docs/architecture-scenarios/server-api)
+
+`Single Page Application + API`: How to configure a Timesheet API using a Single-Page application to log Timesheet Entries
+    (https://auth0.com/docs/architecture-scenarios/spa-api)
+
+`Mobile Application + API`: How to configure a Timesheet API using a Mobile Application to log Timesheet Entries in a Centralized DAtabase
+    (https://auth0.com/docs/architecture-scenarios/mobile-api)
+
+    
