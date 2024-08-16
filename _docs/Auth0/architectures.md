@@ -40,5 +40,6 @@ Downloadable spreadsheet checklists that include tasks for each phase of the SDL
 `Implementation Checklists`: How to plan for the tasks of each phase of the SDLC.
     (https://auth0.com/docs/architecture-scenarios/checklists)
 
-
+`Implementation Resources`: A list of Auth0 videos, glossaries, white papers, blog posts, quickstarts, APIs, SDKs etc including the Auth0 Support Center.
+    (https://auth0.com/docs/architecture-scenarios/implementation-resources)
 
