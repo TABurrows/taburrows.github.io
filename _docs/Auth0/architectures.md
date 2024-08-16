@@ -16,3 +16,6 @@ B2B/B2E:    (https://assets.ctfassets.net/cdy7uua7fh8z/63F0WOPJdVzsPMxV1Xvp8x/7a
 
 Implementation guides from beginning to end:
 
+Multiple Organizations: How to configure an application architecture that uses either Single IdP Organizations or Multiple IdP Organizations.
+    (https://auth0.com/docs/architecture-scenarios/multiple-organization-architecture)
+
