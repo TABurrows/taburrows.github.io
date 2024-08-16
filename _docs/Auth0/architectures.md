@@ -16,6 +16,8 @@ B2B/B2E:    (https://assets.ctfassets.net/cdy7uua7fh8z/63F0WOPJdVzsPMxV1Xvp8x/7a
 
 Implementation guides from beginning to end:
 
-Multiple Organizations: How to configure an application architecture that uses either Single IdP Organizations or Multiple IdP Organizations.
+`Multiple Organizations`: How to configure an application architecture that uses either Single IdP Organizations or Multiple IdP Organizations.
     (https://auth0.com/docs/architecture-scenarios/multiple-organization-architecture)
 
+`Single Sign-On for Regular Web Apps`: How to configure and implement a Web App that uses SSO for employees using Active Directory and Contractors using a separate User Store
+    (https://auth0.com/docs/architecture-scenarios/web-app-sso)
