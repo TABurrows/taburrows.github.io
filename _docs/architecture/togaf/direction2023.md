@@ -10,4 +10,4 @@
 - to focus on employee experience
 - to improve customer and partner experience as well
 - to further embrace product-based IT delivery
-- 
+

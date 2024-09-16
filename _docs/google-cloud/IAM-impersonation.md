@@ -3,7 +3,7 @@ title: IAM Impersonation
 category: Google Cloud
 order: 1
 ---
-IAM Impersonation
+Google Cloud - IAM Impersonation
 
 
 When a PRINCIPAL, such as a USER or another SERVICE ACCOUNT, uses short lived credentials to authenticate as a service account, it's called impersonating the service account.

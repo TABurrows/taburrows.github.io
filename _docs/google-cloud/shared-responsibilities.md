@@ -1,4 +1,9 @@
-
+---
+title: Shared Responsibility Model
+category: Google Cloud
+order: 1
+---
+Google Cloud - Shared Responsibility Model
 
 
 

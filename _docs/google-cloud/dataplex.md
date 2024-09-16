@@ -1,4 +1,9 @@
-
+---
+title: Google Cloud Dataplex
+category: Google Cloud
+order: 1
+---
+Google Cloud Dataplex
 
 Enterprises have data that's distributed across data lakes, data warehouses, and data marts. Using Dataplex, you can do the following:
 
