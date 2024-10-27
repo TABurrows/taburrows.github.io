@@ -8,7 +8,7 @@
     left: 0;
     width: 100%;
     z-index: 20;
-    /* filter: drop-shadow(8px 8px 4px #cecece); */
+    filter: drop-shadow(2px 2px 2px #cecece);
 }
 
 .search-widget {
@@ -22,7 +22,6 @@
 
 .search-controls {
     padding: 0 0.75rem;
-    /* border-radius: 0.75rem; */
     position: relative;
 }
 
