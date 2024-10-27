@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Solution from "../components/Solution.astro";
+import Tags from "../components/Tags.astro";
+import Summary from "../components/Summary.astro";
+
+const allSolutions = await getCollection("solutions");
+---
+
+<BaseLayout>
+
+  <div class="content-container">
+    <div class="page-title">Solutions</div>
+
+    <ul class="unordered-list">
+      {
+        allSolutions.map((solution) => (
+          <Solution url={`/solutions/${solution.slug}/`} title={solution.data.title}>
+            <Tags items={solution.data.tags} slot="tags" />
+            <Summary text={solution.data.summary} slot="summary" />
+          </Solution>
+        ))
+      }
+    </ul>
+  </div>
+
+</BaseLayout>

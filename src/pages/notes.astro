@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Note from "../components/Note.astro";
+import Tags from "../components/Tags.astro";
+import Summary from "../components/Summary.astro";
+
+const allNotes = await getCollection("notes");
+---
+
+<BaseLayout>
+
+  <div class="content-container">
+    <div class="page-title">Notes</div>
+
+    <ul class="unordered-list">
+      {
+        allNotes.map((note) => (
+          <Note url={`/notes/${note.slug}/`} title={note.data.title}>
+            <Tags items={note.data.tags} slot="tags" />
+            <Summary text={note.data.summary} slot="summary" />
+          </Note>
+        ))
+      }
+    </ul>
+  </div>
+
+</BaseLayout>

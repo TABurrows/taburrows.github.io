@@ -1,0 +1,37 @@
+---
+title: "Images Test"
+summary: "Summary here"
+tags: [ "Tag1", "Tag2" ]
+---
+import { Picture } from 'astro:assets';
+import LandscapeImage from './large-landscape.jpg';
+
+
+# Test Markdown with Images
+
+This markdown file is used to test Eleventy and Images.
+
+```js
+<Picture 
+    src={LandscapeImage} 
+    alt="Landscape" 
+    formats={['avif', 'webp']}
+    densities={[1.5, 2]} 
+
+    widths={[240,540,720]}
+
+
+    fallbackFormat={format}
+/>
+```
+
+
+<Picture
+    pictureAttributes={{ class: 'image lazy' }}
+    src={LandscapeImage}
+    alt="Landscape Image"
+    densities={[1.5, 2]}
+    formats={['avif', 'webp']}
+    loading="eager"
+    fetchpriority="high"
+/>
