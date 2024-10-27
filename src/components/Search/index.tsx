@@ -6,8 +6,6 @@ import Fuse from 'fuse.js';
 import './Search.css';
 
 
-// https://danidiaztech.com/create-astro-search-component/
-
 interface SearchResult {
     content: string;
     file: string;

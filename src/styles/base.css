@@ -8,7 +8,6 @@
   user-select: none;
 }
 
-/* #3178c6 */
 #title-bar-title {
   font-optical-sizing: auto;
   font-weight: 400;
@@ -28,8 +27,6 @@
 .rule-line {
   border-top: 2px solid #cecece;
   margin-top: 10px;
-  /* margin-bottom: 15px; */
-  /* padding: .65rem 0 .95rem 0; */
 }
 
 
