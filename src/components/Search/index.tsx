@@ -27,7 +27,7 @@ interface SearchResults extends Array<SearchResult> {
 export default function Search(props: any){
 
     const hidden = {"visibility": "hidden", "height": "0vh"};
-    const visible = {"visibility": "visible", "height": "20vh"};
+    const visible = {"visibility": "visible", "height": "60vh"};
 
     const [search, setSearch] = useState("");
     const [results, setResults] = useState<null | SearchResults>(null);

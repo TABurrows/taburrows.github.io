@@ -107,30 +107,7 @@
     max-width: 32px;
     max-height: 32px;
     cursor: pointer;
-    /* float: right; */
-    /* font-size: 10pt; */
-    /* border: 1px solid #999; */
-    /* color: #999; */
 }
-
-
-/* 
-.search-results-delme {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 2rem;
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    display: block;
-    height: 200px;
-    background-color: white;
-    border-bottom-left-radius: 0.75rem;
-    border-bottom-right-radius: 0.75rem;
-    border: 1px solid #cecece;
-} */
 
 
 @media screen and (max-width:668px) {
