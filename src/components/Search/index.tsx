@@ -23,20 +23,22 @@ interface SearchResults extends Array<SearchResult> {
     count: number;
 }
 
-interface Visibility {
-    visibility: string;
-    height: string; 
-}
+// interface Visibility {
+//     visibility?: string | undefined;
+//     height?: string | undefined; 
+// }
 
 
-export default function Search({searchList}){
+
+
+export default function Search({searchList = []}){
 
     const hidden = {"visibility": "hidden", "height": "0vh"};
     const visible = {"visibility": "visible", "height": "20vh"};
 
     const [search, setSearch] = useState("");
     const [results, setResults] = useState<null | SearchResults>(null);
-    const [visibility, setVisibility] = useState<Visibility>(hidden);
+    const [visibility, setVisibility] = useState(hidden as React.CSSProperties);
 
     const options = {
         keys: ['content', 'frontmatter.title', 'frontmatter.summary', 'frontmatter.slug'],
@@ -56,19 +58,19 @@ export default function Search({searchList}){
                                 .map((result)=>result.item)
                                 .slice(0,5);
             console.log(`results ${JSON.stringify(results,null,2)}`)
-            setVisibility(visible);
+            setVisibility(visible as React.CSSProperties);
             const nextResults = results as SearchResults
             nextResults.count = results.length;
             setResults(nextResults);
         } else {
-            setVisibility(hidden);
+            setVisibility(hidden as React.CSSProperties);
             setResults(null);
         }
     },[search])
 
 
 
-    const handleKeyUp = (event: Event) => {
+    const handleKeyUp = (event: React.KeyboardEvent<HTMLDivElement>) => {
         if(event.key === "Escape"){
             clearSearch();
         }
@@ -77,7 +79,7 @@ export default function Search({searchList}){
     const clearSearch = () => {
         setSearch("");
         setResults(null);
-        setVisibility(hidden);
+        setVisibility(hidden as React.CSSProperties);
     }
 
     const generateResults = (results: null | SearchResults ) => {
