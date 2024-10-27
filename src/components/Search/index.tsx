@@ -10,10 +10,12 @@ import './Search.css';
 
 interface SearchResult {
     content: string;
+    file: string;
     frontmatter: {
         title: string;
         summary: string;
         slug: string;
+        tags: Array<string>;
     }
 }
 
@@ -21,6 +23,10 @@ interface SearchResults extends Array<SearchResult> {
     count: number;
 }
 
+interface Visibility {
+    visibility: string;
+    height: string; 
+}
 
 
 export default function Search({searchList}){
@@ -30,7 +36,7 @@ export default function Search({searchList}){
 
     const [search, setSearch] = useState("");
     const [results, setResults] = useState<null | SearchResults>(null);
-    const [visibility, setVisibility] = useState(hidden);
+    const [visibility, setVisibility] = useState<Visibility>(hidden);
 
     const options = {
         keys: ['content', 'frontmatter.title', 'frontmatter.summary', 'frontmatter.slug'],
@@ -62,7 +68,7 @@ export default function Search({searchList}){
 
 
 
-    const handleKeyUp = (event) => {
+    const handleKeyUp = (event: Event) => {
         if(event.key === "Escape"){
             clearSearch();
         }
@@ -70,11 +76,11 @@ export default function Search({searchList}){
 
     const clearSearch = () => {
         setSearch("");
-        setResults("");
+        setResults(null);
         setVisibility(hidden);
     }
 
-    const generateResults = (results) => {
+    const generateResults = (results: null | SearchResults ) => {
 
         if(results==null){
             return ( <div className="search-results-container"></div> )
@@ -97,7 +103,7 @@ export default function Search({searchList}){
                     </div>
                     <div className="search-results-result-summary">{result.frontmatter.summary}</div>
                     <div className="search-results-result-tags">
-                        { tags.map( (tag, index) => 
+                        { tags.map( (tag: string, index: number) => 
                             <div className="search-results-result-tag" key={index}>
                                 {tag}
                             </div>
