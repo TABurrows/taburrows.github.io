@@ -23,15 +23,8 @@ interface SearchResults extends Array<SearchResult> {
     count: number;
 }
 
-// interface Visibility {
-//     visibility?: string | undefined;
-//     height?: string | undefined; 
-// }
 
-
-
-
-export default function Search({searchList = []}){
+export default function Search(props: any){
 
     const hidden = {"visibility": "hidden", "height": "0vh"};
     const visible = {"visibility": "visible", "height": "20vh"};
@@ -47,7 +40,7 @@ export default function Search({searchList = []}){
         threshold: 0.5,
     }
     
-    const fuse = new Fuse(searchList, options);
+    const fuse = new Fuse(props.searchList, options);
 
 
     useEffect(() => {
