@@ -1,5 +1,5 @@
 ---
-title: "Web Apps: Simple Application"
+title: "Web App: Simple Application"
 summary: "A cheatsheet on using TypeScript + React + Vite for creating a simple application to build on further"
 tags: [ "Web", "TypeScript", "React", "Vite" ]
 ---

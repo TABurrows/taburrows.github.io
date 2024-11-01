@@ -1,5 +1,5 @@
 ---
-title: "Web Apps: Simple Mapping"
+title: "Web App: Simple Mapping"
 summary: "A cheatsheet on using TypeScript + React + Vite + Leaflet to create Mapping Applications for the Web"
 tags: [ "Web", "TypeScript", "React", "Leaflet", "Maps", "Vite" ]
 ---
