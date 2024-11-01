@@ -1,0 +1,18 @@
+---
+
+---
+
+# Scaffold: TypeScript + React + Vite
+
+To scaffold a new application with Vite's `react-ts` template:
+
+```shell
+npm create vite@latest my-app-name -- --template react-ts
+```
+
+Follow the prompts, then change into the `my-app-name` directory and install:
+
+```shell
+cd my-app-name
+npm i
+```

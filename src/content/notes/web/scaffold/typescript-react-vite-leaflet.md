@@ -1,0 +1,81 @@
+---
+
+---
+
+# Scaffold: TypeScript + React + Vite + Leaflet
+
+To scaffold a new application with Vite's `react-ts` template and add support for Open Street Map:
+
+```shell
+npm create vite@latest my-app-name -- --template react-ts
+```
+
+Follow the prompts, then change into the `my-app-name` directory and install:
+
+```shell
+cd my-app-name
+npm i
+```
+
+Add the dependencies:
+
+```shell
+npm i -S leaflet react-leaflet
+npm i -D @types/leaflet
+```
+
+
+Create quick start component:
+
+
+```shell
+rm src/App.tsx src/index.css src/App.css
+touch src/App.tsx src/index.css
+```
+
+Add the quick start style to `src/index.css`:
+
+```css
+/* src/index.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+```
+
+Add the quick start code to `src/App.tsx`:
+
+```tsx
+// src/App.tsx
+import { LatLngExpression } from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
+import "leaflet/dist/leaflet.css";
+
+const point: LatLngExpression = [51.505, -0.09];
+
+export default function() {
+
+    return (
+        <MapContainer center={point} zoom={7} scrollWheelZoom={false} style={{height: "100vh", width: "100vw"}}>
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={point}>
+                <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+            </Marker>
+        </MapContainer>
+    )
+};
+```
+
+Then run the development environment:
+
+```shell
+npm run dev
+```
