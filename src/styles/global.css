@@ -78,7 +78,7 @@ nav, .search-anchor, main {
 }
 
 nav, header, main, .search-anchor {
-  max-width: 80ch;
+  max-width: 90ch;
   width: 100%;
   padding: 0 2rem;
 }
@@ -188,7 +188,6 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin: 0 auto;
   min-height: 4rem;
 }
@@ -203,21 +202,50 @@ pre {
 
 
 @media screen and (max-width:668px) {
-  main {
+  
+  .search-anchor {
+    width: 90%
+  }
+
+  nav, header, main, .search-anchor {
+    max-width: 80ch;
+  }
+
+}
+
+@media screen and (min-width:669px) and (max-width:928px) {
+  
+  .search-anchor {
+    width: 64ch;
+  }
+  
+  nav, header, main, .search-anchor {
+    max-width: 80ch;
   }
 }
 
-@media screen and (min-width:668px) and (max-width:928px) {
-  main {
+@media screen and (min-width:929px) and (max-width:1608px) {
+  
+  .search-anchor {
+    margin-top: 3rem;
+    width: 68ch;
   }
+  
+  nav, header, main, .search-anchor {
+    max-width: 80ch;
+  }
+
 }
 
-@media screen and (min-width:928px) and (max-width:1608px) {
-  main {
+@media screen and (min-width:1609px) {
+  
+  .search-anchor {
+    margin-top: 4rem;
+    width: 72ch;
   }
-}
+  
+  nav, header, main, .search-anchor {
+    max-width: 90ch;
+  }
 
-@media screen and (min-width:1608px) {
-  main {
-  }
 }
