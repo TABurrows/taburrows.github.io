@@ -244,8 +244,12 @@ pre {
     width: 72ch;
   }
   
-  nav, header, main, .search-anchor {
+  nav, header, .search-anchor {
     max-width: 90ch;
+  }
+
+  main {
+    max-width: 84ch;
   }
 
 }
