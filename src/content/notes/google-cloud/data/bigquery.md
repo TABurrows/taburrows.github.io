@@ -1,7 +1,8 @@
 ---
 title: "BigQuery"
 summary: "Using BigQuery Reservations"
-tags: [ "BigQuery" ]
+tags: [ "BigQuery", "Analytics" ]
 ---
 
-# BigQuery
+
+Using BigQuery for Advance Analytics.

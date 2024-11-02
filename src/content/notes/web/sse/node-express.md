@@ -4,7 +4,8 @@ summary: "An overview on building a Server-Sent Events Solution with Express.js"
 tags: ["Web", "SSE", "Node.js", "Express"]
 ---
 
-# Using Server-Sent Events in an Express.js Application
+
+Using Server-Sent Events in an Express.js Application
 
 ```javascript
 const express = require("express);

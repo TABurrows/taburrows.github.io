@@ -78,10 +78,13 @@ pre {
 
 .tag-item {
   border-radius: .25rem;
-  padding: .25rem 1rem;
+  padding: .35rem 1rem;
   margin-bottom: 1rem;
   margin-right: 1rem;
   border: 1px solid #cecece;
-  font-weight: 200;
-  color: #222;
+  color: black;
+  font-size: 11pt;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  user-select: none;
 }

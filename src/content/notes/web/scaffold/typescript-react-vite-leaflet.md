@@ -6,7 +6,7 @@ tags: [ "Web", "TypeScript", "React", "Leaflet", "Maps", "Vite" ]
 
 # Scaffold: TypeScript + React + Vite + Leaflet
 
-To scaffold a new application with Vite's `react-ts` template and add support for Open Street Map:
+A simple web application scaffold for a `TypeScript + React + Vite + Leaflet` mapping web application:
 
 ```shell
 npm create vite@latest my-app-name -- --template react-ts

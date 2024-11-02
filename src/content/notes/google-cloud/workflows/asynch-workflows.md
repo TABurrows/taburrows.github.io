@@ -4,8 +4,7 @@ summary: "Asynchronous Workflows on Google Cloud"
 tags: [ "Workflows" ]
 ---
 
-# Asynchronous Workflows
 
-Asynchronous workflows are the thing on Google Cloud.
+Asynchronous workflows are the thing on Google Cloud with Google Cloud Workflows.
 
 ![Design](./async-workflows-design.svg)

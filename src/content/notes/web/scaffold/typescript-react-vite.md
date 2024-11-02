@@ -4,9 +4,8 @@ summary: "A cheatsheet on using TypeScript + React + Vite for creating a simple 
 tags: [ "Web", "TypeScript", "React", "Vite" ]
 ---
 
-# Scaffold: TypeScript + React + Vite
 
-To scaffold a new application with Vite's `react-ts` template:
+A simple web application scaffold for a `TypeScript + React + Vite` web app:
 
 ```shell
 npm create vite@latest my-app-name -- --template react-ts
