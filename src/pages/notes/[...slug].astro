@@ -13,6 +13,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<MarkdownLayout frontmatter={entry.data} category={entry.collection} path={`/${entry.collection}/${entry.slug}`}>
+<MarkdownLayout frontmatter={entry.data} category={entry.collection} path={`/${entry.collection}/${entry.slug}/`}>
   <Content />
 </MarkdownLayout>
