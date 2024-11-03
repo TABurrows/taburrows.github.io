@@ -1,6 +1,6 @@
 ---
-title: "Asynchronous Workflows"
-summary: "Asynchronous Workflows on Google Cloud"
+title: "Google Cloud Workflows"
+summary: "Notes on Google Cloud Workflows"
 tags: [ "Workflows" ]
 ---
 

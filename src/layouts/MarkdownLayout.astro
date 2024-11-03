@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-const { frontmatter, category } = Astro.props;
+const { frontmatter, category, path } = Astro.props;
 
+import Path from "../components/Path.astro";
 import Tags from "../components/Tags.astro";
+import Summary from "../components/Summary.astro";
 
 ---
 
@@ -12,10 +14,12 @@ import Tags from "../components/Tags.astro";
   <a href={"/" + category}>&lt; <span class="capitalize">{category}</span></a>
 
   <h1>{frontmatter.title}</h1>
-
-
+  <Path value={path} />
+  <Summary text={frontmatter.summary} />
   <Tags items={frontmatter.tags} />
 
+  <div style="min-height: 4rem"></div>
+  
   <slot />
 
 </BaseLayout>

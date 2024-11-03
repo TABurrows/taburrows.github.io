@@ -212,7 +212,10 @@ pre {
   margin-top: 1rem;
 }
 
-
+.path-value {
+  font-size: 11pt;
+  margin: 1rem 0;
+}
 
 @media screen and (max-width:668px) {
   

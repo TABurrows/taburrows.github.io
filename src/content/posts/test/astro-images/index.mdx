@@ -1,5 +1,5 @@
 ---
-title: "Images Test"
+title: "Astro Images Test"
 summary: "Summary here"
 tags: [ "Tag1", "Tag2" ]
 ---
@@ -9,17 +9,18 @@ import LandscapeImage from './large-landscape.jpg';
 
 # Test Markdown with Images
 
-This markdown file is used to test Eleventy and Images.
+This post is used to test `Image` and `Picture` renders.
 
 ```js
 <Picture 
     src={LandscapeImage} 
     alt="Landscape" 
-    formats={['avif', 'webp']}
+    formats={['avif', 'webp', 'jpeg']}
+    /* you can only 'densities' or 'widths' */
+    /* either */
     densities={[1.5, 2]} 
-
+    /* or */
     widths={[240,540,720]}
-
 
     fallbackFormat={format}
 />
@@ -31,7 +32,7 @@ This markdown file is used to test Eleventy and Images.
     src={LandscapeImage}
     alt="Landscape Image"
     densities={[1.5, 2]}
-    formats={['avif', 'webp']}
+    formats={['avif', 'webp', 'jpeg']}
     loading="eager"
     fetchpriority="high"
 />

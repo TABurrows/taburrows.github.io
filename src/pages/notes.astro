@@ -2,7 +2,8 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Note from "../components/Note.astro";
+import Item from "../components/Item.astro";
+import Path from "../components/Path.astro";
 import Tags from "../components/Tags.astro";
 import Summary from "../components/Summary.astro";
 
@@ -17,10 +18,11 @@ const allNotes = await getCollection("notes");
     <ul class="unordered-list">
       {
         allNotes.map((note) => (
-          <Note url={`/notes/${note.slug}/`} title={note.data.title}>
-            <Tags items={note.data.tags} slot="tags" />
+          <Item url={`/notes/${note.slug}/`} title={note.data.title}>
+            <Path value={`/notes/${note.slug}/`} slot="path" />
             <Summary text={note.data.summary} slot="summary" />
-          </Note>
+            <Tags items={note.data.tags} slot="tags" />
+          </Item>
         ))
       }
     </ul>
