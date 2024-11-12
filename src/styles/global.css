@@ -118,7 +118,10 @@ a:hover, a:focus {
 p {
   user-select: none;
   font-weight: 400;
-  font-size: 13pt
+  font-size: 13pt;
+  margin: 0.25rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .capitalize {
@@ -179,7 +182,11 @@ pre {
 }
 
 .unordered-list {
-  margin-top: 4rem;
+  margin-top: 0.25rem;
+}
+
+.list-item {
+  margin-top: 3rem;
 }
 
 #hero-row-title {

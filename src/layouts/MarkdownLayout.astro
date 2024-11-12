@@ -11,7 +11,7 @@ const { frontmatter, category, path } = Astro.props;
   <a href={"/" + category}>&lt; <span class="capitalize">{category}</span></a>
 
   <ul class="unordered-list">
-    <Summary path={path} frontmatter={frontmatter} />
+    <Summary path={path} frontmatter={frontmatter} category={category} />
   </ul>
   
   

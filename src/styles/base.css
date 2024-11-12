@@ -69,15 +69,12 @@ pre {
   margin-bottom: 6rem;
 }
 
-.list-item {
-  margin: 6rem 0;
-}
 
 .tag-items {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .tag-item-tagged,
