@@ -17,7 +17,7 @@ const allNotes = await getCollection("notes");
     <ul class="unordered-list">
       {
         allNotes.map((note) => (
-          <Summary path={`/notes/${note.slug}/`} frontmatter={note.data} />
+          <Summary path={`/notes/${note.slug}/`} frontmatter={note.data} category="Notes" />
         ))
       }
     </ul>

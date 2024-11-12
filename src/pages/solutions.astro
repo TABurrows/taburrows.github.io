@@ -15,7 +15,7 @@ const allSolutions = await getCollection("solutions");
     <ul class="unordered-list">
       {
         allSolutions.map((solution) => (
-          <Summary path={`/solutions/${solution.slug}/`} frontmatter={solution.data} />
+          <Summary path={`/solutions/${solution.slug}/`} frontmatter={solution.data} category="Solutions" />
         ))
       }
     </ul>
