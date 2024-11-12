@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets';
+const { source } = Astro.props;
+const rand = Math.floor(Math.random() * 100000) + 1;
+import "./Gallery.css";
+---
+<script is:inline>
+    function openImage(prefix){
+        document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-shown");
+    }
+    function closeImage(prefix){
+        document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-hidden");
+    }
+</script>
+
+<div id={`pic-fullscrn-${rand}`} class="pic-fullscrn-hidden" onclick={`closeImage("${rand}")`}>
+    <div onclick={`closeImage("${rand}")`} class="pic-fullscrn-control">
+        <div class="pic-fullscrn-control-close">X</div>
+    </div>
+    <Picture
+        pictureAttributes={{ class: 'image lazy' }}
+        src={source}
+        alt="Async Workflow Design Image"
+        densities={[1.5, 2]}
+        formats={['avif', 'webp', 'jpeg']}
+        loading="eager"
+        fetchpriority="high"
+    />
+</div>
+
+<div onclick={`openImage("${rand}")`} id={`pic-container-${rand}`}>
+    <Picture
+        pictureAttributes={{ class: 'image lazy' }}
+        src={source}
+        alt="Async Workflow Design Image"
+        densities={[1.5, 2]}
+        formats={['avif', 'webp', 'jpeg']}
+        loading="eager"
+        fetchpriority="high"
+    />
+</div>

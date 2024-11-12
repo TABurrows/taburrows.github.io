@@ -7,7 +7,7 @@ tags: ["Web", "SSE", "Node.js", "Express"]
 
 Using Server-Sent Events in an Express.js Application
 
-```javascript
+```js
 const express = require("express);
 const app = express();
 const port = 3000;
