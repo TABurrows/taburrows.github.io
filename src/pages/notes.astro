@@ -2,10 +2,7 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Item from "../components/Item.astro";
-import Path from "../components/Path.astro";
-import Tags from "../components/Tags.astro";
-import Summary from "../components/Summary.astro";
+import Summary from "../components/Summary/Item.astro";
 
 const allNotes = await getCollection("notes");
 ---
@@ -15,14 +12,12 @@ const allNotes = await getCollection("notes");
   <div class="content-container">
     <div class="page-title">Notes</div>
 
+    <div class="page-2rem"></div>
+
     <ul class="unordered-list">
       {
         allNotes.map((note) => (
-          <Item url={`/notes/${note.slug}/`} title={note.data.title}>
-            <Path value={`/notes/${note.slug}/`} slot="path" />
-            <Summary text={note.data.summary} slot="summary" />
-            <Tags items={note.data.tags} slot="tags" />
-          </Item>
+          <Summary path={`/notes/${note.slug}/`} frontmatter={note.data} />
         ))
       }
     </ul>

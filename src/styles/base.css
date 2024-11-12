@@ -69,21 +69,43 @@ pre {
   margin-bottom: 6rem;
 }
 
+.list-item {
+  margin: 6rem 0;
+}
 
 .tag-items {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin: 1rem 0;
 }
 
+.tag-item-tagged,
 .tag-item {
   border-radius: .25rem;
-  padding: .25rem .75rem;
+  padding: .35rem .75rem .25rem .75rem;
   margin-right: 1rem;
-  border: 1px solid #cecece;
+  border: 2px solid #cecece;
   color: #222;
   font-size: 9pt;
   font-weight: 400;
   letter-spacing: .03rem;
   user-select: none;
+  cursor: pointer;
+}
+
+.tag-item {
+  border: 2px solid #cecece;
+}
+
+.tag-item-tagged {
+  font-weight: 600;
+  border: 2px solid black;
+}
+
+.tag-item-tagged:hover,
+.tag-item:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+  border: 2px solid black;
 }

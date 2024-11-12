@@ -1,0 +1,12 @@
+---
+const { path, frontmatter, tagged, category } = Astro.props
+---
+
+<li class="list-item">
+    { category && <div class="page-small-text">{category}</div>}
+    <a href={path} class="list-item-link">{frontmatter.title}</a>
+    <div class="tag-items">
+        { frontmatter.tags.map( (tag: string) => <span class={ tagged === tag ? "tag-item-tagged" : "tag-item"}  onclick={`location.href='/tagged/${tag}'`}>{tag}</span> ) }
+    </div>
+    <p>{frontmatter.summary}</p>
+</li>

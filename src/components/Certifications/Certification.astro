@@ -12,7 +12,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/certifi
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in the glob pattern`);
 ---
 
-<div class="certification-item" onclick="window.location.href='https://www.credly.com/users/tomburrows'">
+<div class="certification-item" onclick="window.open('https://www.credly.com/users/tomburrows')">
     <h3>{altText}</h3>
     <div class="certification-image">
         <Image src={images[imagePath]()} alt={altText} />
