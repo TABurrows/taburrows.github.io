@@ -1,7 +1,7 @@
 ---
 title: "Apache Beam Foundations"
 summary: "An overview of Apache Beam's constructs"
-tags: [ "Dataflow", "Apache Beam" ]
+tags: [ "Dataflow", "Apache Beam", "Foundations" ]
 ----
 
 Apache Beam is the open source project behind Google Cloud's Dataflow product.
