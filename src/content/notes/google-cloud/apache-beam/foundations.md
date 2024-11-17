@@ -1,8 +1,10 @@
 ---
-title: "Apache Beam Concepts Review"
-summary: "A review of Apache Beam concepts"
-tags: [ "Dataflow", "Apached Beam" ]
+title: "Apache Beam Foundations"
+summary: "An overview of Apache Beam's constructs"
+tags: [ "Dataflow", "Apache Beam" ]
 ----
+
+Apache Beam is the open source project behind Google Cloud's Dataflow product.
 
 Apache Beam - four main concepts:
 - Beam transforms - called a `P Transform`

@@ -1,12 +1,14 @@
 ---
-title: "Cloud Composer"
-summary: "The foundations of the Apache Airflow managed service Google Cloud Composer."
+title: "Apache Airflow"
+summary: "An overview of Apache Airflow's constructs."
 tags: [ "Airflow", "Composer" ]
 
 ---
 
+Apache Airflow is the open source project behind Google Cloud's Cloud Composer managed service product.
 
 ## Components
+
 - Kubernetes Engine + Cloud SQL 
 - preinstalled logging and monitoring agents (Cloud Operations Logging and Monitoring)
 - connectors for services in AWS, Azure, Databricks and Google Cloud

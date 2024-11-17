@@ -1,7 +1,7 @@
 ---
 title: "BigQuery SQL Dataset Size"
 summary: "SQL: get the size of a dataset"
-tags: [ "BigQuery", "Dataset" ]
+tags: [ "BigQuery", "Dataset", "SQL" ]
 ---
 
 To get the size of a BigQuery dataset:

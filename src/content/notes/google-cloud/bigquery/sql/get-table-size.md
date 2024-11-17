@@ -1,7 +1,7 @@
 ---
 title: "BigQuery SQL Table Size"
 summary: "SQL: get the size of a table"
-tags: [ "BigQuery", "Dataset" ]
+tags: [ "BigQuery", "Table", "SQL" ]
 ---
 
 To get the size of a BigQuery table:
