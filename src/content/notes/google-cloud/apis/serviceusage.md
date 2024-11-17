@@ -1,6 +1,6 @@
 ---
 title: "API: serviceusage.googleapis.com"
-summary: "Introduction to using the Service Usage API",
+summary: "Introduction to using the Service Usage API"
 tags: [ "API", "serviceusage.googleapis.com" ]
 ---
 
