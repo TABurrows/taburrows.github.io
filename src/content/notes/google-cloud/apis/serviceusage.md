@@ -1,7 +1,7 @@
 ---
-title: "API: serviceusage.googleapis.com"
+title: "APIs: serviceusage.googleapis.com"
 summary: "Introduction to using the Service Usage API"
-tags: [ "API", "serviceusage.googleapis.com" ]
+tags: [ "API", "APIs", "serviceusage.googleapis.com" ]
 ---
 
 The API `serviceusage.googleapis.com` can be used to list and manage APIs and Services from Google, Google Cloud and 3rd Party Producers.
