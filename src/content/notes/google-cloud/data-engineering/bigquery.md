@@ -1,6 +1,6 @@
 ---
 title: "BigQuery"
-summary: "Using BigQuery Reservations"
+summary: "Using BigQuery"
 tags: [ "BigQuery", "Analytics" ]
 ---
 
