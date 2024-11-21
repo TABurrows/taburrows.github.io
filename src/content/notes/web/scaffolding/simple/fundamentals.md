@@ -1,11 +1,11 @@
 ---
-title: "Web App: Base Web Application"
+title: "Web App: Simple Base Web Application"
 summary: "A cheatsheet on using TypeScript + React + Vite for creating a base web application for further development."
 tags: [ "Web", "TypeScript", "React", "Vite" ]
 ---
 
 
-A simple web application scaffold for a `TypeScript + React + Vite` web app:
+A simple base web application scaffold for a `TypeScript + React + Vite` web app:
 
 ```shell
 npm create vite@latest my-app-name -- --template react-ts

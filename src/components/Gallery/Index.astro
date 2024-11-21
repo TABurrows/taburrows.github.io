@@ -9,6 +9,7 @@ import "./Gallery.css";
         document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-shown");
     }
     function closeImage(prefix){
+        document.getElementById("pic-fullscrn-img-"+prefix).style.transform = "scale(1)";
         document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-hidden");
     }
     function zoomIn(prefix){;
@@ -44,7 +45,7 @@ import "./Gallery.css";
     </div>
 </div>
 
-<div onclick={`openImage("${rand}")`} id={`pic-container-${rand}`}>
+<div onclick={`openImage("${rand}")`} id={`pic-container-${rand}`} class="pic-on-page-container">
     <Picture
         pictureAttributes={{ class: 'image lazy' }}
         src={source}

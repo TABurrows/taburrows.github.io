@@ -82,3 +82,8 @@
     justify-content: center;
     transform: translateY(-10px);
 }
+
+.pic-on-page-container {
+    margin: 2rem 0;
+    cursor: zoom-in;
+}
