@@ -1,6 +1,6 @@
 ---
-title: "Dataflow Foundations"
-summary: "The foundations to using Google Cloud Dataflow"
+title: "Dataflow Fundamentals"
+summary: "The fundamentals to using Google Cloud Dataflow"
 tags: [ "Dataflow", "Beam" ]
 ---
 
@@ -51,3 +51,17 @@ class MyDoFn(beam.DoFn):
     def teardown(self):
         pass
 ```
+
+The division of collection in the bundle is arbitrary and selected by the runner. A Streaming runner may process and commit small bundles and a batch runner may process larger bundles.
+
+Dependent on the runner, the DoFn object can be reused across bundles.
+
+When a worker starts, it creates an instance of the function, calls the `@Setup` method (called once per worker).
+
+Then the `@StartBundle` method is called, before the `@ProcessElement` and `@OnTimer` methods then State Objects are read.
+
+The `@FinishBundle` method is called to write State Objects.
+
+If there is an exception at any stage `@TearDown` is called.
+
+

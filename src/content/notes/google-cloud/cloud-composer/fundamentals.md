@@ -1,7 +1,7 @@
 ---
 title: "Apache Airflow"
-summary: "An overview of Apache Airflow's constructs."
-tags: [ "Airflow", "Composer", "Foundations" ]
+summary: "An overview of Apache Airflow's fundamental constructs."
+tags: [ "Airflow", "Composer", "Fundamentals" ]
 
 ---
 

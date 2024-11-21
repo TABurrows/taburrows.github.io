@@ -1,7 +1,7 @@
 ---
-title: "Google Cloud Foundations"
-summary: "An overview of the foundational components of Google Cloud"
-tags: [ "Google Cloud Foundations", "Foundations" ]
+title: "Google Cloud Fundamentals"
+summary: "An overview of the fundamental components of Google Cloud"
+tags: [ "Google Cloud Fundamentals", "Fundamentals" ]
 ---
 
 
@@ -226,7 +226,7 @@ Then Cloud Run handles HTTPS serving for you.
 You can use Cloud Run to run any binary, as long as it’s compiled for Linux sixty-four bit. This means you can use Cloud Run to run web applications written using popular languages, such as: Java, Python, Node.js, PHP, Go, and C++ - also run code written in less popular languages, such as: Cobol, Haskell, and Perl.
 
 
-## Prompt Engineering
+## AI: Prompt Engineering
 
 Tips and techniques for the best results:
 

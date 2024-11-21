@@ -1,6 +1,6 @@
 ---
-title: "Datastore Foundations"
-summary: "The foundations for Google Cloud Datastore NoSQL document database"
+title: "Datastore Fundamentals"
+summary: "The fundamentals for using Google Cloud Datastore NoSQL document database"
 tags: [ "Datastore", "NoSQL" ]
 ---
 
