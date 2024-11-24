@@ -1,7 +1,7 @@
 ---
-title: "Best Practices for Cloud Storage"
-summary: "Best practices for using Google Cloud Storage"
-tags: [ "Google Cloud Storage", "Buckets" ]
+title: "Google Cloud: Best Practices for Cloud Storage"
+summary: "Best practices for using Google Cloud Storage."
+tags: [ "Google Cloud", "Cloud Storage", "Buckets" ]
 ---
 
 

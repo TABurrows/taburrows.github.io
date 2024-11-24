@@ -1,8 +1,10 @@
 ---
-title: "Dataflow Fundamentals"
-summary: "The fundamentals to using Google Cloud Dataflow"
-tags: [ "Dataflow", "Beam" ]
+title: "Apache: Apache Beam Fundamentals"
+summary: "The fundamentals to using Apache Beam."
+tags: [ "Google Cloud", "Dataflow", "Beam" ]
 ---
+
+Apache Beam is the open source project behind Google Cloud's Dataflow managed service product. 
 
 ## Basics
 

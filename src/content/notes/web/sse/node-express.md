@@ -1,6 +1,6 @@
 ---
 title: "SSE with Express.js"
-summary: "An overview on building a Server-Sent Events Solution with Express.js"
+summary: "An overview on building a Server-Sent Events Solution with Express.js."
 tags: ["Web", "SSE", "Node.js", "Express"]
 ---
 

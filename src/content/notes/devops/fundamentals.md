@@ -1,6 +1,6 @@
 ---
-title: "DevOps Fundamentals"
-summary: "The fundamentals of DevOps processes"
+title: "DevOps: DevOps Fundamentals"
+summary: "The fundamentals of DevOps processes."
 tags: [ "DevOps", "Fundamentals" ]
 ---
 

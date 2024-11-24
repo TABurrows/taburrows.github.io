@@ -1,7 +1,7 @@
 ---
-title: "Data Curation Fundamentals"
+title: "Data: Curation Fundamentals"
 summary: "The fundamentals of Data Curation"
-tags: [ "data", "curation", "data curation" ]
+tags: [ "Data", "Curation", "Data Curation" ]
 ---
 
 

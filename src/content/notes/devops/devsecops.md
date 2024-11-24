@@ -1,7 +1,7 @@
 ---
-title: "DevSecOps Fundamentals"
-summary: "The fundamentals of DevSecOps processes"
-tags: [ "DevSecOps", "Fundamentals" ]
+title: "DevOps: DevSecOps Fundamentals"
+summary: "The fundamentals of DevSecOps processes in relation to DevOps."
+tags: [ "DevOps", "DevSecOps", "Fundamentals" ]
 ---
 
 DevSecOps is a process that integrates CyberSecurity processes into all phases of the Software Development Lifecycle (SDLC), from writing code to deployment.

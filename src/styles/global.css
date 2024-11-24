@@ -144,7 +144,7 @@ ul {
   padding-inline-start: unset;
 }
 li {
-  max-width: 80%;
+  font-weight: 400;
 }
 .list-item-link {
   font-size: 15pt;
@@ -218,7 +218,7 @@ pre {
 }
 
 .page-title {
-  font-size: 22pt;
+  font-size: 18pt;
   font-weight: 400;
   margin-top: 1rem;
 }

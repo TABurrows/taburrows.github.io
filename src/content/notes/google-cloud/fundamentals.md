@@ -1,7 +1,7 @@
 ---
-title: "Google Cloud Fundamentals"
+title: "Google Cloud: Fundamentals"
 summary: "An overview of the fundamental components of Google Cloud"
-tags: [ "Google Cloud Fundamentals", "Fundamentals" ]
+tags: [ "Google Cloud", "Fundamentals" ]
 ---
 
 
