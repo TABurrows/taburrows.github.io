@@ -144,7 +144,7 @@ ul {
   padding-inline-start: unset;
 }
 li {
-  margin-bottom: 1rem;
+  max-width: 80%;
 }
 .list-item-link {
   font-size: 15pt;
@@ -187,6 +187,7 @@ pre {
 
 .list-item {
   margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 #hero-row-title {
@@ -238,7 +239,7 @@ pre {
     width: 90%
   }
 
-  nav, header, main, .search-anchor {
+  nav, header, main, .search-anchor, ul {
     max-width: 80ch;
   }
 
