@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud: BigQuery Commands Reference"
+title: "BigQuery: CLI Commands Reference"
 summary: "A reference document of some of BigQuery's most common commands"
 tags: [ "Google Cloud", "BigQuery", "Reference" ]
 ---
