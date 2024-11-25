@@ -91,3 +91,18 @@ gcloud dataplex assets delete $ASSET_NAME \
     --zone=$ZONE_NAME \
     --lake=$LAKE_NAME
 ```
+
+To delete a zone:
+```
+gcloud dataplex zones delete $ZON_NAME \
+    --location=$REGION \
+    --lake=$LAKE_NAME
+```
+
+To delete a lake:
+```
+gcloud dataplex lakes delect $LAKE_NAME \
+    --location=$REGION
+```
+
+
