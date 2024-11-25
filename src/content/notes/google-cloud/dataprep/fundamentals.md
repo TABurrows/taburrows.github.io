@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud: Dataprep"
+title: "Google Cloud: Dataprep Fundamentals"
 summary: "The fundamentals of Google Cloud's Dataprep managed service."
 tags: [ "Google Cloud", "Dataprep" ]
 ---
