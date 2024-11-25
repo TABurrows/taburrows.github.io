@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud: serviceusage.googleapis.com API"
+title: "Google Cloud API: serviceusage.googleapis.com"
 summary: "Introduction to using the Service Usage API"
 tags: [ "Google Cloud", "API", "APIs", "serviceusage.googleapis.com" ]
 ---

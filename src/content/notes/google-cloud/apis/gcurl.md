@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud: Implement gcurl command"
+title: "Google Cloud API: Implement gcurl command"
 summary: "Create the gcurl alias command for quicker use of curl with Google Cloud"
 tags: [ "gcurl", "curl", "API", "APIs"]
 ---
