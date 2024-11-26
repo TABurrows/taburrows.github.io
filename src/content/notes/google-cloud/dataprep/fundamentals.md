@@ -21,6 +21,6 @@ Available from Trifacta via the Marketplace and is only available on a `Private 
 
 ## Editions
 
-- __Starter__: for ad hoc data preparation - up to 60 automated workflows
+- __STARTER__: for ad hoc data preparation - up to 60 automated workflows
 - __PROFESSIONAL__: for teams of 3 or more who are creating, automating and monitoring data pipelines for mission-critical business analytics - up to 3000 automated workflows
 - __ENTERPRISE__: builds on the Professional offering with Fine-grained RBAC access controls, SSO, programmatic access via APIs - up to 15,000 automated workflows

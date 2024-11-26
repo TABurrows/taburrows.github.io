@@ -1,5 +1,5 @@
 ---
-title: " Apache: Apache Beam Fundamentals"
+title: " Apache: Beam Fundamentals"
 summary: "An overview of the fundamental concepts within Apache Beam."
 tags: [ "Apache", "Apache Beam", "Dataflow", "Fundamentals" ]
 ----
