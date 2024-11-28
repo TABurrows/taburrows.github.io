@@ -6,3 +6,17 @@ tags: [ "Google Cloud", "Dataflow", "Apache Beam", "Fundamentals" ]
 
 Google Cloud Dataflow is Google Cloud's managed service for Apache Beam.
 
+
+
+### Stateful Operations
+
+Include:
+- Transforms that produce or consume side inputs
+- I/O Reads
+- Transforms that use __keyed state__
+- Transforms that have window __merging__
+
+
+### Schemas
+
+Apache Beam allows `PCollection`s to hvae schemas with named fields, in which case explicit Coders are not needed.
