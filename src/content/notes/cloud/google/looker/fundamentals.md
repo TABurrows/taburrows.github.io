@@ -17,12 +17,20 @@ A Looker project can be access from the __Develop__ menu within Looker
 
 A Project's set of files contains:
 
-- a __Manifest__ file containing instructions for using external files or configuration settings such as localization
+- a __Manifest__ file containing instructions for using external files or configuration settings such as localization and other project-level settings
+
+- __Models__ file containing  information about which tables to use and they should be joined - typically a definition of the model, its Explores and its joins. Each model specifies a single connection to a single database.
+
+- __Explores__ are often defined in a model file, but will be in a separate Explore file for derived tables, or extensions or refinements across a multiple model's existing Explores
+
+- __Views__ contain information about how to access or calculate information from each table typically containing __Dimensions__, __Measures__ and __Field Sets__. A single View file is a declaration of a list of fields (dimensions or measures) and their linkage to an underlying table or derived table or it may join other views
+
+- __Dashboards__ contain information and __Visualizations__ for the audiences consumption of the information from the modeled data
 
 
-, __Models__ (__Explores__, __Joins__), __Views__ (__Dimensions__, __Measures__, __Field Sets__) and __Dashboards__ (__Visualizations__).
+## LookML
 
-
+Looker can generate LookML files automatically from a connected database or you can create them manually.
 
 
 ## Database Connectivity
