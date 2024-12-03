@@ -20,3 +20,8 @@ Include:
 ### Schemas
 
 Apache Beam allows `PCollection`s to hvae schemas with named fields, in which case explicit Coders are not needed.
+
+
+## Streaming Engine
+
+Using Streaming Engine you can update the minimum and maximum number of Workers without stopping jobs.
