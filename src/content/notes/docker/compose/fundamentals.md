@@ -77,7 +77,7 @@ services:
 
 Reference containers by name rather than IP whenever possible as configuration changes can force a container rebuild with the same name but a new IP address.
 
-### Custom Networks
+### Custom Networking
 
 You can specify networks rather than using the default app network, with the top-level `networks` key.
 
@@ -108,4 +108,58 @@ networks:
   backend:
     # Use a custom driver
     driver: custom-driver
+```
+
+You can specify a static IP address for a service using the `ipv4_address` and `ipv6_address` configuration items in `compose.yaml`.
+
+```yaml
+services:
+  frontend:
+    image: example/webapp
+    networks:
+      front-tier:
+        ipv4_address: 172.16.238.10
+        ipv6_address: 2001:3984:3989::10
+
+networks:
+  front-tier:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+        - subnet: "2001:3984:3989::/64"
+```
+
+
+### Separating Services
+
+In this `compose.yaml`, the service `frontend` is able to reach the `backend` service at the hostname `backend` or `database` on the `back-tier` network. The service `monitoring` is able to reach same `backend` service at `backend` or `mysql` on the `admin` network.
+
+```yaml
+services:
+  frontend:
+    image: example/webapp
+    networks:
+      - front-tier
+      - back-tier
+
+  monitoring:
+    image: example/monitoring
+    networks:
+      - admin
+
+  backend:
+    image: example/backend
+    networks:
+      back-tier:
+        aliases:
+          - database
+      admin:
+        aliases:
+          - mysql
+
+networks:
+  front-tier:
+  back-tier:
+  admin:
 ```
