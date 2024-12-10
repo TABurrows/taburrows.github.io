@@ -76,3 +76,36 @@ services:
 ```
 
 Reference containers by name rather than IP whenever possible as configuration changes can force a container rebuild with the same name but a new IP address.
+
+### Custom Networks
+
+You can specify networks rather than using the default app network, with the top-level `networks` key.
+
+In this `compose.yaml` the `proxy` service is isolated from the `db` service, because they do not share a network in common.  Only the `app` service can talk to both.
+
+```yaml
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - frontend
+  app:
+    build: ./app
+    networks:
+      - frontend
+      - backend
+  db:
+    image: postgres
+    networks:
+      - backend
+
+networks:
+  frontend:
+    # Specify driver options
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  backend:
+    # Use a custom driver
+    driver: custom-driver
+```
