@@ -58,3 +58,19 @@ You can watch a project directory for changes and automatically rebuild on chang
 ## Networking Services
 
 By default, the network name is based on the directory with the `compose.yaml`.  To override the project name, use either the `--project-name` flag or the `COMPOSE_PROJECT_NAME` environment variable.
+
+The `HOST_PORT` and the `CONTAINER_PORT` are defined in the `ports:` seciont of a service in `compose.yaml` in the form `HOST_PORT:CONTAINER_PORT`.
+
+The `HOST_PORT`s exposed  in the following `compose.yaml` are `8000` for the `web` service and `8001` for the `db` service.
+
+```yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+    ports:
+      - "8001:5432"
+```
