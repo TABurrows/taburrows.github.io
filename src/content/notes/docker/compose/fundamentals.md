@@ -27,6 +27,28 @@ services:
         image: "redis:debian"
 ```
 
+## Building Services
+
+If the `build` and `image` are both specified in the `compose.yaml` then the rules of the `pull_policy` are used.  If this policy is absent, then a pull of the image is attempted first and then a build from source is attempted if the image still is not found.
+
+Paths are relative to the `compose.yaml` directory.
+
+```yaml
+services:
+  frontend:
+    image: example/webapp
+    build: ./webapp
+
+  backend:
+    image: example/database
+    build:
+      context: backend
+      dockerfile: ../backend.Dockerfile
+
+  custom:
+    build: ~/custom
+```
+
 
 ## Controlling Services
 
