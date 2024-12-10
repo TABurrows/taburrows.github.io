@@ -74,3 +74,5 @@ services:
     ports:
       - "8001:5432"
 ```
+
+Reference containers by name rather than IP whenever possible as configuration changes can force a container rebuild with the same name but a new IP address.
