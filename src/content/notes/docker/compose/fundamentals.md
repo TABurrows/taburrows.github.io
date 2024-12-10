@@ -54,3 +54,7 @@ services:
 ## Develop Services
 
 You can watch a project directory for changes and automatically rebuild on changes with `docker compose watch` or `docker compose up --watch`.
+
+## Networking Services
+
+By default, the network name is based on the directory with the `compose.yaml`.  To override the project name, use either the `--project-name` flag or the `COMPOSE_PROJECT_NAME` environment variable.
