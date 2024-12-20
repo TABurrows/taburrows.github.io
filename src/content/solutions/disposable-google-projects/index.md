@@ -1,5 +1,5 @@
 ---
-title: "Solution: automated disposable Google Cloud Projects solution"
+title: "Solution: Disposable Google Cloud Projects"
 summary: "An automated solution to implement disposable Google Cloud Projects"
 tags: [ "Google Cloud", "Google Cloud Projects" ]
 ---
