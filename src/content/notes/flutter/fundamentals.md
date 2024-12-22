@@ -1,7 +1,7 @@
 ---
-title: ""
-summary: ""
-tags: [ "", "" ]
+title: "Flutter: Fundamentals"
+summary: "An overview of the fundamentals of building apps with Dart and Flutter"
+tags: [ "Flutter", "Dart", "Fundamentals" ]
 ---
 
 Basics of setting up 
