@@ -36,23 +36,60 @@ FROM docker.io/influxdb
 
 The Docker Compose file defines the services that go up to make the solution. This will include the Grafana and InfluxDB instances built from the above Dockerfile image definitions.
 
+The docker compose YAML file:
 
-
-`compose.yml`:
-
-```
+```yaml
+# compose.yml
 services:
     dashboard:
         build: ./images/grafana
-        ports: "13000:3000"
+        ports: 
+          - "13000:3000"
         networks:
             - grafana
     timeseries:
         build: ./images/influxdb
-        ports: "18086:8086"
+        ports:
+          - "18086:8086"
         networks:
             - grafana
 networks:
     grafana:
         driver: bridge
+```
+
+
+To run the docker containers:
+
+```
+# In the foreground of the terminal:
+docker compose up
+# In the background:
+docker composer up -d
+# Or:
+docker compose up --detach
+```
+
+To force docker to stop all containers and recreate them:
+
+```
+docker compose up --force-recreate
+```
+
+To stop the containers:
+
+```
+docker compose stop
+```
+
+To start the containers:
+
+```
+docker compose start
+```
+
+To stop and remove containers, volumes, networks and images created in `docker compose up`:
+
+```
+docker compose down
 ```
