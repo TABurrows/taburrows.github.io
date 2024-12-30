@@ -1,4 +1,8 @@
-
+---
+title: "Elastic: Stack Fundamentals"
+summary: "The fundamentals of the Elastic stack."
+tags: [ "Elastic", "Fundamentals" ]
+---
 
 
 ## Set Password
