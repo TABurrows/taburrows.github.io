@@ -80,6 +80,11 @@ output {
 }
 ```
 
+https://www.elastic.co/guide/en/logstash/current/ls-security.html
+
+
+
+
 Then recreate the logstash container:
 
 ```
