@@ -4,7 +4,7 @@ summary: "An introduction to JSON Web Tokens"
 tags: [ "JWT" ]
 ---
 
-
+Some JWT notes:
 
 - JWT is a JSON Web Token and is pronounced "jot". JSON objects support human-readable text and are used in many applications, such as with NoSQL databases.
 
