@@ -46,3 +46,42 @@ bin/elasticsearch-create-enrollment-token -s node
 
 
 ## Logstash Connectivity
+
+Copy the Elasticsearch `http_ca.crt` file from the `/etc/elasticsearch/certs/http_ca.crt` location and on to the logstash image `/usr/share/logstash/elasticsearch/http_ca.crt`.
+
+Then configure the logstash pipeline to use this certificate in the `pipeline.yml` - this example for Apache log format:
+
+```
+input {
+  file {
+    path => "/tmp/apache_log"
+    start_position => "beginning"
+  }
+}
+
+filter {
+  if [path] =~ "access" {
+    mutate { replace => { "type" => "apache_access" } }
+    grok {
+      match => { "message" => "%{COMBINEDAPACHELOG}" }
+    }
+  }
+  date {
+    match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["https://172.30.0.3:9200"] 
+    ssl_certificate_authorities => ["/usr/share/logstash/elasticsearch/http_ca.crt"]
+  }
+  stdout { codec => rubydebug }
+}
+```
+
+Then recreate the logstash container:
+
+```
+docker compose up --force-recreate logstash
+```
