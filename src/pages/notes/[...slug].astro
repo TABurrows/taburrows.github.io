@@ -3,9 +3,11 @@ import { getCollection } from 'astro:content';
 import MarkdownLayout from '../../layouts/MarkdownLayout.astro';
 
 export async function getStaticPaths() {
+
   const noteEntries = await getCollection('notes');
   return noteEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { slug: entry.slug }, 
+    props: { entry },
   }));
 }
 

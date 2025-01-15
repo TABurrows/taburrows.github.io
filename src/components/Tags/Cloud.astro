@@ -1,0 +1,14 @@
+---
+const { tags, tagged, counter } = Astro.props
+---
+
+<div class="tag-cloud-container">
+    <div class="tag-cloud">
+        <span class={ tagged === 'ALL' ? "cloud-tag-item-tagged" : "tag-item"}  onclick={`location.href='/notes'`}>All</span>
+        { tags.map( (tag: string) => <span class={ tagged === tag ? "cloud-tag-item-tagged" : "tag-item"}  onclick={`location.href='/tagged/${tag}'`}>{tag}</span> ) }
+    </div>
+
+    <div class="entry-count-container"> 
+        <span class="entry-count">{`Found ${counter} ${counter === 1 ? "entry" : "entries"}.`}</span></div>
+    <div class="page-2rem"></div>
+</div>

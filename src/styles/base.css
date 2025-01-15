@@ -78,6 +78,7 @@ pre {
   flex-wrap: wrap;
 }
 
+.cloud-tag-item-tagged,
 .tag-item-tagged,
 .tag-item {
   border-radius: .25rem;
@@ -93,17 +94,39 @@ pre {
 }
 
 .tag-item {
-  border: 2px solid #cecece;
+  border: 2px solid #888;
 }
 
-.tag-item-tagged {
+.tag-item-tagged,
+.cloud-tag-item-tagged {
+  font-weight: 400;
+  border: 2px solid #333;
+  border: 2px solid #cecece;
+  background-color: #ececec;
+  color: #010101;
+}
+/* .tag-item-tagged {
   font-weight: 600;
   border: 2px solid black;
-}
+} */
 
 .tag-item-tagged:hover,
 .tag-item:hover {
   transform: scale(1.1);
   font-weight: 600;
   border: 2px solid black;
+}
+
+.tag-cloud-container {
+  width: 80ch;
+}
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 1rem 0;
+
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaMagnifyingGlass, FaRegCircleXmark } from "react-icons/fa6";
 
 import Fuse from 'fuse.js';
 
@@ -122,6 +122,11 @@ export default function Search(props: any){
                     <div className="search-icon">
                         <FaMagnifyingGlass style={{"color": "#cecece"}} />
                     </div>
+                    { search && search.length > 0 &&
+                        <div className="clear-icon" onClick={clearSearch}>
+                            <FaRegCircleXmark style={{"color": "#555"}} />
+                        </div>
+                    }
                     <input type="text" placeholder="Search ..." className="search-input" value={search} onChange={(e)=>setSearch(e.target.value)} onKeyUp={handleKeyUp} />
                 </div>
                 <div className="search-results" style={visibility}>{generateResults(results)}</div>

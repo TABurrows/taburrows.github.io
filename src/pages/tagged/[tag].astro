@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Summary from '../../components/Summary/Item.astro';
+import TagCloud from '../../components/Tags/Cloud.astro';
 
 export async function getStaticPaths() {
   
@@ -32,18 +33,19 @@ export async function getStaticPaths() {
     console.log(`Annotated Results: ${JSON.stringify(annotatedResults,null,2)}`)
     return {
         params: { tag: tag },
-        props: { results: annotatedResults },
+        props: { results: annotatedResults, tags: uniqueTags },
       }
   });
 
 }
 
 const { tag } = Astro.params;
-const { results } = Astro.props;
+const { results, tags } = Astro.props;
 ---
 <BaseLayout pagetTitle="Tags">
 
-  <div class="page-title">{`Tagged: "${tag}"`}</div>
+  <TagCloud tags={tags} tagged={tag} counter={results.length}/>
+
     <div class="content-container">
       { results.map( (result) => (
             <ul class="unordered-list">
