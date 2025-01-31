@@ -21,6 +21,8 @@ const certifications = [
 
 <div id="certifications-container">
 
-        { certifications.map( certification => <Certification imagePath={certification.imagePath} altText={certification.altText} /> ) }
+    <div class="page-title">Certifications <small>[ ${certifications.length} ]</small></div>
+    
+    { certifications.map( certification => <Certification imagePath={certification.imagePath} altText={certification.altText} /> ) }
 
 </div>
