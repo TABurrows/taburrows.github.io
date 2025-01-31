@@ -22,7 +22,7 @@ const certifications = [
 
 <div id="certifications-container">
 
-    <div class="page-title">Certifications <small>[ ${certifications.length} ]</small></div>
+    <div class="page-title">Certifications <span style="font-size: 9pt">[ {certifications.length} ]</span></div>
     
     { certifications.map( certification => <Certification imagePath={certification.imagePath} altText={certification.altText} /> ) }
 
