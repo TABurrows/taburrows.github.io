@@ -1,5 +1,8 @@
-
-# IAM Deny Policy
+---
+title: "Google Cloud: IAM Deny Policy"
+summary: "How to use the Google Cloud IAM Deny Policy engine"
+tags: [ "Google Cloud", "IAM Deny Policy" ]
+---
 
 ## Notes
 
