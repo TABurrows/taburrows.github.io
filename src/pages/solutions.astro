@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Summary from "../components/Summary/Item.astro";
+
+const allSolutions = await getCollection("solutions");
+---
+
+<BaseLayout>
+
+  <div class="content-container">
+    <div class="page-title">All Solutions <span style="margin-left: 10px;font-size: 10pt; letter-spacing: 0.15rem; font-weight: 800;">[{allSolutions.length}]</span></div>
+
+    <ul class="unordered-list">
+      {
+        allSolutions.map((solution) => (
+          <Summary path={`/solutions/${solution.slug}/`} frontmatter={solution.data} category="Solutions" />
+        ))
+      }
+    </ul>
+  </div>
+
+</BaseLayout>

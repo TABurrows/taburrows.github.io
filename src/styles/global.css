@@ -1,0 +1,296 @@
+html {
+    font-family: Hind, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+  }
+
+body {
+  box-sizing: border-box;
+  overscroll-behavior: none;
+  color: #222;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Hind, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  user-select: none;
+}
+
+h1 {
+  font-size: 1.85em;
+  color: black;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+.hero-text {
+  font-size: 16pt;
+  font-weight: 400;
+  margin-bottom: 6rem;
+  text-align: center;
+  user-select: none;
+}
+
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+header {
+  margin-top: 3.5rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav, .search-anchor, main {
+  margin: 0 auto;
+
+}
+
+nav, header, main, .search-anchor {
+  max-width: 90ch;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.nav-link a {
+  margin-left: 1rem; 
+  font-size: 14pt;
+}
+
+a, a:visited {
+  user-select: none;
+  font-size: 12pt;
+  font-weight: 400;
+  /* color: #3178c6; */
+  color: #1e21b8;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+.expanded {
+  display: unset;
+}
+
+p {
+  user-select: none;
+  font-weight: 400;
+  font-size: 13pt;
+  margin: 0.25rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+p > code {
+  user-select: none;
+  font-weight: 600;
+  font-size: 12pt;
+  color: black;
+}
+
+pre {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: unset;
+}
+li {
+  font-weight: 400;
+}
+.list-item-link {
+  font-size: 15pt;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+picture, img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+  
+input {
+  font-size: 12pt;
+  border: 0;
+  padding: .75rem;
+  border: 1px solid white;
+}
+
+pre {
+  font-weight: 200;
+  font-size: 10pt;
+}
+
+.hero-row-container {
+  margin: 4rem 0;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.unordered-list {
+  margin-top: 0.25rem;
+}
+
+.list-item {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+#hero-row-title {
+  margin-bottom: 2rem;
+  max-height: 3rem;
+}
+
+#hero-row-subtitle {
+  max-height: 2.4rem;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.search-anchor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 4rem;
+}
+
+.page-title {
+  font-size: 18pt;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+.entry-count-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 72ch;
+}
+.entry-count {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.page-small-text {
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.path-value {
+  font-size: 11pt;
+  margin: 1rem 0;
+}
+
+@media screen and (max-width:668px) {
+  
+  .search-anchor {
+    width: 90%
+  }
+
+  nav, header, main, .search-anchor, ul {
+    max-width: 80ch;
+  }
+
+}
+
+@media screen and (min-width:669px) and (max-width:928px) {
+  
+  .search-anchor {
+    width: 64ch;
+  }
+  
+  nav, header, main, .search-anchor {
+    max-width: 80ch;
+  }
+}
+
+@media screen and (min-width:929px) and (max-width:1608px) {
+  
+  .search-anchor {
+    margin-top: 3rem;
+    width: 68ch;
+  }
+  
+  nav, header, main, .search-anchor {
+    max-width: 80ch;
+  }
+
+}
+
+@media screen and (min-width:1609px) {
+  
+  .search-anchor {
+    margin-top: 4rem;
+    width: 72ch;
+  }
+  
+  nav, header, .search-anchor {
+    max-width: 90ch;
+  }
+
+  main {
+    max-width: 84ch;
+  }
+
+}

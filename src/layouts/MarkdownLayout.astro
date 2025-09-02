@@ -1,0 +1,22 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Summary from "../components/Summary/Item.astro";
+
+const { frontmatter, category, path } = Astro.props;
+
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+
+  <a href={"/" + category}>&lt; <span class="capitalize">{category}</span></a>
+
+  <ul class="unordered-list">
+    <Summary path={path} frontmatter={frontmatter} category={category} />
+  </ul>
+  
+  
+  <slot />
+
+  <div style="min-height: 20rem;"></div>
+
+</BaseLayout>

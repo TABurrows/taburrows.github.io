@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import TagCloud from '../components/Tags/Cloud.astro';
+
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Summary from "../components/Summary/Item.astro";
+
+const allNotes = await getCollection("notes");
+let tags = [ ...new Set( allNotes.map( note => note.data.tags).flat() )];
+
+---
+
+<BaseLayout>
+
+  <TagCloud tags={tags} tagged="ALL" counter={allNotes.length} />
+
+
+  <div class="content-container">
+    <ul class="unordered-list">
+      {
+        allNotes.map((note) => (
+          <Summary path={`/notes/${note.slug}/`} frontmatter={note.data} category="Notes" />
+        ))
+      }
+    </ul>
+  </div>
+
+</BaseLayout>

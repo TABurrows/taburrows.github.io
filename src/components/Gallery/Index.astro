@@ -1,0 +1,58 @@
+---
+import { Picture } from 'astro:assets';
+const { source } = Astro.props;
+const rand = Math.floor(Math.random() * 100000) + 1;
+import "./Gallery.css";
+---
+<script is:inline>
+    function openImage(prefix){
+        document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-shown");
+    }
+    function closeImage(prefix){
+        document.getElementById("pic-fullscrn-img-"+prefix).style.transform = "scale(1)";
+        document.getElementById("pic-fullscrn-"+prefix).setAttribute("class", "pic-fullscrn-hidden");
+    }
+    function zoomIn(prefix){;
+        document.getElementById("pic-fullscrn-img-"+prefix).style.transform = "scale(2)";
+    }
+    function zoomOut(prefix){
+        document.getElementById("pic-fullscrn-img-"+prefix).style.transform = "scale(1)";
+    }
+</script>
+
+<div id={`pic-fullscrn-${rand}`} class="pic-fullscrn-hidden" onclick={`event.stopPropagation();closeImage("${rand}")`}>
+    <div onclick={`event.stopPropagation();closeImage("${rand}")`} class="pic-fullscrn-control">
+        <div class="pic-fullscrn-control-close">X</div>
+    </div>
+    <div class="pic-fullscrn-img" id={`pic-fullscrn-img-${rand}`} onclick={`event.stopPropagation();`}>
+        <Picture
+            pictureAttributes={{ class: 'image lazy' }}
+            src={source}
+            alt="Async Workflow Design Image"
+            densities={[1.5, 2]}
+            formats={['avif', 'webp', 'jpeg']}
+            loading="eager"
+            fetchpriority="high"
+        />
+    </div>
+    <div class="pic-fullscrn-zoom">
+        <div class="pic-fullscrn-zoom-control" onclick={`event.stopPropagation();zoomIn("${rand}")`}>
+            <div class="pic-fullscrn-zoom-control-text">+</div>
+        </div>
+        <div class="pic-fullscrn-zoom-control" onclick={`event.stopPropagation();zoomOut("${rand}")`}>
+            <div class="pic-fullscrn-zoom-control-text">-</div>
+        </div>
+    </div>
+</div>
+
+<div onclick={`openImage("${rand}")`} id={`pic-container-${rand}`} class="pic-on-page-container">
+    <Picture
+        pictureAttributes={{ class: 'image lazy' }}
+        src={source}
+        alt="Async Workflow Design Image"
+        densities={[1.5, 2]}
+        formats={['avif', 'webp', 'jpeg']}
+        loading="eager"
+        fetchpriority="high"
+    />
+</div>

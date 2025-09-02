@@ -1,0 +1,11 @@
+---
+import Search from '../../components/Search/';
+
+const allContent = await Astro.glob('../../content/**/*.{md,mdx}');
+const content = allContent.filter((item) => item.frontmatter.title);
+---
+
+
+
+
+<Search client:only="react" searchList={content}/>

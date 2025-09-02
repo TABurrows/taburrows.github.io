@@ -1,0 +1,132 @@
+
+
+#title-bar-title-container {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: "Jost", Arial, Helvetica, sans-serif;
+  margin: 0 1rem;
+  user-select: none;
+}
+
+#title-bar-title {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18pt;
+  user-select: none;
+}
+
+#title-bar-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  transform: translateY(-0.5rem);
+  user-select: none;
+}
+
+
+.rule-line {
+  border-top: 2px solid #cecece;
+  margin-top: 10px;
+}
+
+
+.nav-title-menu {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-bar-name-logo {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  /* height: 2rem; */
+}
+
+#title-bar-logo {
+  user-select: none;
+  height: 48px;
+}
+
+
+pre {
+  border: 1px solid #cecece;
+  padding: 6px 12px;
+  line-height: 1.5rem;
+}
+
+
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 6rem;
+}
+
+
+.tag-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.cloud-tag-item-tagged,
+.tag-item-tagged,
+.tag-item {
+  border-radius: .25rem;
+  padding: .35rem .75rem .25rem .75rem;
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  border: 1px solid #cecece;
+  color: #222;
+  font-size: 9pt;
+  font-weight: 400;
+  letter-spacing: .03rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tag-item {
+  border: 1px solid #888;
+}
+
+.tag-item-tagged,
+.cloud-tag-item-tagged {
+  font-weight: 400;
+  /* border: 1px solid #333; */
+  border: 1px solid #cecece;
+  background-color: #ececec;
+  color: #010101;
+}
+/* .tag-item-tagged {
+  font-weight: 600;
+  border: 2px solid black;
+} */
+
+.tag-item-tagged:hover,
+.tag-item:hover {
+  /* transform: scale(1.1); */
+  font-weight: 600;
+  border: 1px solid black;
+}
+
+.tag-cloud-container {
+  width: 80ch;
+}
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 1rem 0;
+
+}

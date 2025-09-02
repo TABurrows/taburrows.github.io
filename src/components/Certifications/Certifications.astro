@@ -1,0 +1,31 @@
+---
+import Certification from "./Certification.astro"
+
+import "./Certifications.css"
+
+const certifications = [
+    { imagePath: "/src/assets/certifications/okta/okta-certified-developer-cic.png", altText: "Okta Identity Developer - Customer Identity Cloud" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-architect.png", altText: "Google Cloud Architect" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-developer.png", altText: "Google Cloud Developer" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-devops-engineer.png", altText: "Google Cloud DevOps Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/data-engineer.png", altText: "Google Data Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-database-engineer.png", altText: "Google Cloud Database Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-security-engineer.png", altText: "Google Cloud Security Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-network-engineer.png", altText: "Google Cloud Network Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/cloud-digital-leader.png", altText: "Google Cloud Digital Leader" },
+    { imagePath: "/src/assets/certifications/google-cloud/workspace-administrator.png", altText: "Google Cloud Workspace Administrator" },
+    { imagePath: "/src/assets/certifications/google-cloud/associate-cloud-engineer.png", altText: "Google Associate Cloud Engineer" },
+    { imagePath: "/src/assets/certifications/google-cloud/data-practioner.png", altText: "Google Associate Data Practioner" },
+    
+];
+---
+
+
+
+<div id="certifications-container">
+
+    <div class="page-title">Certifications <span style="font-size: 9pt; font-weight: 600; letter-spacing: 0.175rem">[{certifications.length}]</span></div>
+    
+    { certifications.map( certification => <Certification imagePath={certification.imagePath} altText={certification.altText} /> ) }
+
+</div>

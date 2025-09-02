@@ -1,0 +1,58 @@
+---
+import Header from "../components/Base/Header.astro";
+import Navigation from "../components/Base/Navigation.astro";
+import SearchBar from "../components/Base/SearchBar.astro";
+
+import "../styles/global.css";
+import "../styles/base.css";
+
+const pageTitle = "taburrows.github.io";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
+    <meta name="google-site-verification" content="vSQNhveXH_Y-S8JnnQK4oEejHo5ktnc8oc-7kvARe88" />
+    
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+
+    <noscript>
+      <p>
+        <strong>This web page requires JavaScript to be enabled./strong>
+      </p>
+      <p>JavaScript is an object-oriented computer programming language commonly used to create interactive effects within web browsers.</p>
+      <p>
+        <a href="https://goo.gl/koeeaJ">How to enable JavaScript?</a>
+      </p>
+    </noscript>
+
+
+
+      <Header />
+
+      <Navigation />
+
+      <div class="search-anchor">
+        <SearchBar />
+      </div>
+
+      <main>
+
+        <slot />
+
+      </main>
+
+  </body>
+</html>

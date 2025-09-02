@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Summary from '../../components/Summary/Item.astro';
+import TagCloud from '../../components/Tags/Cloud.astro';
+
+export async function getStaticPaths() {
+  
+  const allContent: Record<string, any>[] = await Astro.glob('../../content/**/*.{md,mdx}');
+  const uniqueTags: Record<string, any>[] = [...new Set(allContent.map( content => content.frontmatter.tags ).flat())];
+
+  return uniqueTags.map((tag) => {
+
+    const filteredContent = allContent.filter((note) => note.frontmatter.tags.includes(tag));
+    
+    const annotatedResults: Record<string, any>[] = filteredContent.map( (item) => {
+      const nextResult = { path: "", category: "", ...item};
+      const contentPath = item.file.substring(item.file.indexOf("content"));
+      let filePath = contentPath;
+      let itemCategory = "Content";
+      if(contentPath.indexOf("notes") >= 0) {
+        itemCategory = "Notes";
+        filePath = contentPath.substring(contentPath.indexOf("notes"));
+      }
+      if (contentPath.indexOf("solutions") >= 0) {
+        itemCategory = "Solutions";
+        filePath = contentPath.substring(contentPath.indexOf("solutions"));
+      }
+      nextResult.category = itemCategory;
+      nextResult.path = filePath.substring(0,filePath.lastIndexOf('.')).replace(/index/g, ""); 
+      return nextResult;
+    })
+
+    console.log(`Annotated Results: ${JSON.stringify(annotatedResults,null,2)}`)
+    return {
+        params: { tag: tag },
+        props: { results: annotatedResults, tags: uniqueTags },
+      }
+  });
+
+}
+
+const { tag } = Astro.params;
+const { results, tags } = Astro.props;
+---
+<BaseLayout pagetTitle="Tags">
+
+  <TagCloud tags={tags} tagged={tag} counter={results.length}/>
+
+    <div class="content-container">
+      { results.map( (result) => (
+            <ul class="unordered-list">
+              <Summary path={`/${result.path}`} frontmatter={result.frontmatter} tagged={tag} category={result.category}/>
+            </ul>
+          )
+        )
+      }
+    </div>
+
+</BaseLayout>

@@ -1,0 +1,139 @@
+
+
+.search-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    /* filter: drop-shadow(1px 1px 1px #cecece); */
+}
+
+.search-widget {
+    background-color: white;
+    display: block;
+    border-radius: 0.5rem;
+    border: 1px solid #cecece;
+    background-color: white;
+    position: relative;
+}
+
+.search-controls {
+    padding: 0 0.75rem;
+    position: relative;
+}
+
+.clear-icon,
+.search-icon {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-icon {
+    color: #333;
+    right: .8rem;
+    top: .8rem;
+    cursor: pointer;
+}
+
+.search-icon {
+    border-right: 1px solid #cecece;
+    padding-right: 1rem;
+    left: 1rem;
+    top: .8rem;
+}
+
+.search-input {
+    width: 100%;
+    padding-left: 3.25rem;
+    padding-right: 1rem;
+    word-wrap: break-word;
+}
+
+
+.search-results {
+    transition: height 0.25s ease-in;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    overflow-y: scroll;
+}
+
+.search-results-container {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-delay: .2s;
+    word-wrap: break-word;
+}
+
+
+.search-results-result {
+    margin: 1rem 2rem 2rem 0;
+    cursor: pointer;
+}
+
+.search-results-result-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search-results-result-tag {
+    font-size: 10pt;
+    font-weight: 400;
+    border: 1px solid #cecece;
+    border-radius: .5rem;
+    padding: .25rem .75rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-results-count {
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.search-results-result-title {
+    font-weight: 600;
+}
+
+.search-results-result-summary {
+    font-weight: 400; 
+    margin: 0.5rem 0;  
+}
+
+.search-results-clear {
+    position: absolute;
+    font-size: 12pt;
+    right: 0.75rem;
+    top: 0.25rem;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 32px;
+    max-height: 32px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:668px) {
+
+}
+
+@media screen and (min-width:668px) and (max-width:928px) {
+
+}
+
+@media screen and (min-width:928px) and (max-width:1608px) {
+
+}
+
+@media screen and (min-width:1608px) {
+
+}
