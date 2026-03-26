@@ -4,8 +4,6 @@ summary: "Bun: deploy Bun projects"
 tags: [ "Bun" ]
 ---
 
-
-
 ## Google Cloud Run
 
 To run a Bun project on Cloud Run:
