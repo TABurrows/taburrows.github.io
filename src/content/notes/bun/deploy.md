@@ -1,7 +1,7 @@
 ---
 title: "Bun: Deploy"
 summary: "Bun: deploy Bun projects"
-tags: [ "Bun", "React" ]
+tags: [ "Bun" ]
 ---
 
 
