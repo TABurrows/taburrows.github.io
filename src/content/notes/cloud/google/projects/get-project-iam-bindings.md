@@ -4,6 +4,9 @@ summary: "HOWTO: Get Google Cloud Project IAM Bindings"
 tags: [ "Google Cloud", "gcloud" ]
 ---
 
+## Get IAM Bindings
+
+Get IAM Bindings for the current project only or for all bindings in the ancestry chain.
 
 ```bash
 #!/bin/bash
