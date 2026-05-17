@@ -8,7 +8,9 @@ Access Context Manager defines and controls policies made up of Access Levels an
 
 ## List Access Levels
 
-```
+```bash
+#!/bin/bash
+
 POLICY_NAME="1234567890"
 OUTPUT_FORMAT="list" # 'list'=YAML, 'json'=JSON
 
@@ -19,7 +21,9 @@ gcloud access-context-manager levels list \
 
 ## List Service Perimeters
 
-```
+```bash
+#!/bin/bash
+
 POLICY_NAME="1234567890"
 OUTPUT_FORMAT="json" # 'list'=YAML, 'json'=JSON
 
