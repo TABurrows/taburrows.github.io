@@ -1,7 +1,7 @@
 ---
-title: "Tools: Extract a Google Cloud Project to Terraform"
+title: "Extract Google Cloud Project to Terraform"
 summary: "HOWTO extract a Google Cloud Project to Terraform with resource-config"
-tags: [ "Google Cloud", "Terraform" ]
+tags: [ "Google Cloud", "gcloud", "Terraform" ]
 ---
 
 ## Extract a Project

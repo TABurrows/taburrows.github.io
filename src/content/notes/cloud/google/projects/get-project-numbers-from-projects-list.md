@@ -1,5 +1,5 @@
 ---
-title: "HOWTO: Get Google Cloud Project Numbers from a list of Projects"
+title: "Get Google Cloud Project Numbers"
 summary: "HOWTO: Get Google Cloud Project Numbers from a list of Projects"
 tags: [ "Google Cloud", "gcloud" ]
 ---
